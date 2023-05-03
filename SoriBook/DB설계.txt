@@ -1,0 +1,658 @@
+DB설계
+
+[1] soribook 계정생성 (cmd)
+
+1. sqlplus
+2. 본인 system / 비밀번호  입력
+3. conn/as sysdba (관리자로 접속)
+4. create user soribook identified by 1234;
+5. grant connect, resource, dba to soribook;
+
+
+
+
+[2] 테이블 생성
+
+
+/* 상품 */
+CREATE TABLE Book (
+	BookNo Varchar2(100) NOT NULL, /* 상품번호 */
+	BookPrice number, /* 가격 */
+	BookTitle Varchar2(100), /* 제목 */
+	BookPdate DATE, /* 출판일자 */
+	BookSyno VARCHAR2(1000), /* 시놉시스 */
+	BookImg Varchar2(500), /* 썸네일url */
+	BookContent Varchar2(500), /* 텍스트파일url */
+	BookAudio Varchar2(500), /* 오디오파일url */
+	CategoryNo Varchar2(100), /* 카테고리번호 */
+	WriterNo Varchar2(100), /* 작가번호 */
+	CompanyNo Varchar2(100) /* 출판사번호 */
+);
+
+COMMENT ON TABLE Book IS '상품';
+
+COMMENT ON COLUMN Book.BookNo IS '상품번호';
+
+COMMENT ON COLUMN Book.BookPrice IS '가격';
+
+COMMENT ON COLUMN Book.BookTitle IS '제목';
+
+COMMENT ON COLUMN Book.BookPdate IS '출판일자';
+
+COMMENT ON COLUMN Book.BookSyno IS '시놉시스';
+
+COMMENT ON COLUMN Book.BookImg IS '썸네일url';
+
+COMMENT ON COLUMN Book.BookContent IS '텍스트파일url';
+
+COMMENT ON COLUMN Book.BookAudio IS '오디오파일url';
+
+COMMENT ON COLUMN Book.CategoryNo IS '카테고리번호';
+
+COMMENT ON COLUMN Book.WriterNo IS '작가번호';
+
+COMMENT ON COLUMN Book.CompanyNo IS '출판사번호';
+
+CREATE UNIQUE INDEX PK_Book
+	ON Book (
+		BookNo ASC
+	);
+
+ALTER TABLE Book
+	ADD
+		CONSTRAINT PK_Book
+		PRIMARY KEY (
+			BookNo
+		);
+
+/* 카테고리대분류 */
+CREATE TABLE MajorCategory (
+	MajorCategoryNo Varchar2(100) NOT NULL, /* 대분류번호 */
+	MajorCategoryName Varchar2(100) /* 대분류이름 */
+);
+
+COMMENT ON TABLE MajorCategory IS '카테고리대분류';
+
+COMMENT ON COLUMN MajorCategory.MajorCategoryNo IS '대분류번호';
+
+COMMENT ON COLUMN MajorCategory.MajorCategoryName IS '대분류이름';
+
+CREATE UNIQUE INDEX PK_MajorCategory
+	ON MajorCategory (
+		MajorCategoryNo ASC
+	);
+
+ALTER TABLE MajorCategory
+	ADD
+		CONSTRAINT PK_MajorCategory
+		PRIMARY KEY (
+			MajorCategoryNo
+		);
+
+/* 이벤트 */
+CREATE TABLE Event (
+	EventNo Varchar2(100) NOT NULL, /* 이벤트번호 */
+	EventName Varchar2(100), /* 이벤트이름 */
+	EventDCP number, /* 할인가격(퍼센트) */
+	EventDCW number /* 할인가격(원) */
+);
+
+COMMENT ON TABLE Event IS '이벤트';
+
+COMMENT ON COLUMN Event.EventNo IS '이벤트번호';
+
+COMMENT ON COLUMN Event.EventName IS '이벤트이름';
+
+COMMENT ON COLUMN Event.EventDCP IS '할인가격(퍼센트)';
+
+COMMENT ON COLUMN Event.EventDCW IS '할인가격(원)';
+
+CREATE UNIQUE INDEX PK_Event
+	ON Event (
+		EventNo ASC
+	);
+
+ALTER TABLE Event
+	ADD
+		CONSTRAINT PK_Event
+		PRIMARY KEY (
+			EventNo
+		);
+
+/* 회원정보 */
+CREATE TABLE UserInfo (
+	UserTel Varchar2(100) NOT NULL, /* 전화번호 */
+	userid Varchar2(100), /* 아이디 */
+	userpass Varchar2(100), /* 비밀번호 */
+	useremail Varchar2(100), /* 이메일 */
+	userTF Varchar2(100), /* 구독여부 */
+	TFstart DATE, /* 구독시작일 */
+	TFend DATE /* 구독종료일 */
+);
+
+COMMENT ON TABLE UserInfo IS '회원정보';
+
+COMMENT ON COLUMN UserInfo.UserTel IS '전화번호';
+
+COMMENT ON COLUMN UserInfo.userid IS '아이디';
+
+COMMENT ON COLUMN UserInfo.userpass IS '비밀번호';
+
+COMMENT ON COLUMN UserInfo.useremail IS '이메일';
+
+COMMENT ON COLUMN UserInfo.userTF IS '구독여부';
+
+COMMENT ON COLUMN UserInfo.TFstart IS '구독시작일';
+
+COMMENT ON COLUMN UserInfo.TFend IS '구독종료일';
+
+CREATE UNIQUE INDEX PK_UserInfo
+	ON UserInfo (
+		UserTel ASC
+	);
+
+ALTER TABLE UserInfo
+	ADD
+		CONSTRAINT PK_UserInfo
+		PRIMARY KEY (
+			UserTel
+		);
+
+/* 별점 */
+CREATE TABLE StarPoint (
+	StarPointNo Varchar2(100) NOT NULL, /* 별점번호 */
+	StarPoint number, /* 별점 */
+	BookNo Varchar2(100), /* 상품번호 */
+	UserTel Varchar2(100) /* 전화번호 */
+);
+
+COMMENT ON TABLE StarPoint IS '별점';
+
+COMMENT ON COLUMN StarPoint.StarPointNo IS '별점번호';
+
+COMMENT ON COLUMN StarPoint.StarPoint IS '별점';
+
+COMMENT ON COLUMN StarPoint.BookNo IS '상품번호';
+
+COMMENT ON COLUMN StarPoint.UserTel IS '전화번호';
+
+CREATE UNIQUE INDEX PK_StarPoint
+	ON StarPoint (
+		StarPointNo ASC
+	);
+
+ALTER TABLE StarPoint
+	ADD
+		CONSTRAINT PK_StarPoint
+		PRIMARY KEY (
+			StarPointNo
+		);
+
+/* 공지사항(고객센터) */
+CREATE TABLE Notice (
+	NoticeNo Varchar2(100) NOT NULL, /* 게시글번호 */
+	NoticeTitle Varchar2(100), /* 공지사항제목 */
+	NoticeContent Varchar2(100), /* 공지사항내용 */
+	NoticeCount number, /* 공지사항조회수 */
+	NoticeDate DATE /* 공지게시일 */
+);
+
+COMMENT ON TABLE Notice IS '공지사항(고객센터)';
+
+COMMENT ON COLUMN Notice.NoticeNo IS '게시글번호';
+
+COMMENT ON COLUMN Notice.NoticeTitle IS '공지사항제목';
+
+COMMENT ON COLUMN Notice.NoticeContent IS '공지사항내용';
+
+COMMENT ON COLUMN Notice.NoticeCount IS '공지사항조회수';
+
+COMMENT ON COLUMN Notice.NoticeDate IS '공지게시일';
+
+CREATE UNIQUE INDEX PK_Notice
+	ON Notice (
+		NoticeNo ASC
+	);
+
+ALTER TABLE Notice
+	ADD
+		CONSTRAINT PK_Notice
+		PRIMARY KEY (
+			NoticeNo
+		);
+
+/* 상담테이블(고객센터) */
+CREATE TABLE QnA (
+	QnANo Varchar2(100) NOT NULL, /* 상담게시글번호 */
+	QnATitle Varchar2(100), /* 상담게시글제목 */
+	QnAContent Varchar2(100), /* 상담게시글내용 */
+	QnAAnswer Varchar2(100), /* 상담게시글답변 */
+	QnADate DATE, /* 상담게시일자 */
+	QnAImg1 Varchar2(500), /* 상담이미지파일명1 */
+	QnAImg2 Varchar2(500), /* 상담이미지파일명2 */
+	QnAImg3 Varchar2(500), /* 상담이미지파일명3 */
+	UserTel Varchar2(100) /* 전화번호 */
+);
+
+COMMENT ON TABLE QnA IS '상담테이블(고객센터)';
+
+COMMENT ON COLUMN QnA.QnANo IS '상담게시글번호';
+
+COMMENT ON COLUMN QnA.QnATitle IS '상담게시글제목';
+
+COMMENT ON COLUMN QnA.QnAContent IS '상담게시글내용';
+
+COMMENT ON COLUMN QnA.QnAAnswer IS '상담게시글답변';
+
+COMMENT ON COLUMN QnA.QnADate IS '상담게시일자';
+
+COMMENT ON COLUMN QnA.QnAImg1 IS '상담이미지파일명1';
+
+COMMENT ON COLUMN QnA.QnAImg2 IS '상담이미지파일명2';
+
+COMMENT ON COLUMN QnA.QnAImg3 IS '상담이미지파일명3';
+
+COMMENT ON COLUMN QnA.UserTel IS '전화번호';
+
+CREATE UNIQUE INDEX PK_QnA
+	ON QnA (
+		QnANo ASC
+	);
+
+ALTER TABLE QnA
+	ADD
+		CONSTRAINT PK_QnA
+		PRIMARY KEY (
+			QnANo
+		);
+
+/* 댓글 */
+CREATE TABLE Reply (
+	ReplyNo Varchar2(100) NOT NULL, /* 댓글번호 */
+	ReplyContent VARCHAR2(1000), /* 댓글내용 */
+	ReplyDate DATE, /* 댓글작성일 */
+	BookNo Varchar2(100), /* 상품번호 */
+	UserTel Varchar2(100) /* 전화번호 */
+);
+
+COMMENT ON TABLE Reply IS '댓글';
+
+COMMENT ON COLUMN Reply.ReplyNo IS '댓글번호';
+
+COMMENT ON COLUMN Reply.ReplyContent IS '댓글내용';
+
+COMMENT ON COLUMN Reply.ReplyDate IS '댓글작성일';
+
+COMMENT ON COLUMN Reply.BookNo IS '상품번호';
+
+COMMENT ON COLUMN Reply.UserTel IS '전화번호';
+
+CREATE UNIQUE INDEX PK_Reply
+	ON Reply (
+		ReplyNo ASC
+	);
+
+ALTER TABLE Reply
+	ADD
+		CONSTRAINT PK_Reply
+		PRIMARY KEY (
+			ReplyNo
+		);
+
+/* 장바구니상품 */
+CREATE TABLE Cart (
+	CartBookNo Varchar2(100) NOT NULL, /* 장바구니상품번호 */
+	CartNo Varchar2(100), /* 장바구니번호 */
+	BookNo Varchar2(100), /* 상품번호 */
+	UserTel Varchar2(100) /* 전화번호 */
+);
+
+COMMENT ON TABLE Cart IS '장바구니상품';
+
+COMMENT ON COLUMN Cart.CartBookNo IS '장바구니상품번호';
+
+COMMENT ON COLUMN Cart.CartNo IS '장바구니번호';
+
+COMMENT ON COLUMN Cart.BookNo IS '상품번호';
+
+COMMENT ON COLUMN Cart.UserTel IS '전화번호';
+
+CREATE UNIQUE INDEX PK_Cart
+	ON Cart (
+		CartBookNo ASC
+	);
+
+ALTER TABLE Cart
+	ADD
+		CONSTRAINT PK_Cart
+		PRIMARY KEY (
+			CartBookNo
+		);
+
+/* 카테고리 */
+CREATE TABLE Category (
+	CategoryNo Varchar2(100) NOT NULL, /* 카테고리번호 */
+	CategoryName Varchar2(100), /* 카테고리이름 */
+	MajorCategoryNo Varchar2(100) /* 대분류번호 */
+);
+
+COMMENT ON TABLE Category IS '카테고리';
+
+COMMENT ON COLUMN Category.CategoryNo IS '카테고리번호';
+
+COMMENT ON COLUMN Category.CategoryName IS '카테고리이름';
+
+COMMENT ON COLUMN Category.MajorCategoryNo IS '대분류번호';
+
+CREATE UNIQUE INDEX PK_Category
+	ON Category (
+		CategoryNo ASC
+	);
+
+ALTER TABLE Category
+	ADD
+		CONSTRAINT PK_Category
+		PRIMARY KEY (
+			CategoryNo
+		);
+
+/* 작가 */
+CREATE TABLE Writer (
+	WriterNo Varchar2(100) NOT NULL, /* 작가번호 */
+	WriterName Varchar2(100), /* 작가이름 */
+	WriterDetail Varchar2(100) /* 작가설명 */
+);
+
+COMMENT ON TABLE Writer IS '작가';
+
+COMMENT ON COLUMN Writer.WriterNo IS '작가번호';
+
+COMMENT ON COLUMN Writer.WriterName IS '작가이름';
+
+COMMENT ON COLUMN Writer.WriterDetail IS '작가설명';
+
+CREATE UNIQUE INDEX PK_Writer
+	ON Writer (
+		WriterNo ASC
+	);
+
+ALTER TABLE Writer
+	ADD
+		CONSTRAINT PK_Writer
+		PRIMARY KEY (
+			WriterNo
+		);
+
+/* 출판사 */
+CREATE TABLE Company (
+	CompanyNo Varchar2(100) NOT NULL, /* 출판사번호 */
+	CompanyName Varchar2(100) /* 출판사이름 */
+);
+
+COMMENT ON TABLE Company IS '출판사';
+
+COMMENT ON COLUMN Company.CompanyNo IS '출판사번호';
+
+COMMENT ON COLUMN Company.CompanyName IS '출판사이름';
+
+CREATE UNIQUE INDEX PK_Company
+	ON Company (
+		CompanyNo ASC
+	);
+
+ALTER TABLE Company
+	ADD
+		CONSTRAINT PK_Company
+		PRIMARY KEY (
+			CompanyNo
+		);
+
+/* 결제 */
+CREATE TABLE Payment (
+	PaymentNo Varchar2(100) NOT NULL, /* 결제번호 */
+	PaymentMoney number, /* 결제금액 */
+	PaymentDate DATE, /* 결제일 */
+	UserTel Varchar2(100) /* 전화번호 */
+);
+
+COMMENT ON TABLE Payment IS '결제';
+
+COMMENT ON COLUMN Payment.PaymentNo IS '결제번호';
+
+COMMENT ON COLUMN Payment.PaymentMoney IS '결제금액';
+
+COMMENT ON COLUMN Payment.PaymentDate IS '결제일';
+
+COMMENT ON COLUMN Payment.UserTel IS '전화번호';
+
+CREATE UNIQUE INDEX PK_Payment
+	ON Payment (
+		PaymentNo ASC
+	);
+
+ALTER TABLE Payment
+	ADD
+		CONSTRAINT PK_Payment
+		PRIMARY KEY (
+			PaymentNo
+		);
+
+/* 결제상품 */
+CREATE TABLE BookPayment (
+	BookPaymentNo Varchar2(100) NOT NULL, /* 결제상품번호 */
+	PaidPrice number, /* 가격 */
+	PaymentNo Varchar2(100), /* 결제번호 */
+	BookNo Varchar2(100) /* 상품번호 */
+);
+
+COMMENT ON TABLE BookPayment IS '결제상품';
+
+COMMENT ON COLUMN BookPayment.BookPaymentNo IS '결제상품번호';
+
+COMMENT ON COLUMN BookPayment.PaidPrice IS '가격';
+
+COMMENT ON COLUMN BookPayment.PaymentNo IS '결제번호';
+
+COMMENT ON COLUMN BookPayment.BookNo IS '상품번호';
+
+CREATE UNIQUE INDEX PK_BookPayment
+	ON BookPayment (
+		BookPaymentNo ASC
+	);
+
+ALTER TABLE BookPayment
+	ADD
+		CONSTRAINT PK_BookPayment
+		PRIMARY KEY (
+			BookPaymentNo
+		);
+
+/* 서재 */
+CREATE TABLE Library (
+	LibraryNo Varchar2(100) NOT NULL, /* 서재번호 */
+	BookNo Varchar2(100), /* 상품번호 */
+	UserTel Varchar2(100), /* 전화번호 */
+	PaymentTF Varchar2(10) /* 결제여부 */
+);
+
+COMMENT ON TABLE Library IS '서재';
+
+COMMENT ON COLUMN Library.LibraryNo IS '서재번호';
+
+COMMENT ON COLUMN Library.BookNo IS '상품번호';
+
+COMMENT ON COLUMN Library.UserTel IS '전화번호';
+
+COMMENT ON COLUMN Library.PaymentTF IS '결제여부';
+
+CREATE UNIQUE INDEX PK_Library
+	ON Library (
+		LibraryNo ASC
+	);
+
+ALTER TABLE Library
+	ADD
+		CONSTRAINT PK_Library
+		PRIMARY KEY (
+			LibraryNo
+		);
+
+ALTER TABLE Book
+	ADD
+		CONSTRAINT FK_Category_TO_Book
+		FOREIGN KEY (
+			CategoryNo
+		)
+		REFERENCES Category (
+			CategoryNo
+		);
+
+ALTER TABLE Book
+	ADD
+		CONSTRAINT FK_Writer_TO_Book
+		FOREIGN KEY (
+			WriterNo
+		)
+		REFERENCES Writer (
+			WriterNo
+		);
+
+ALTER TABLE Book
+	ADD
+		CONSTRAINT FK_Company_TO_Book
+		FOREIGN KEY (
+			CompanyNo
+		)
+		REFERENCES Company (
+			CompanyNo
+		);
+
+ALTER TABLE StarPoint
+	ADD
+		CONSTRAINT FK_Book_TO_StarPoint
+		FOREIGN KEY (
+			BookNo
+		)
+		REFERENCES Book (
+			BookNo
+		);
+
+ALTER TABLE StarPoint
+	ADD
+		CONSTRAINT FK_UserInfo_TO_StarPoint
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE QnA
+	ADD
+		CONSTRAINT FK_UserInfo_TO_QnA
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE Reply
+	ADD
+		CONSTRAINT FK_Book_TO_Reply
+		FOREIGN KEY (
+			BookNo
+		)
+		REFERENCES Book (
+			BookNo
+		);
+
+ALTER TABLE Reply
+	ADD
+		CONSTRAINT FK_UserInfo_TO_Reply
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE Cart
+	ADD
+		CONSTRAINT FK_Book_TO_Cart
+		FOREIGN KEY (
+			BookNo
+		)
+		REFERENCES Book (
+			BookNo
+		);
+
+ALTER TABLE Cart
+	ADD
+		CONSTRAINT FK_UserInfo_TO_Cart
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE Category
+	ADD
+		CONSTRAINT FK_MajorCategory_TO_Category
+		FOREIGN KEY (
+			MajorCategoryNo
+		)
+		REFERENCES MajorCategory (
+			MajorCategoryNo
+		);
+
+ALTER TABLE Payment
+	ADD
+		CONSTRAINT FK_UserInfo_TO_Payment
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE BookPayment
+	ADD
+		CONSTRAINT FK_Payment_TO_BookPayment
+		FOREIGN KEY (
+			PaymentNo
+		)
+		REFERENCES Payment (
+			PaymentNo
+		);
+
+ALTER TABLE BookPayment
+	ADD
+		CONSTRAINT FK_Book_TO_BookPayment
+		FOREIGN KEY (
+			BookNo
+		)
+		REFERENCES Book (
+			BookNo
+		);
+
+ALTER TABLE Library
+	ADD
+		CONSTRAINT FK_UserInfo_TO_Library
+		FOREIGN KEY (
+			UserTel
+		)
+		REFERENCES UserInfo (
+			UserTel
+		);
+
+ALTER TABLE Library
+	ADD
+		CONSTRAINT FK_Book_TO_Library
+		FOREIGN KEY (
+			BookNo
+		)
+		REFERENCES Book (
+			BookNo
+		);
