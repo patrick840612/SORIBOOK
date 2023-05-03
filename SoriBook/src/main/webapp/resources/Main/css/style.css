@@ -84,7 +84,7 @@ p {
 }
 
 img {
-	max-width: 100%;
+	max-width: 50%;
 }
 
 input:focus,
@@ -417,6 +417,7 @@ ol {
 
 .header__menu {
 	padding: 24px 0;
+	position: absolute;
 }
 
 .header__menu ul li {
