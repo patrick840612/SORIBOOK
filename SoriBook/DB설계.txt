@@ -14,7 +14,6 @@ DB설계
 [2] 테이블 생성
 
 
-/* 상품 */
 CREATE TABLE Book (
 	BookNo Varchar2(100) NOT NULL, /* 상품번호 */
 	BookPrice number, /* 가격 */
@@ -24,6 +23,7 @@ CREATE TABLE Book (
 	BookImg Varchar2(500), /* 썸네일url */
 	BookContent Varchar2(500), /* 텍스트파일url */
 	BookAudio Varchar2(500), /* 오디오파일url */
+	BookSub Varchar2(20), /* 구독용상품 */
 	CategoryNo Varchar2(100), /* 카테고리번호 */
 	WriterNo Varchar2(100), /* 작가번호 */
 	CompanyNo Varchar2(100) /* 출판사번호 */
@@ -46,6 +46,8 @@ COMMENT ON COLUMN Book.BookImg IS '썸네일url';
 COMMENT ON COLUMN Book.BookContent IS '텍스트파일url';
 
 COMMENT ON COLUMN Book.BookAudio IS '오디오파일url';
+
+COMMENT ON COLUMN Book.BookSub IS '구독용상품';
 
 COMMENT ON COLUMN Book.CategoryNo IS '카테고리번호';
 
@@ -94,7 +96,8 @@ CREATE TABLE Event (
 	EventNo Varchar2(100) NOT NULL, /* 이벤트번호 */
 	EventName Varchar2(100), /* 이벤트이름 */
 	EventDCP number, /* 할인가격(퍼센트) */
-	EventDCW number /* 할인가격(원) */
+	EventDCW number, /* 할인가격(원) */
+	EventImg Varchar2(500) /* 이벤트이미지 */
 );
 
 COMMENT ON TABLE Event IS '이벤트';
@@ -106,6 +109,8 @@ COMMENT ON COLUMN Event.EventName IS '이벤트이름';
 COMMENT ON COLUMN Event.EventDCP IS '할인가격(퍼센트)';
 
 COMMENT ON COLUMN Event.EventDCW IS '할인가격(원)';
+
+COMMENT ON COLUMN Event.EventImg IS '이벤트이미지';
 
 CREATE UNIQUE INDEX PK_Event
 	ON Event (
