@@ -3,7 +3,7 @@ package com.kosmo.soribook.domain;
 import lombok.Data;
 
 @Data
-public class BookVO {
+public class BookVO {//상품 테이블
 
 	private String BookNo; //상품번호 pk
 	private int    BookPrice; // 가격
