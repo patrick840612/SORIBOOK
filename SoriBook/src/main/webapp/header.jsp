@@ -34,6 +34,8 @@
 	type="text/css">
 <link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
 	type="text/css">
+	
+    
 </head>
 
 <body>
@@ -140,8 +142,6 @@
 	<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
 	<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
 	<script src="/soribook/resources/Main/js/main.js"></script>
-
-
 
 </body>
 
