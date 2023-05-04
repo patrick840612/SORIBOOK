@@ -29,6 +29,18 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+/* css 추가 시작*/
+
+.copyright{
+	color: #909090;
+}
+.companyinfo{
+	text-align: center;
+}
+
+
+/* css 추가 끝 */
+
 
 html,
 body {
@@ -2616,12 +2628,12 @@ ol {
 
 .footer {
 	background: #F3F6FA;
-	padding-top: 70px;
+	padding-top: 25px;
 	padding-bottom: 0;
 }
 
 .footer__about {
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 .footer__about ul li {

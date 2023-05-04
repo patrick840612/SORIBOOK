@@ -1,116 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
- 
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+<meta charset="UTF-8">
+<meta name="description" content="Ogani Template">
+<meta name="keywords" content="Ogani, unica, creative, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Ogani | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+	rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="resources/Main/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="resources/Main/css/style.css" type="text/css">
-    
-     <!-- Js Plugins -->
-    <script src="resources/Main/js/jquery-3.3.1.min.js"></script>
-    <script src="resources/Main/js/bootstrap.min.js"></script>
-    <script src="resources/Main/js/jquery.nice-select.min.js"></script>
-    <script src="resources/Main/js/jquery-ui.min.js"></script>
-    <script src="resources/Main/js/jquery.slicknav.js"></script>
-    <script src="resources/Main/js/mixitup.min.js"></script>
-    <script src="resources/Main/js/owl.carousel.min.js"></script>
-    <script src="resources/Main/js/main.js"></script>
-    
+<!-- Css Styles -->
+<link rel="stylesheet" href="resources/Main/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/font-awesome.min.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/elegant-icons.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/nice-select.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/jquery-ui.min.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/owl.carousel.min.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/slicknav.min.css"
+	type="text/css">
+<link rel="stylesheet" href="resources/Main/css/style.css"
+	type="text/css">
+
+<!-- Js Plugins -->
+<script src="resources/Main/js/jquery-3.3.1.min.js"></script>
+<script src="resources/Main/js/bootstrap.min.js"></script>
+<script src="resources/Main/js/jquery.nice-select.min.js"></script>
+<script src="resources/Main/js/jquery-ui.min.js"></script>
+<script src="resources/Main/js/jquery.slicknav.js"></script>
+<script src="resources/Main/js/mixitup.min.js"></script>
+<script src="resources/Main/js/owl.carousel.min.js"></script>
+<script src="resources/Main/js/main.js"></script>
+
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-<!--#########################################################################################  -->
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+	<!--#########################################################################################  -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="/soribook/MainPage.jsp"><img src="resources/Main/img/SORIBOOK.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  SoriBook <script>document.write(new Date().getFullYear());</script> Copyright © SoriBook Corp. All Rights Reserved <i class="fa fa-heart" aria-hidden="true"></i> <a href="/soribook/MainPage.jsp" target="_blank">SoriBook</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="resources/Main/img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+	<!-- Footer Section Begin -->
+	<footer class="footer spad">
+		<div class="container">
+			<div class="row">
+		
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="footer__about">
+						<div class="footer__about__logo">
+							<a href="/soribook/MainPage.jsp"><img
+								src="resources/Main/img/soribookLogo.png" alt=""></a>
+						</div>
+						<ul>
+							<li>Address: 서울 금천구 가산디지털2로 101</li>
+							<li>Phone: +82 10.1234.5678</li>
+							<li>Email: Service@SoriBook.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-6 col-sm-6">
+				<div class="row"><br/><br/></div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="footer__widget companyinfo">
+								<h5>
+									<a href="#">회사소개</a> &nbsp;|&nbsp; <a href="#">이용약관</a>&nbsp;|&nbsp;<a
+										href="#">개인정보처리방침</a>
+								</h5>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="footer__widget">
+								<div class="copyright">
+								소리북에서 판매되는 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 처벌될 수
+								있습니다.<br />통신판매업 신고번호: 서울가산 제 1111 -
+								111호 <br />사업자등록번호:111-11-1111 대표이사:김소리
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer__copyright">
+						<div class="footer__copyright__text">
+							<p>
+								SoriBook
+								<script>document.write(new Date().getFullYear());</script>
+								Copyright © SoriBook Corp. All Rights Reserved <i
+									class="fa fa-heart" aria-hidden="true"></i> <a
+									href="/soribook/MainPage.jsp" target="_blank">SoriBook</a>
+							</p>
+						</div>
+						<div class="footer__copyright__payment">
+							<img src="resources/Main/img/payment-item.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer Section End -->
 
 
 
