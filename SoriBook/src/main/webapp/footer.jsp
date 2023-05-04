@@ -18,32 +18,32 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="resources/Main/css/bootstrap.min.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/bootstrap.min.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/font-awesome.min.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/elegant-icons.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/elegant-icons.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/nice-select.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/nice-select.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/jquery-ui.min.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/jquery-ui.min.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/owl.carousel.min.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/owl.carousel.min.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/slicknav.min.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/slicknav.min.css"
 	type="text/css">
-<link rel="stylesheet" href="resources/Main/css/style.css"
+<link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
 	type="text/css">
 
 <!-- Js Plugins -->
-<script src="resources/Main/js/jquery-3.3.1.min.js"></script>
-<script src="resources/Main/js/bootstrap.min.js"></script>
-<script src="resources/Main/js/jquery.nice-select.min.js"></script>
-<script src="resources/Main/js/jquery-ui.min.js"></script>
-<script src="resources/Main/js/jquery.slicknav.js"></script>
-<script src="resources/Main/js/mixitup.min.js"></script>
-<script src="resources/Main/js/owl.carousel.min.js"></script>
-<script src="resources/Main/js/main.js"></script>
+<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
+<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
+<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
+<script src="/soribook/resources/Main/js/main.js"></script>
 
 </head>
 
@@ -60,7 +60,7 @@
 					<div class="footer__about">
 						<div class="footer__about__logo">
 							<a href="/soribook/MainPage.jsp"><img
-								src="resources/Main/img/soribookLogo.png" alt=""></a>
+								src="/soribook/resources/Main/img/soribookLogo.png" alt=""></a>
 						</div>
 						<ul>
 							<li>Address: 서울 금천구 가산디지털2로 101</li>
@@ -105,7 +105,7 @@
 							</p>
 						</div>
 						<div class="footer__copyright__payment">
-							<img src="resources/Main/img/payment-item.png" alt="">
+							<img src="/soribook/resources/Main/img/payment-item.png" alt="">
 						</div>
 					</div>
 				</div>

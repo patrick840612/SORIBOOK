@@ -577,11 +577,11 @@ ol {
 -----------------------*/
 
 .hero {
-	padding-bottom: 50px;
+	padding-bottom: 0x;
 }
 
 .hero.hero-normal {
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 }
 
 .hero.hero-normal .hero__categories {
@@ -1286,7 +1286,7 @@ ol {
 -----------------------*/
 
 .product {
-	padding-top: 80px;
+	padding-top: 0px;
 	padding-bottom: 80px;
 }
 
