@@ -47,7 +47,27 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3"></div>
+			<div class="col-lg-3">
+			<div class="hero__categories">
+						<div class="hero__categories__all">
+							<i class="fa fa-bars"></i> <span>카테고리</span>
+						</div>
+						<ul>
+							<li><a href="#">국내도서</a><a href="#">외국도서</a></li>
+							<li><a href="#">건강 - 취미</a></li>
+							<li><a href="#">경영 - 경제</a></li>
+							<li><a href="#">공무원수험서</a></li>
+							<li><a href="#">사회과학</a></li>
+							<li><a href="#">여행</a></li>
+							<li><a href="#">역사</a></li>
+							<li><a href="#">예술</a></li>
+							<li><a href="#">만화</a></li>
+							<li><a href="#">소설</a></li>
+							<li><a href="#">에세이</a></li>
+						</ul>
+					</div>
+			
+			</div>
 			<div class="col-lg-6">
 				
 				<nav class="header__menu">
@@ -86,38 +106,20 @@
 
 	<!-- Hero Section Begin -->
 	<section class="hero">
-		<div class="container">
+	<div class="row"><br/><br/><br/><br/><br/></div>
+		<div class="container">	    
 			<div class="row">
-			<div class="header__logo">
-						<a href="MainPage.jsp"><img src="resources/Main/img/SORIBOOK.png" alt=""></a>
-					</div>
-				<div class="col-lg-3">
-					<div class="hero__categories">
-						<div class="hero__categories__all">
-							<i class="fa fa-bars"></i> <span>카테고리</span>
-						</div>
-						<ul>
-							<li><a href="#">Fresh Meat</a></li>
-							<li><a href="#">Vegetables</a></li>
-							<li><a href="#">Fruit & Nut Gifts</a></li>
-							<li><a href="#">Fresh Berries</a></li>
-							<li><a href="#">Ocean Foods</a></li>
-							<li><a href="#">Butter & Eggs</a></li>
-							<li><a href="#">Fastfood</a></li>
-							<li><a href="#">Fresh Onion</a></li>
-							<li><a href="#">Papayaya & Crisps</a></li>
-							<li><a href="#">Oatmeal</a></li>
-							<li><a href="#">Fresh Bananas</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-9">
-					
+			<div class="col-sm-3">
+            <div class="header__logo">
+			<a href="MainPage.jsp"><img src="resources/Main/img/SORIBOOK.png" alt=""><br/></a>
+				</div>	
+			</div>		
+				<div class="col-lg-9">			
 					<div class="hero__search">
 						<div class="hero__search__form">
 							<form action="#">
 								<div class="hero__search__categories">
+								
 									All Categories <span class="arrow_carrot-down"></span>
 								</div>
 								<input type="text" placeholder="검색어를 입력하세요">
