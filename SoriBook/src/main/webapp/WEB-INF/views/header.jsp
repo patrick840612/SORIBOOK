@@ -71,7 +71,7 @@
 				<nav class="header__menu">
 
 					<ul>
-						<li class="active"><a href="MainPage.jsp">Home</a></li>
+						<li class="active"><a href="MainPage.do">Home</a></li>
 						<li><a href=" ">구독상품</a></li>
 						<li><a href=" ">TOP100</a></li>
 						<li><a href=" ">이벤트</a></li>
@@ -109,7 +109,7 @@
 			<div class="row">
 			<div class="col-sm-3">
             <div class="header__logo">
-			<a href="MainPage.jsp"><img src="/soribook/resources/Main/img/SORIBOOK.png" alt=""><br/></a>
+			<a href="MainPage.do"><img src="/soribook/resources/Main/img/SORIBOOK.png" alt=""><br/></a>
 				</div>	
 			</div>		
 				<div class="col-lg-9">			

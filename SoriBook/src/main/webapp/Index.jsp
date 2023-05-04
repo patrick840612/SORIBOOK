@@ -8,3 +8,4 @@
 %>
 <a href="MainPage.do">mainpage.do</a> <hr/>
 <a href="CategoryPage.do">CategoryPage.do</a><hr/>
+<a href="myPage.do">myPage.do</a><hr/>
