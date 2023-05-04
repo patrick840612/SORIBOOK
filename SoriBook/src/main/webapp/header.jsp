@@ -37,10 +37,7 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+
 	<!--#########################################################################################  -->
 
 	<!-- 헤더 섹션 시작 -->
@@ -53,7 +50,6 @@
 							<i class="fa fa-bars"></i> <span>카테고리</span>
 						</div>
 						<ul>
-							<li><a href="#">국내도서</a><a href="#">외국도서</a></li>
 							<li><a href="#">건강 - 취미</a></li>
 							<li><a href="#">경영 - 경제</a></li>
 							<li><a href="#">공무원수험서</a></li>
