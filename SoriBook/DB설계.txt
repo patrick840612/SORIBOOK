@@ -2,11 +2,12 @@ DB설계
 
 [1] soribook 계정생성 (cmd)
 
-1. sqlplus
+1. sqlplus;
 2. 본인 system / 비밀번호  입력
-3. conn/as sysdba (관리자로 접속)
+3. conn/as sysdba; (관리자로 접속)
 4. create user soribook identified by 1234;
 5. grant connect, resource, dba to soribook;
+6. commit;
 
 
 

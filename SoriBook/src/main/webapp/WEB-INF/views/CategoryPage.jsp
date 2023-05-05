@@ -134,9 +134,9 @@
 
 								</c:forEach>
 								<li><a href="#">외국도서</a></li>
-								<c:forEach var=''>
+								<%-- <c:forEach var=''> --%>
 
-								</c:forEach>
+								<%-- </c:forEach> --%>
 								<li><a href="#">Fruit & Nut Gifts</a></li>
 								<li><a href="#">Fresh Berries</a></li>
 								<li><a href="#">Ocean Foods</a></li>
