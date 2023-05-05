@@ -6,5 +6,5 @@ import com.kosmo.soribook.domain.CategoryVO;
 
 public interface CategoryDAO {
 
-	public List<CategoryVO> selectCategory(CategoryVO vo) ;
+	public List<CategoryVO> selectCategory() ;
 }

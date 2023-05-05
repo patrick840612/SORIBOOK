@@ -1,8 +1,10 @@
 package com.kosmo.soribook.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kosmo.soribook.domain.CategoryVO;
@@ -15,9 +17,12 @@ public class CategoryController {
 	CategoryServiceImpl categoryService;
 	
 	
-	
-	public void  selectCategory(CategoryVO vo) {
-		categoryService.selectCategory(vo);
+	@RequestMapping("CategoryPage.do")
+	public void  selectCategory(Model m) {
+		System.out.println("===> Contoller 호출");
+		List<CategoryVO> list = categoryService.selectCategory();
+		m.addAttribute("categoryList",list);
+		System.out.println(list);
 	}
 	
 	

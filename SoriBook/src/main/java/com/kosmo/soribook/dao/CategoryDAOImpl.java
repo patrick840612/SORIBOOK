@@ -15,10 +15,9 @@ public class CategoryDAOImpl implements CategoryDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<CategoryVO> selectCategory(CategoryVO vo) {
-
+	public List<CategoryVO> selectCategory() {
 			System.out.println("===> Mybatis selectCategory() 호출");
-			return mybatis.selectList("CategoryMapper.selectCategory", vo);
+			return mybatis.selectList("CategoryMapper.selectCategory");
 	}
 
 }

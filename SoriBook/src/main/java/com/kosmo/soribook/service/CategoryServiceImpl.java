@@ -15,9 +15,9 @@ public class CategoryServiceImpl implements CategoryService {
 	private CategoryDAOImpl categoryDAO;
 	
 	@Override
-	public List<CategoryVO> selectCategory(CategoryVO vo) {
-		categoryDAO.selectCategory(vo);
-		return null;
+	public List<CategoryVO> selectCategory() {
+		System.out.println("===> CategoryDAOImpl selectCategory() 호출");
+		return categoryDAO.selectCategory();
 	}
 
 }

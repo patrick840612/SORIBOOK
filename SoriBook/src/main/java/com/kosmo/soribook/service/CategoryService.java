@@ -6,5 +6,5 @@ import com.kosmo.soribook.domain.CategoryVO;
 
 public interface CategoryService {
 
-	List<CategoryVO>  selectCategory(CategoryVO vo);
+	List<CategoryVO>  selectCategory();
 }
