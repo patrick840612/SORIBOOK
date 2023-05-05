@@ -14,12 +14,8 @@ public class CategoryController {
 	@Autowired
 	CategoryServiceImpl categoryService;
 	
-	@RequestMapping("/{step}.do")
-	public String viewPage(@PathVariable String step) {
-		return step;
-	}
 	
-	@RequestMapping("CategoryPage.do")
+	
 	public void  selectCategory(CategoryVO vo) {
 		categoryService.selectCategory(vo);
 	}
