@@ -47,7 +47,7 @@
  <section class="product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-7">
+                <div class="col-lg-12 col-md-12">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
                             <h2>카테고리 이름</h2>
