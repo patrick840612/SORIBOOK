@@ -99,7 +99,7 @@
 			<i class="fa fa-bars"></i>
 		</div> -->
 	</div>
-	</header>
+	
 	<!-- 헤더섹션 종료 -->
 
 	<!-- Hero Section Begin -->

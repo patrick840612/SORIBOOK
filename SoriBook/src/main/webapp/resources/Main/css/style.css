@@ -590,7 +590,7 @@ ol {
 
 .hero.hero-normal .hero__categories ul {
 	display: none;
-	position: absolute;
+	position: relative;
 	top: 20px;
 	left: 70px;
 	width: 100%;
@@ -608,6 +608,7 @@ ol {
 	position: relative;
 	padding: 10px 25px 10px 40px;
 	cursor: pointer;
+	z-index:1;
 }
 
 .hero__categories__all i {
@@ -615,6 +616,7 @@ ol {
 	margin-right: 10px;
 	top: 20px;
 	left: 70px;
+	z-index:1;
 }
 
 .hero__categories__all span {
@@ -626,7 +628,7 @@ ol {
 }
 
 .hero__categories__all:after {
-	position: absolute;
+	position: relative;
 	right: 18px;
 	top: 9px;
 	content: "3";
@@ -642,7 +644,7 @@ ol {
 	top: 60px;
 	left: 120px;
 	position:absolute;
-	z-index: 3;
+	z-index: 10;
 	display: none;
 	background: #ffffff;
 	 text-align: center;

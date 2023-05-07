@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="CategoryMapper">
+<mapper namespace="BookMapper">
 
-	<select id="selectCategory"  resultType="com.kosmo.soribook.domain.CategoryVO">
+	<select id="selectBook"  resultType="com.kosmo.soribook.domain.BookVO">
 		SELECT *
-		FROM category
+		FROM book
 		ORDER BY categoryno asc
 	</select>
 	
