@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-<link rel="stylesheet" type="text/css" href="/test/resources/mabagerPage/css/ui.css">
-<link rel="stylesheet" type="text/css" href="/test/resources/mabagerPage/css/leekoon.css">
+<link rel="stylesheet" type="text/css" href="/SoriBook/resources/mabagerPage/css/ui.css">
+<link rel="stylesheet" type="text/css" href="/SoriBook/resources/mabagerPage/css/leekoon.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 		<h1>소리북 관리자</h1>
 		<div id="divheader">
 		<header id="header">
-			<strong class="logo_box"><img src="/test/resources/mabagerPage/images/mainLogo.png" alt="이지스퍼블리싱"></strong>
+			<strong class="logo_box"><img src="/SoriBook/resources/mabagerPage/images/mainLogo.png" alt="이지스퍼블리싱"></strong>
 			<nav>        
 				<ul>       
 					<li data-rol="menu1"><a href="#">상품관리</a></li>        
@@ -83,7 +83,7 @@
 		  	 				<article class="notebook">
 		  	 					<div class="detail_content">
 		  	 						<div class="img_book">
-		  	 							<img src="/test/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
+		  	 							<img src="/SoriBook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
 		  	 						</div>
 		  	 						<section class="book_description">
 		  	 							<h4>Do it! HTML5+CSS3 웹 표준의 정석 &#60; 개정판 &#62;</h4>
@@ -110,14 +110,14 @@
 							<button class="roll_right"></button>
 							<div class="book_roll">
 								<ul>
-			                        <li data-url="files/book1.html"><img src="/test/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
-			                        <li data-url="files/book2.html"><img src="/test/resources/mabagerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
-			                        <li data-url="files/book3.html"><img src="/test/resources/mabagerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
-			                        <li data-url="files/book4.html"><img src="/test/resources/mabagerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
-			                        <li data-url="files/book5.html"><img src="/test/resources/mabagerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
-			                        <li data-url="files/book6.html"><img src="/test/resources/mabagerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
-			                        <li data-url="files/book7.html"><img src="/test/resources/mabagerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
-			                        <li data-url="files/book8.html"><img src="/test/resources/mabagerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
+			                        <li data-url="files/book1.html"><img src="/SoriBook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
+			                        <li data-url="files/book2.html"><img src="/SoriBook/resources/mabagerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
+			                        <li data-url="files/book3.html"><img src="/SoriBook/resources/mabagerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
+			                        <li data-url="files/book4.html"><img src="/SoriBook/resources/mabagerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
+			                        <li data-url="files/book5.html"><img src="/SoriBook/resources/mabagerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
+			                        <li data-url="files/book6.html"><img src="/SoriBook/resources/mabagerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
+			                        <li data-url="files/book7.html"><img src="/SoriBook/resources/mabagerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
+			                        <li data-url="files/book8.html"><img src="/SoriBook/resources/mabagerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
 			                      </ul>
 							</div>
 						</div>
@@ -162,8 +162,8 @@
 	
 
 	
-	<script type="text/javascript" src="/test/resources/mabagerPage/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/test/resources/mabagerPage/js/ui.js"></script>
+	<script type="text/javascript" src="/SoriBook/resources/mabagerPage/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/SoriBook/resources/mabagerPage/js/ui.js"></script>
 </body>
 </html>
 
