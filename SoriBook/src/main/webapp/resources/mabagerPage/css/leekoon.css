@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body > #wrap > #divheader{
+	
+
+	/* background : #7fad39; */
+
+	display : inline-block;
+	position: relative;
+	
+}
+
+body > #wrap > #divcontainer{
+	display : inline;
+	position: relative;
+	margin-left: 250px; 
+	
+}
+
+
