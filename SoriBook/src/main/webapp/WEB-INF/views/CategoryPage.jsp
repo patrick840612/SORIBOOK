@@ -49,17 +49,59 @@
 <script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
 <script src="/soribook/resources/Main/js/main.js"></script>
 
+<% 
+
+String categoryno = request.getParameter("categoryno");
+String categoryname = request.getParameter("categoryname");
+
+%>
+<script type="text/javascript">
+
+//이전 버튼 이벤트
+
+
+function fn_prev(page, range, rangeSize) {
+		var page = ((range - 2) * rangeSize) + 1;
+		var range = range - 1;
+		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
+		url = url + "&page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;
+
+	}
+
+//페이지 번호 클릭
+	function fn_pagination(page, range, rangeSize, searchType, keyword) {
+		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
+		url = url + "&page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;	
+	}
+	//다음 버튼 이벤트
+	function fn_next(page, range, rangeSize) {
+		var page = parseInt((range * rangeSize)) + 1;
+		var range = parseInt(range) + 1;
+		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
+		url = url + "&page=" + page;
+		url = url + "&range=" + range;
+
+		location.href = url;
+
+	}
+
+</script>
 
 
 
 
 </head>
 
+
+
 <body>
 	<!-- Page Preloder -->
 
-<jsp:include page="header.jsp"></jsp:include>
-
+	<jsp:include page="header.jsp"></jsp:include>
 
 	<!-- Product Section Begin -->
 	<section class="product spad">
@@ -67,27 +109,24 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-3">
 					<div class="sidebar">
+					<!-- 카테고리 목록 sidebar 시작 -->
 						<div class="sidebar__item">
-							<h4>Department</h4>
 							<ul>
-								<li><a href="#">국내도서</a></li>
-	<%-- 							<c:forEach var='category' items="${categoryList }" var>
-
-								</c:forEach> --%>
-								<li><a href="#">외국도서</a></li>
-								<%-- <c:forEach var=''> --%>
-
-								<%-- </c:forEach> --%>
-								<li><a href="#">Fruit & Nut Gifts</a></li>
-								<li><a href="#">Fresh Berries</a></li>
-								<li><a href="#">Ocean Foods</a></li>
-								<li><a href="#">Butter & Eggs</a></li>
-								<li><a href="#">Fastfood</a></li>
-								<li><a href="#">Fresh Onion</a></li>
-								<li><a href="#">Papayaya & Crisps</a></li>
-								<li><a href="#">Oatmeal</a></li>
+								<li><h4>국내도서</h4></li>
+	 								<c:forEach items="${category }" var="category">
+										<c:if test="${category.majorCategoryNo == '1'}"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+									</c:forEach>
+								<li><h4>외국도서</h4></li>
+	 								<c:forEach items="${category }" var="category">
+		 								<c:if test="${category.majorCategoryNo == '2' }"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+									</c:forEach>
 							</ul>
 						</div>
+						<!-- 카테고리 목록 sidebar 끝 -->
 						<div class="sidebar__item">
 							<h4>Price</h4>
 							<div class="price-range-wrap">
@@ -230,11 +269,96 @@
 						</div>
 					</div>
 				</div>
-				<!-- ProducList 페이지 삽입-->
+				<!-- ProductList 페이지 삽입-->
 				<div class="col-lg-9 col-md-9">
-					<div id="product_list">
-						<jsp:include page="ProductList.jsp" />
-					</div>
+					<section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="product__discount">
+                        <div class="section-title product__discount__title">
+                            <h2>${param.categoryname}</h2>
+                        </div>
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-5">
+                                <div class="filter__sort">
+                                    <span>Sort By</span>
+                                    <select>
+                                        <option value="0">Default</option>
+                                        <option value="0">Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span>${listSize }</span> Books found</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-3">
+                                <div class="filter__option">
+                                    <span class="icon_grid-2x2"></span>
+                                    <span class="icon_ul"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    
+                    
+                     <!-- 상품--> 
+                     <c:forEach items="${bookListCnt}" var="bookList">
+                     <div class="col-lg-4 col-md-6 col-sm-6"> 
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="${bookList.bookImg}">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">${bookList.bookTitle}</a></h6>
+                                    <h5>${bookList.bookPrice} 원 </h5>
+                                </div>
+                            </div>
+                        </div>
+						</c:forEach>
+						<!-- 상품 끝 -->
+						
+						
+	
+                    
+                    </div>
+<!--                     <div class="product__pagination">
+                       
+                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                    </div> -->
+                    
+                    <div id="paginationBox">
+
+		<ul class="pagination">
+			<c:if test="${pagination.prev}">
+				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
+			</c:if>
+
+			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
+				<li class="page-item" value="${pagination.page == idx ? 'active' : ''}"><a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
+			</c:forEach>
+			<c:if test="${pagination.next}">
+				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
+			</c:if>
+
+		</ul>
+
+	</div>
+
+	<!-- pagination{e} -->
+	
+                </div>
+            </div>
+        </div>
+    </section>
 				</div>
 			</div>
 	</section>

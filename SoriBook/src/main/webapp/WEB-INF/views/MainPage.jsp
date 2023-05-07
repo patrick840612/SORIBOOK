@@ -46,7 +46,7 @@
 <body>
 
 
-<%@ include file="header.jsp" %>
+<jsp:include page="header.jsp"></jsp:include>
 <!--#########################################################################################  -->
     <!-- 베스트셀러 슬라이더 -->
     <section class="categories">

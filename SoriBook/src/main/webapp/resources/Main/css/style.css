@@ -38,6 +38,20 @@
 	text-align: center;
 }
 
+.catehead h5{
+	color: #ffffff;;
+	background: #7fad39;
+}
+
+/* header에있는 카테고리 드롭다운 메뉴를 2열로 */
+#catedrop{
+   columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  width: 350px;
+
+  	
+}
 
 /* css 추가 끝 */
 
@@ -427,7 +441,7 @@ ol {
 }
 
 .header__logo a {
-	display: inline-block;
+	display: block;
 }
 
 .header__menu {
@@ -446,7 +460,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 50px;
-	background: #222222;
+	background: #ffffff;
 	width: 180px;
 	z-index: 9;
 	padding: 5px 0;
@@ -457,6 +471,8 @@ ol {
 	transition: all, 0.3s;
 	opacity: 0;
 	visibility: hidden;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	
 }
 
 .header__menu ul li .header__menu__dropdown li {
@@ -470,7 +486,7 @@ ol {
 
 .header__menu ul li .header__menu__dropdown li a {
 	text-transform: capitalize;
-	color: #ffffff;
+	color: #000000;
 	font-weight: 400;
 	padding: 5px 15px;
 }
@@ -3181,7 +3197,7 @@ ol {
 		display: none;
 	}
 	.header__menu {
-		display: none;
+		display: inline-block;
 	}
 	.header__cart {
 		text-align: center;

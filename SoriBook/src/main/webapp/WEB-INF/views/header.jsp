@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -35,7 +36,7 @@
 <link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
 	type="text/css">
 	
-    
+
 </head>
 
 <body>
@@ -45,9 +46,10 @@
 	<!-- 헤더 섹션 시작 -->
 
 	<div class="container">
+	<div class="row"><br/><br/></div>
 		<div class="row">
-			<div class="col-lg-3">
-			<div class="hero__categories">
+			<div class="col-lg-2">		
+			<!-- <div class="hero__categories">
 						<div class="hero__categories__all">
 							<i class="fa fa-bars"></i> <span>카테고리</span>
 						</div>
@@ -63,14 +65,31 @@
 							<li><a href="#">소설</a></li>
 							<li><a href="#">에세이</a></li>
 						</ul>
-					</div>
-			
+					</div> -->
 			</div>
-			<div class="col-lg-6">
-				
-				<nav class="header__menu">
-
+			<div class="col-lg-8">				
+					<nav class="header__menu">
 					<ul>
+						<!-- 카테고리 dropdown 시작  -->
+						<li><a href="#" id="catecate"><i class="fa fa-bars"></i>카테고리</a>
+						<ul  id="catedrop" class="header__menu__dropdown">
+							<!-- 국내도서 -->
+							<li class="catehead"><h5>국내도서</h5></li>
+							<c:forEach items="${category }" var="category">
+										<c:if test="${category.majorCategoryNo == '1'}"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+							</c:forEach> 
+							<!-- 외국도서 -->
+							<li class="catehead"><h5>외국도서</h5></li>
+							<c:forEach items="${category }" var="category">
+										<c:if test="${category.majorCategoryNo == '2'}"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+							</c:forEach> 
+						</ul>
+						</li>
+						<!-- 카테고리 dropdown 끝  -->
 						<li class="active"><a href="MainPage.do">Home</a></li>
 						<li><a href=" ">구독상품</a></li>
 						<li><a href=" ">TOP100</a></li>
@@ -84,7 +103,7 @@
 
 				</nav>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-2">
 				<div class="header__cart">
 					<ul>
 						<li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -104,7 +123,7 @@
 
 	<!-- Hero Section Begin -->
 	<section class="hero">
-	<div class="row"><br/><br/><br/><br/><br/></div>
+	<div class="row"><br/><br/></div>
 		<div class="container">	    
 			<div class="row">
 			<div class="col-sm-3">

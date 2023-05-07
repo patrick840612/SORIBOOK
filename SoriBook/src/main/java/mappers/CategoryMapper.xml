@@ -9,5 +9,28 @@
 		ORDER BY categoryno asc
 	</select>
 	
+	<select id="selectCategoryList" parameterType="String" resultType="com.kosmo.soribook.domain.BookVO">
+		SELECT *
+		FROM book
+		WHERE CATEGORYNO=#{categoryno}
+	</select>
+	
+	<select id="getBookList"  resultType="com.kosmo.soribook.domain.BookVO">
+	SELECT
+		*
+	FROM 
+		(SELECT ROW_NUMBER() OVER (ORDER BY booktitle) num, b.* FROM book b WHERE CATEGORYNO=#{categoryNo} ORDER BY booktitle)
+	WHERE
+		num BETWEEN #{startList}+1 AND #{startList}+9
+	</select>
+	
+	<select id="getBookListCnt" resultType="int">
+
+		SELECT
+			count(*) as listCnt
+		FROM
+			book
+	</select>
+	
 
 </mapper>
