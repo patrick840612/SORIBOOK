@@ -1,8 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
+
 <!DOCTYPE html>
 <html lang="zxx">
+<script>
+  window.onload = function() {
+    const category = document.getElementById("category");
+    const ul = category.querySelector("ul");
+
+    category.addEventListener("click", function() {
+      if (ul.style.display === "none") {
+        ul.style.display = "block";
+      } else {
+        ul.style.display = "none";
+      }
+    });
+  }
+</script>
 
 <head>
 <meta charset="UTF-8">
@@ -51,7 +67,7 @@
 						<div class="hero__categories__all">
 							<i class="fa fa-bars"></i> <span>카테고리</span>
 						</div>
-						<ul>
+						<ul style="display: none;">
 							<li><a href="#">건강 - 취미</a></li>
 							<li><a href="#">경영 - 경제</a></li>
 							<li><a href="#">공무원수험서</a></li>

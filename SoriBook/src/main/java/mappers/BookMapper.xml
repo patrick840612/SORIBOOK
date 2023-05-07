@@ -6,7 +6,7 @@
 	<select id="selectBook"  resultType="com.kosmo.soribook.domain.BookVO">
 		SELECT *
 		FROM book
-		ORDER BY categoryno asc
+		ORDER BY bookno asc
 	</select>
 	
 	

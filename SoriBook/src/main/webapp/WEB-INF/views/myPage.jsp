@@ -90,7 +90,7 @@ $(document).ready(function() {
                         <div class="sidebar__item">
                             <h4>나의 계정</h4>
                             <ul>
-                                <li><a href="#">나의 소리북</a></li>
+                                <li><a href="book.do">나의 소리북</a></li>
                                 <li><a href="#">회원정보관리</a></li>
                                 <li>구독신청<input type=button value="구독하기"></li>
                                 <li>구독만료일<input type="text" id="datepicker">

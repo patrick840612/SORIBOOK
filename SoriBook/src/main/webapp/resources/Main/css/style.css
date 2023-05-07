@@ -628,7 +628,7 @@ ol {
 }
 
 .hero__categories__all:after {
-	position: relative;
+	position: absolute;
 	right: 18px;
 	top: 9px;
 	content: "3";
@@ -644,8 +644,7 @@ ol {
 	top: 60px;
 	left: 120px;
 	position:absolute;
-	z-index: 10;
-	display: none;
+	z-index: 100;
 	background: #ffffff;
 	 text-align: center;
 	 width: 100%; 
@@ -688,7 +687,7 @@ ol {
 	font-weight: 700;
 	padding-left: 18px;
 	padding-top: 11px;
-	position: relative;
+	position: absolute;
 }
 
 .hero__search__form form .hero__search__categories:after {
