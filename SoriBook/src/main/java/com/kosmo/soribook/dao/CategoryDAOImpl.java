@@ -31,15 +31,14 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public int getBookListCnt() {
-		
 		return mybatis.selectOne("CategoryMapper.getBookListCnt");
 	}
 
 	@Override
 	public List<BookVO> getBookList(Pagination pagination) {
-		
 		return mybatis.selectList("CategoryMapper.getBookList", pagination);
 	}
+
 
 
 

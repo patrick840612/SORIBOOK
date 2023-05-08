@@ -367,7 +367,7 @@ function fn_prev(page, range, rangeSize) {
         </div>
     </section> --%>
     <div id=include>
-    <jsp:include page="<%=bookUrl %>"></jsp:include>
+<jsp:include page="<%=bookUrl %>"></jsp:include>
     </div>
 				</div>
 			</div>
@@ -377,12 +377,33 @@ function fn_prev(page, range, rangeSize) {
 	
 	<script type="text/javascript">
 $(function(){
-	$("#bookClick").click(function(){
-		
-		<% bookUrl="BookDetail.jsp";%>
-		alert("<%=bookUrl%>")
-		 $("#include").load(location.href + " #include");
-	})
+
+/* $('#include').load('BookList.do'); 
+	
+$("#include-btn").click(function(){
+
+	    //queryString 형식
+
+	    //받는객체의 setXXX 를 타고 알아서 세팅됨
+
+ 	    var send;
+
+	    $.ajax({
+	        url:"MainPage.do",
+	        data:send,
+	        method: 'post',
+	        success:function(data){
+	            //page 자체를 받아서 div에 넣는식
+	            alert(data);
+	            $("#include").html(data);
+	        },error:function(request,status,error){
+	             alert("code:"+request.status+"\n"+"message:"
+	             +request.responseText+"\n"+"error:"+error);
+	         }
+	    }) 
+
+}) */
+
 })
 </script>
 	

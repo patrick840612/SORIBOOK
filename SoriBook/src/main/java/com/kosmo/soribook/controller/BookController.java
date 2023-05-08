@@ -27,8 +27,6 @@ public class BookController {
 		List<BookVO> list = bookService.selectBook();
 		m.addAttribute("bookList",list);
 
-		System.out.println(list);
-		
 		//헤더카테고리 목록출력
 		List<CategoryVO> header = categoryService.selectCategory();
 		m.addAttribute("category",header);

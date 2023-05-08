@@ -6,5 +6,6 @@ import com.kosmo.soribook.domain.BookVO;
 
 public interface BookService {
 
-	List<BookVO> selectBook();
+	public List<BookVO> selectBook();
+	public List<BookVO> getBookDetail(String bookNo);
 }

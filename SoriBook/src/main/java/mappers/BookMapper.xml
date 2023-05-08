@@ -9,6 +9,10 @@
 		ORDER BY bookno asc
 	</select>
 	
-	
+	<select id="getBookDetail"  resultType="com.kosmo.soribook.domain.BookVO">
+		SELECT *
+		FROM book
+		WHERE bookno=#{bookNo}
+	</select>
 
 </mapper>

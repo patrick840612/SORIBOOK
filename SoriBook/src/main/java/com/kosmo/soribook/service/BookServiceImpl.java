@@ -19,5 +19,10 @@ public class BookServiceImpl implements BookService {
 		System.out.println("===> CategoryDAOImpl selectCategory() 호출");
 		return bookDAO.selectBook();
 	}
+	
+	@Override
+	public List<BookVO> getBookDetail(String bookNo) {
+		return bookDAO.getBookDetail(bookNo);
+	}
 
 }

@@ -4,6 +4,8 @@ package com.kosmo.soribook.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kosmo.soribook.Pagination;
+import com.kosmo.soribook.domain.BookVO;
 import com.kosmo.soribook.domain.CategoryVO;
+import com.kosmo.soribook.service.BookService;
+import com.kosmo.soribook.service.BookServiceImpl;
 import com.kosmo.soribook.service.CategoryServiceImpl;
 
 @Controller
@@ -20,6 +25,9 @@ public class CategoryController {
 	
 	@Autowired
 	CategoryServiceImpl categoryService;
+	
+	@Autowired
+	BookServiceImpl bookService;
 	
 	@RequestMapping("/{step}.do")
 	public String viewPage(@PathVariable String step, Model m) {
@@ -62,8 +70,31 @@ public class CategoryController {
 		List<CategoryVO> header = categoryService.selectCategory();
 		m.addAttribute("category",header);
 		
-		
+
 	}
+	
+	
+	@RequestMapping("BookDetail.do")
+	public void CategoryListBookDetail(
+			HttpServletRequest httpServletRequest
+			,Model m
+			) 
+	{
+		//헤더카테고리 목록출력
+		List<CategoryVO> header = categoryService.selectCategory();
+		m.addAttribute("category",header);
+		
+		// 책목록 불러오기
+		String bookno = httpServletRequest.getParameter("bookno");
+		System.out.println("===> categoryService.getBookDetail 호출");
+		System.out.println(bookno);
+		List<BookVO> list = bookService.getBookDetail(bookno);
+		m.addAttribute("bookList",list);
+	
+		
+
+	}
+
 	
 	
 	

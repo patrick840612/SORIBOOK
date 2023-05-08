@@ -8,5 +8,6 @@ import com.kosmo.soribook.domain.BookVO;
 public interface BookDAO {
 
 	public List<BookVO> selectBook() ;
+	public List<BookVO> getBookDetail(String bookNo);
 	
 }

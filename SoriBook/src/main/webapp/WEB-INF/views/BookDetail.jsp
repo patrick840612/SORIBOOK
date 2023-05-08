@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -12,11 +13,11 @@
     <title>Ogani | Template</title>
 
 <!-- Google Font -->
-<!-- <link
+<link
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
 	rel="stylesheet">
 
-Css Styles
+
 <link rel="stylesheet"
 	href="/soribook/resources/Main/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet"
@@ -36,7 +37,7 @@ Css Styles
 <link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
 	type="text/css">
 
-Js Plugins
+
 <script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
 <script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
@@ -44,58 +45,72 @@ Js Plugins
 <script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
 <script src="/soribook/resources/Main/js/mixitup.min.js"></script>
 <script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-<script src="/soribook/resources/Main/js/main.js"></script> -->
+<script src="/soribook/resources/Main/js/main.js"></script>
 </head>
+
+
+<% 
+
+String bookno = request.getParameter("bookno");
+
+
+%>
 
 <body>
 
 
 
-
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Vegetable’s Package</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <a href="./index.html">Vegetables</a>
-                            <span>Vegetable’s Package</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+<jsp:include page="header.jsp"></jsp:include>
 
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+            <div class="col-lg-3 col-md-3">
+					<div class="sidebar">
+					<!-- 카테고리 목록 sidebar 시작 -->
+						<div class="sidebar__item">
+							<ul>
+								<li><h4>국내도서</h4></li>
+	 								<c:forEach items="${category }" var="category">
+										<c:if test="${category.majorCategoryNo == '1'}"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+									</c:forEach>
+								<li><h4>외국도서</h4></li>
+	 								<c:forEach items="${category }" var="category">
+		 								<c:if test="${category.majorCategoryNo == '2' }"> 
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+										</c:if>
+									</c:forEach>
+							</ul>
+						</div>
+					</div>
+					</div>
+					<!-- 카테고리 목록 sidebar 끝 -->
+	<c:forEach items="${bookList }" var="bookList">
+                <div class="col-lg-3 col-md-3">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/details/product-details-1.jpg" alt="">
+                                src="${bookList.bookImg }" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
+                            <img data-imgbigurl=""
+                                src="" alt="">
+<!--                             <img data-imgbigurl="img/product/details/product-details-3.jpg"
                                 src="img/product/details/thumb-2.jpg" alt="">
                             <img data-imgbigurl="img/product/details/product-details-5.jpg"
                                 src="img/product/details/thumb-3.jpg" alt="">
                             <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+                                src="img/product/details/thumb-4.jpg" alt=""> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
+                
                     <div class="product__details__text">
-                        <h3>Vetgetable’s Package</h3>
+                        <h3>${bookList.bookTitle }</h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -104,10 +119,8 @@ Js Plugins
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price">$50.00</div>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                        <div class="product__details__price">${bookList.bookPrice } 원</div>
+                        <p>${bookList.bookSyno }</p>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -118,9 +131,9 @@ Js Plugins
                         <a href="#" class="primary-btn">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
-                            <li><b>Availability</b> <span>In Stock</span></li>
-                            <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <li><b>Weight</b> <span>0.5 kg</span></li>
+                            <li><b>출판사</b> <span>In Stock</span></li>
+                            <li><b>출판일자</b> <span>${bookList.bookPdate }<samp>
+                            <li><b>작가</b> <span>0.5 kg</span></li>
                             <li><b>Share on</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -129,9 +142,11 @@ Js Plugins
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                 </div>
                             </li>
+                      
                         </ul>
                     </div>
                 </div>
+              
                 <div class="col-lg-12">
                     <div class="product__details__tab">
                         <ul class="nav nav-tabs" role="tablist">
@@ -212,6 +227,7 @@ Js Plugins
                         </div>
                     </div>
                 </div>
+                </c:forEach>
             </div>
         </div>
     </section>
@@ -292,74 +308,8 @@ Js Plugins
         </div>
     </section>
     <!-- Related Product Section End -->
+<jsp:include page="footer.jsp"></jsp:include>
 
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
 
 
 
