@@ -31,3 +31,23 @@ body > #wrap > #divcontainer{
 .addr{
 	width: 200px;
 }
+
+#selectCategory{
+	width: 200px;
+}
+
+.pagecontent{
+	zoom: 2;
+	margin-left: 100px;
+	margin-top: 50px;
+}
+#up, #down{
+	position: absolute;
+	margin-top: 25px;
+}
+
+.categorybutton{
+	background-color: #008080;
+	color: white;
+}
+
