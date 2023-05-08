@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CategoryMGMapper">
+
+	<select id="getCategoryList" parameterType="com.kosmo.soribook.domain.CategoryVO" resultType="com.kosmo.soribook.domain.CategoryVO">
+		SELECT * FROM category WHERE majorCategoryNo=#{majorCategoryNo}
+	</select>
+	
+	<insert id="insertCategory" parameterType="com.kosmo.soribook.domain.CategoryVO">
+		INSERT INTO category (categoryNo,categoryName,majorCategoryNo) VALUES (SEQ_CATEGORY_CATEGORYNO.nextval,#{categoryName},#{majorCategoryNo})
+	</insert>
+	
+	<delete id="deleteCategory" parameterType="com.kosmo.soribook.domain.CategoryVO">
+		DELETE FROM category WHERE categoryNo=#{categoryNo}
+	</delete>
+	
+	<update id="updateCategory" parameterType="com.kosmo.soribook.domain.CategoryVO">
+		UPDATE category SET categoryName=#{categoryName} WHERE categoryNo=#{categoryNo}
+	</update>
+
+</mapper>
