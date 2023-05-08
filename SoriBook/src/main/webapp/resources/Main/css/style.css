@@ -40,7 +40,7 @@
 
 .catehead h5{
 	color: #ffffff;;
-	background: #7fad39;
+	background-color: #7fad39;
 }
 
 /* header에있는 카테고리 드롭다운 메뉴를 2열로 */
@@ -48,9 +48,11 @@
    columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
-  width: 350px;
+  width: 350px;	
+}
 
-  	
+.category_sidebar{
+	
 }
 
 /* css 추가 끝 */

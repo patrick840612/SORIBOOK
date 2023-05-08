@@ -19,5 +19,14 @@
 		FROM book
 		WHERE bookno=#{bookNo}
 	</select>
+	
+	<select id="getBookDetail2" resultType="com.kosmo.soribook.domain.BookVO">
+	SELECT b.BOOKNO,b.BOOKPRICE ,b.BOOKTITLE ,to_char(b.BOOKPDATE,'yyyy-mm-dd') AS BOOKPDATE ,b.BOOKSYNO,b.BOOKIMG ,b.BOOKCONTENT ,b.BOOKAUDIO ,b.BOOKSUB ,b.CATEGORYNO ,c.CATEGORYNAME,c2.COMPANYNAME , w.WRITERNAME , w.WRITERDETAIL 
+	FROM book b
+		INNER JOIN CATEGORY c ON b.CATEGORYNO=c.CATEGORYNO
+		INNER JOIN COMPANY c2 ON b.COMPANYNO=c2.COMPANYNO
+		INNER JOIN WRITER w ON b.WRITERNO=w.WRITERNO
+	WHERE b.bookno=#{bookNo}
+	</select>
 
 </mapper>

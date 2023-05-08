@@ -65,11 +65,11 @@ String bookno = request.getParameter("bookno");
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
         <div class="container">
-            <div class="row">
-            <div class="col-lg-3 col-md-3">
+            <div class="row shadow-none p-3 mb-5 bg-light rounded">
+            <div class="col-lg-3 col-md-3 ">
 					<div class="sidebar">
 					<!-- 카테고리 목록 sidebar 시작 -->
-						<div class="sidebar__item">
+						<div class="sidebar__item category_sidebar shadow p-3 mb-5 bg-body rounded ">
 							<ul>
 								<li><h4>국내도서</h4></li>
 	 								<c:forEach items="${category }" var="category">
@@ -88,12 +88,12 @@ String bookno = request.getParameter("bookno");
 					</div>
 					</div>
 					<!-- 카테고리 목록 sidebar 끝 -->
-	<c:forEach items="${bookList }" var="bookList">
-                <div class="col-lg-3 col-md-3">
+	
+                <div class="col-lg-4 col-md-4 ">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="${bookList.bookImg }" alt="">
+                                src="${bookDetail.bookImg }" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl=""
@@ -107,10 +107,10 @@ String bookno = request.getParameter("bookno");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-5 col-md-5 ">
                 
                     <div class="product__details__text">
-                        <h3>${bookList.bookTitle }</h3>
+                        <h3>${bookDetail.bookTitle}</h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -119,8 +119,8 @@ String bookno = request.getParameter("bookno");
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price">${bookList.bookPrice } 원</div>
-                        <p>${bookList.bookSyno }</p>
+                        <div class="product__details__price">${bookDetail.bookPrice} 원</div>
+                        <p>${bookDetail.bookSyno }</p>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -128,13 +128,14 @@ String bookno = request.getParameter("bookno");
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="#" class="primary-btn">장바구니</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
-                            <li><b>출판사</b> <span>In Stock</span></li>
-                            <li><b>출판일자</b> <span>${bookList.bookPdate }<samp>
-                            <li><b>작가</b> <span>0.5 kg</span></li>
-                            <li><b>Share on</b>
+                        	<li><b>장르</b> <span>${bookDetail.categoryName}</span></li>
+                            <li><b>출판사</b> <span>${bookDetail.companyName}</span></li>
+                            <li><b>출판일자</b> <span>${bookDetail.bookPdate }<samp>
+                            <li><b>작가</b> <span>${bookDetail.writerName }</span></li>
+                            <li><b>공유하기</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -147,7 +148,7 @@ String bookno = request.getParameter("bookno");
                     </div>
                 </div>
               
-                <div class="col-lg-12">
+                <div class="col-lg-12 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="product__details__tab">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
@@ -227,7 +228,7 @@ String bookno = request.getParameter("bookno");
                         </div>
                     </div>
                 </div>
-                </c:forEach>
+                
             </div>
         </div>
     </section>
@@ -237,14 +238,14 @@ String bookno = request.getParameter("bookno");
     <section class="related-product">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="section-title related__product__title">
                         <h2>Related Product</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                             <ul class="product__item__pic__hover">
@@ -259,7 +260,7 @@ String bookno = request.getParameter("bookno");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
                             <ul class="product__item__pic__hover">
@@ -274,7 +275,7 @@ String bookno = request.getParameter("bookno");
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
                             <ul class="product__item__pic__hover">
@@ -288,8 +289,8 @@ String bookno = request.getParameter("bookno");
                             <h5>$30.00</h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                </div> 
+                <div class="col-lg-3 col-md-4 col-sm-6 shadow-none p-3 mb-5 bg-light rounded">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
                             <ul class="product__item__pic__hover">

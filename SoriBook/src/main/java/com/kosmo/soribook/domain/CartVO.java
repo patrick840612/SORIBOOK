@@ -4,7 +4,7 @@ import lombok.Data;
  
 @Data
 public class CartVO { 				// 장바구니상품 클래스
-	private String CartBookNo;	 	// 장바구니 상품번호 
+	private String cartBookNo;	 	// 장바구니 상품번호 
 	
 	
 

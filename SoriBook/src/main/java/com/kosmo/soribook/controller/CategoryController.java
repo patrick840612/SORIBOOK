@@ -85,13 +85,13 @@ public class CategoryController {
 		m.addAttribute("category",header);
 		
 		// 책목록 불러오기
-		String bookno = httpServletRequest.getParameter("bookno");
-		System.out.println("===> categoryService.getBookDetail 호출");
-		System.out.println(bookno);
-		List<BookVO> list = bookService.getBookDetail(bookno);
+		String bookNo = httpServletRequest.getParameter("bookno");
+		List<BookVO> list = bookService.getBookDetail(bookNo);
 		m.addAttribute("bookList",list);
-	
 		
+		BookVO vo = bookService.getBookDetail2(bookNo);
+		m.addAttribute("bookDetail",vo);
+		System.out.println(vo);
 
 	}
 

@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class NoticeVO {
 
-	private String NoticeNo;			//게시글번호(PK)
-	private String NoticeTitle;			//공지사항제목
-	private String NoticeContent;		//공지사항내용
-	private int NoticeCount;			//공지사항조회수
-	private String NoticeDate;			//공지게시일
+	private String noticeNo;			//게시글번호(PK)
+	private String noticeTitle;			//공지사항제목
+	private String noticeContent;		//공지사항내용
+	private int noticeCount;			//공지사항조회수
+	private String noticeDate;			//공지게시일
 
 }

@@ -25,4 +25,9 @@ public class BookServiceImpl implements BookService {
 		return bookDAO.getBookDetail(bookNo);
 	}
 
+	@Override
+	public BookVO getBookDetail2(String bookNo) {
+		return bookDAO.getBookDetail2(bookNo);
+	}
+
 }

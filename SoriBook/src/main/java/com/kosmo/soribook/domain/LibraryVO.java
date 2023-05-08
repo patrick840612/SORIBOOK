@@ -6,8 +6,8 @@ import lombok.Data;
 public class LibraryVO {
 	
 
-	private String LibraryNo; //서재번호(PK)
-	private String PaymentTF; //결제여부
+	private String libraryNo; //서재번호(PK)
+	private String paymentTF; //결제여부
 
 }
 
