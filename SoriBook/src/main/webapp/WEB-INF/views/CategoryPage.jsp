@@ -53,9 +53,13 @@
 
 String categoryno = request.getParameter("categoryno");
 String categoryname = request.getParameter("categoryname");
+String bookUrl;
+bookUrl = "BookList.jsp";
 
 %>
-<script type="text/javascript">
+
+
+<%-- <script type="text/javascript">
 
 //이전 버튼 이벤트
 
@@ -89,7 +93,7 @@ function fn_prev(page, range, rangeSize) {
 
 	}
 
-</script>
+</script> --%>
 
 
 
@@ -271,7 +275,7 @@ function fn_prev(page, range, rangeSize) {
 				</div>
 				<!-- ProductList 페이지 삽입-->
 				<div class="col-lg-9 col-md-9">
-					<section class="product spad">
+					<%-- <section class="product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -339,14 +343,17 @@ function fn_prev(page, range, rangeSize) {
 
 		<ul class="pagination">
 			<c:if test="${pagination.prev}">
-				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
+				<li class="page-item">
+				<a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
 			</c:if>
 
 			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-				<li class="page-item" value="${pagination.page == idx ? 'active' : ''}"><a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
+				<li class="page-item" value="${pagination.page == idx ? 'active' : ''}">
+				<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
 			</c:forEach>
 			<c:if test="${pagination.next}">
-				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
+				<li class="page-item">
+				<a class="page-link" href="#" onClick="fn_next('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
 			</c:if>
 
 		</ul>
@@ -358,12 +365,28 @@ function fn_prev(page, range, rangeSize) {
                 </div>
             </div>
         </div>
-    </section>
+    </section> --%>
+    <div id=include>
+    <jsp:include page="<%=bookUrl %>"></jsp:include>
+    </div>
 				</div>
 			</div>
 	</section>
 	<!-- Product Section End -->
 	<jsp:include page="footer.jsp"></jsp:include>
+	
+	<script type="text/javascript">
+$(function(){
+	$("#bookClick").click(function(){
+		
+		<% bookUrl="BookDetail.jsp";%>
+		alert("<%=bookUrl%>")
+		 $("#include").load(location.href + " #include");
+	})
+})
+</script>
+	
+
 
 
 

@@ -23,11 +23,12 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="book" items="${BookList}">
+        <c:forEach var="book" items="${bookList}" >
             <tr>
-                <td>${book.BookNo}</td>
-                <td>${book.BookTitle}</td>
-                <td><img src="${book.bookimg}"></td>
+                <td>${book.bookNo}</td>
+                <td>${book.bookTitle}</td>
+                <td><img src="${book.bookImg}"></td>
+                 
             </tr>
         </c:forEach>
     </tbody>

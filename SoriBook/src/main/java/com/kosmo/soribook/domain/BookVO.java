@@ -14,6 +14,7 @@ public class BookVO {//상품 테이블
 	private String BookContent;	//텍스트파일
 	private String BookAudio;   // 오디오파일
 
+	
 
 	
 
