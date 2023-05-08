@@ -11,3 +11,4 @@
 <a href="myPage.do">myPage.do</a><hr/>
 <a href="header.do">header.do</a><hr/>
 <a href="footer.do">footer.do</a><hr/>
+<a href="managePage.do">managePage.do</a><hr/>
