@@ -7,28 +7,46 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-<link rel="stylesheet" type="text/css" href="/SoriBook/resources/mabagerPage/css/ui.css">
-<link rel="stylesheet" type="text/css" href="/SoriBook/resources/mabagerPage/css/leekoon.css">
+<link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/ui.css">
+<link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/leekoon.css">
+<link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
 
+	
 	
 	<section id="wrap">
 		<h1>소리북 관리자</h1>
 		<div id="divheader">
 		<header id="header">
-			<strong class="logo_box"><img src="/SoriBook/resources/mabagerPage/images/mainLogo.png" alt="이지스퍼블리싱"></strong>
-			<nav>        
+			<br/><br/>
+			<a href="MainPage.do">
+			<strong class="logo_box">
+			<img src="/soribook/resources/Main/img/SORIBOOK.png" alt="소리북">
+			</strong>
+			</a>
+			<br/><br/><br/><br/>
+			<nav id="manageMenu">        
 				<ul>       
-					<li data-rol="menu1"><a href="#">상품관리</a></li>        
-					<li data-rol="menu2"><a href="#">카테고리 관리</a></li>        
+					<li data-rol="menu1"><a href="#">카테고리 관리</a></li>        
+					<li data-rol="menu2"><a href="#">상품관리</a></li>        
 					<li data-rol="menu3"><a href="#">공지사항 관리</a></li>        
 					<li data-rol="menu4"><a href="#">문의 관리</a></li>
 					<li data-rol="menu5"><a href="#">이벤트 관리</a></li>
 					<li data-rol="menu6"><a href="#">매출 통계</a></li>    
 				</ul> 
 			</nav>
+			<br/><br/><br/><br/>
+
 		</header> 
+		<footer id="foot">
+			  	<address class="addr">(08505)서울 금천구 가산디지털2로 101 TEL +82 10.1234.5678 Email Service@SoriBook.com</address>    
+			  	<p class="addr">SoriBook 2023 Copyright © SoriBook Corp. All Rights Reserved &nbsp;<i class="fa fa-heart" aria-hidden="true"></i> 
+			  			<a href="MainPage.do" target="_blank">SoriBook</a></p> 
+			  	<a href="https://www.facebook.com/easyspub" class="face" title="페이스북으로 이동"></a>    
+			  	<a href="https://twitter.com/easyspub" class="twit" title="트위터로 이동"></a>    
+			  	<a href="https://www.instagram.com/easyspub_book/" class="instar" title="인스타그램으로 이동"></a>
+		</footer> 
 		</div>
 		
 		<div id="divcontainer">
@@ -83,7 +101,7 @@
 		  	 				<article class="notebook">
 		  	 					<div class="detail_content">
 		  	 						<div class="img_book">
-		  	 							<img src="/SoriBook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
+		  	 							<img src="/soribook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
 		  	 						</div>
 		  	 						<section class="book_description">
 		  	 							<h4>Do it! HTML5+CSS3 웹 표준의 정석 &#60; 개정판 &#62;</h4>
@@ -110,14 +128,14 @@
 							<button class="roll_right"></button>
 							<div class="book_roll">
 								<ul>
-			                        <li data-url="files/book1.html"><img src="/SoriBook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
-			                        <li data-url="files/book2.html"><img src="/SoriBook/resources/mabagerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
-			                        <li data-url="files/book3.html"><img src="/SoriBook/resources/mabagerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
-			                        <li data-url="files/book4.html"><img src="/SoriBook/resources/mabagerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
-			                        <li data-url="files/book5.html"><img src="/SoriBook/resources/mabagerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
-			                        <li data-url="files/book6.html"><img src="/SoriBook/resources/mabagerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
-			                        <li data-url="files/book7.html"><img src="/SoriBook/resources/mabagerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
-			                        <li data-url="files/book8.html"><img src="/SoriBook/resources/mabagerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
+			                        <li data-url="files/book1.html"><img src="/soribook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
+			                        <li data-url="files/book2.html"><img src="/soribook/resources/mabagerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
+			                        <li data-url="files/book3.html"><img src="/soribook/resources/mabagerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
+			                        <li data-url="files/book4.html"><img src="/soribook/resources/mabagerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
+			                        <li data-url="files/book5.html"><img src="/soribook/resources/mabagerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
+			                        <li data-url="files/book6.html"><img src="/soribook/resources/mabagerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
+			                        <li data-url="files/book7.html"><img src="/soribook/resources/mabagerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
+			                        <li data-url="files/book8.html"><img src="/soribook/resources/mabagerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
 			                      </ul>
 							</div>
 						</div>
@@ -151,19 +169,15 @@
 		</section>
 		</div>
 		    
-		<footer>
-		  	<address>(04003)서울특별시 마포구 잔다리로 109 TEL (02)325-1722 FAX (02)326-1723</address>    
-		  	<p>Copyright(c)2015 이지스퍼블리싱㈜ EasysPublishing Co., Ltd. All Rights Reserved</p> 
-		  	<a href="https://www.facebook.com/easyspub" class="face" title="페이스북으로 이동"></a>    
-		  	<a href="https://twitter.com/easyspub" class="twit" title="트위터로 이동"></a>    
-		  	<a href="https://www.instagram.com/easyspub_book/" class="instar" title="인스타그램으로 이동"></a>
-		</footer> 
+
 	</section>
 	
 
 	
-	<script type="text/javascript" src="/SoriBook/resources/mabagerPage/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/SoriBook/resources/mabagerPage/js/ui.js"></script>
+
+	
+	<script type="text/javascript" src="/soribook/resources/mabagerPage/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/soribook/resources/mabagerPage/js/ui.js"></script>
 </body>
 </html>
 

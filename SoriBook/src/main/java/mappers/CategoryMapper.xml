@@ -25,7 +25,6 @@
 	</select>
 	
 	<select id="getBookListCnt" resultType="int">
-
 		SELECT
 			count(*) as listCnt
 		FROM

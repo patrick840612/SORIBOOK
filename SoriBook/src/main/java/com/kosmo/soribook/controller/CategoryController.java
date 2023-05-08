@@ -45,23 +45,23 @@ public class CategoryController {
 			, @RequestParam(required = false, defaultValue = "1") int range
 			) 
 	{
-		//전체 게시글 개수
-		int listCnt = categoryService.getBookListCnt();
-		
-		//pagination
-		Pagination pagination = new Pagination();
-		pagination.pageInfo(page, range, listCnt,categoryno);
-		m.addAttribute("pagination",pagination);
-		m.addAttribute("bookListCnt",categoryService.getBookList(pagination));
-		
 		List<CategoryVO> list = categoryService.selectCategoryList(categoryno);
 		m.addAttribute("bookList",list);
 		
-		List<CategoryVO> list2 = categoryService.selectCategory();
-		m.addAttribute("category",list2);
-		
 		int listSize = list.size();
 		m.addAttribute("listSize",listSize);
+		
+		//pagination
+		Pagination pagination = new Pagination();
+		// pageInfo 함수에 현재페이지, 페이지 범위, 현재 카테고리 책 개수, 카테고리번호 인자 전달
+		pagination.pageInfo(page, range, listSize,categoryno);
+		m.addAttribute("pagination",pagination);
+		m.addAttribute("bookListCnt",categoryService.getBookList(pagination));
+		
+		//헤더카테고리 목록출력
+		List<CategoryVO> header = categoryService.selectCategory();
+		m.addAttribute("category",header);
+		
 		
 	}
 	

@@ -15,8 +15,9 @@
  
 <table>
     <tbody>
+
 <br/>
-        <c:forEach var="book" items="${bookList}">
+         <c:forEach var="book" items="${bookList}">
             <tr>
                 <td> ${book.bookNo} </td>
                 
@@ -25,6 +26,8 @@
                   
                 <td>${book.paymentDate}</td>
                 <td><button><a href="book.do">보기</a></button></td>          
+
+
         </c:forEach>
     </tbody>
 </table>

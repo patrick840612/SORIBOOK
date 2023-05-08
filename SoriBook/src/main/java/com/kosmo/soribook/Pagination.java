@@ -29,7 +29,11 @@ public class Pagination {
 		this.categoryNo = categoryNo;
 		
 		//전체 페이지수
-		this.pageCnt =  (int)Math.ceil((double)listCnt/listSize); 
+		this.pageCnt =  (int)Math.ceil(listCnt/(double)listSize);
+		System.out.println(listCnt);
+		System.out.println((double)listSize);
+		System.out.println((int)Math.ceil(listCnt/(double)listSize));
+		System.out.println(this.pageCnt);
 		
 		//시작 페이지
 		this.startPage = (range-1)*rangeSize+1;
