@@ -10,30 +10,28 @@
 </head>
 <body>
 
-<h4>나의 소리북</h4>
-
-#도서명&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;주문일
-<h2>1</h2>  
+<h7>나의 소리북</h7>
+<hr/>
+ 
 <table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Image</th>
-        </tr>
-    </thead>
     <tbody>
-        <c:forEach var="book" items="${bookList}" >
+
+<br/>
+         <c:forEach var="book" items="${bookList}">
             <tr>
-                <td>${book.bookNo}</td>
-                <td>${book.bookTitle}</td>
-                <td><img src="${book.bookImg}"></td>
-                 
-            </tr>
+                <td> ${book.bookNo} </td>
+                
+                <td><img src="${book.bookImg}"></td>   
+                <td><h4>『${book.bookTitle}』</h4><br/>―${book.writerName}</td>
+                  
+                <td>${book.paymentDate}</td>
+                <td><button><a href="book.do">보기</a></button></td>          
+
+
         </c:forEach>
     </tbody>
 </table>
-<button><a href="book.do">보기</a></button>
+
 
 </body>
 </html>

@@ -2,10 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!DOCTYPE html>
 <html lang="zxx">
+
 
 <head>
 <meta charset="UTF-8">
@@ -45,7 +44,7 @@
 
 	<!--#########################################################################################  -->
 
-	<!-- 헤더 섹션 시작 -->
+	<!-- 카테고리 섹션 시작 -->
 
 	<div class="container">
 	<div class="row"><br/><br/></div>
@@ -55,7 +54,11 @@
 						<div class="hero__categories__all">
 							<i class="fa fa-bars"></i> <span>카테고리</span>
 						</div>
+<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/header.jsp
 						<ul style="display: none;">
+=======
+						<ul>
+>>>>>>> Stashed changes:SoriBook/src/main/webapp/header.jsp
 							<li><a href="#">건강 - 취미</a></li>
 							<li><a href="#">경영 - 경제</a></li>
 							<li><a href="#">공무원수험서</a></li>
@@ -122,8 +125,9 @@
 	</div>
 	
 	<!-- 헤더섹션 종료 -->
-
-	<!-- Hero Section Begin -->
+	
+	<!--#########################################################################################  -->
+	<!-- 검색창섹션 -->
 	<section class="hero">
 	<div class="row"><br/><br/></div>
 		<div class="container">	    
@@ -151,7 +155,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- Hero Section End -->
+	<!-- 검색창 섹션 종료 -->
+
+
 
 
 	<!-- Js Plugins -->

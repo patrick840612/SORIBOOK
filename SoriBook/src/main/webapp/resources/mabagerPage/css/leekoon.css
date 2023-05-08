@@ -17,4 +17,17 @@ body > #wrap > #divcontainer{
 	
 }
 
+#manageMenu{
+	position : relative;
+	bottom : 200px;
+}
 
+#foot{
+	position: absolute;
+	bottom: 100px;
+	
+}
+
+.addr{
+	width: 200px;
+}

@@ -3,11 +3,16 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BookMapper">
 
-	<select id="selectBook"  resultType="com.kosmo.soribook.domain.BookVO">
-		SELECT *
-		FROM book
-		ORDER BY bookno asc
-	</select>
+<select id="selectBook" resultType="com.kosmo.soribook.domain.BookVO">
+
+	SELECT b.*, w.writername as writername, p.paymentdate as paymentdate
+	FROM book b 
+	INNER JOIN writer w ON b.writerno = w.writerno
+	INNER JOIN bookpayment bp ON b.bookno = bp.bookno
+	INNER JOIN payment p ON bp.paymentno = p.paymentno
+	ORDER BY b.bookno ASC
+
+</select>
 	
 	<select id="getBookDetail"  resultType="com.kosmo.soribook.domain.BookVO">
 		SELECT *

@@ -18,9 +18,11 @@ public class BookController {
 	@Autowired
 	BookServiceImpl bookService;
 	
+
 	@Autowired
 	CategoryServiceImpl categoryService;
 	
+
 	@RequestMapping("myPage.do")
 	public void selectBook(Model m) {
 		System.out.println("===> Contoller 호출");

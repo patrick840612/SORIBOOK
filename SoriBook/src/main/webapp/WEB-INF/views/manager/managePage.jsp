@@ -9,26 +9,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
 <link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/ui.css">
 <link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/leekoon.css">
+<link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
 
+	
 	
 	<section id="wrap">
 		<h1>소리북 관리자</h1>
 		<div id="divheader">
 		<header id="header">
-			<strong class="logo_box"><img src="/soribook/resources/mabagerPage/images/mainLogo.png" alt="이지스퍼블리싱"></strong>
-			<nav>        
+			<br/><br/>
+			<a href="MainPage.do">
+			<strong class="logo_box">
+			<img src="/soribook/resources/Main/img/SORIBOOK.png" alt="소리북">
+			</strong>
+			</a>
+			<br/><br/><br/><br/>
+			<nav id="manageMenu">        
 				<ul>       
-					<li data-rol="menu1"><a href="#">상품관리</a></li>        
-					<li data-rol="menu2"><a href="#">카테고리 관리</a></li>        
+					<li data-rol="menu1"><a href="#">카테고리 관리</a></li>        
+					<li data-rol="menu2"><a href="#">상품관리</a></li>        
 					<li data-rol="menu3"><a href="#">공지사항 관리</a></li>        
 					<li data-rol="menu4"><a href="#">문의 관리</a></li>
 					<li data-rol="menu5"><a href="#">이벤트 관리</a></li>
 					<li data-rol="menu6"><a href="#">매출 통계</a></li>    
 				</ul> 
 			</nav>
+			<br/><br/><br/><br/>
+
 		</header> 
+		<footer id="foot">
+			  	<address class="addr">(08505)서울 금천구 가산디지털2로 101 TEL +82 10.1234.5678 Email Service@SoriBook.com</address>    
+			  	<p class="addr">SoriBook 2023 Copyright © SoriBook Corp. All Rights Reserved &nbsp;<i class="fa fa-heart" aria-hidden="true"></i> 
+			  			<a href="MainPage.do" target="_blank">SoriBook</a></p> 
+			  	<a href="https://www.facebook.com/easyspub" class="face" title="페이스북으로 이동"></a>    
+			  	<a href="https://twitter.com/easyspub" class="twit" title="트위터로 이동"></a>    
+			  	<a href="https://www.instagram.com/easyspub_book/" class="instar" title="인스타그램으로 이동"></a>
+		</footer> 
 		</div>
 		
 		<div id="divcontainer">
@@ -151,14 +169,10 @@
 		</section>
 		</div>
 		    
-		<footer>
-		  	<address>(04003)서울특별시 마포구 잔다리로 109 TEL (02)325-1722 FAX (02)326-1723</address>    
-		  	<p>Copyright(c)2015 이지스퍼블리싱㈜ EasysPublishing Co., Ltd. All Rights Reserved</p> 
-		  	<a href="https://www.facebook.com/easyspub" class="face" title="페이스북으로 이동"></a>    
-		  	<a href="https://twitter.com/easyspub" class="twit" title="트위터로 이동"></a>    
-		  	<a href="https://www.instagram.com/easyspub_book/" class="instar" title="인스타그램으로 이동"></a>
-		</footer> 
+
 	</section>
+	
+
 	
 
 	

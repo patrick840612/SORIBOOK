@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
 <!DOCTYPE html>
 <html lang="zxx">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
@@ -85,52 +84,6 @@
         </div>
     </section>
     <!-- 베스트셀러 슬라이더 엔드 -->
-
-<!--#########################################################################################  -->
-    <!-- 베스트셀러 슬라이더 -->
-    
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-   <section class="categories">
-
-        <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h2> <신간 도서> </h2>
-        </div>
-    </section>
-    <!-- 베스트셀러 슬라이더 엔드 -->
-
-    
 
     <!-- Latest Product Section Begin -->
     <section class="latest-product spad">
@@ -398,7 +351,11 @@
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
-  <%@ include file="footer.jsp" %>
+
+  
+
+ <jsp:include page="footer.jsp"></jsp:include>
+
     <!-- Footer Section End -->
 
 
