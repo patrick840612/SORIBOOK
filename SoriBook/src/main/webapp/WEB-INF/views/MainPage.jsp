@@ -43,7 +43,6 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/MainPage.jsp
 
 
 <jsp:include page="header.jsp"></jsp:include>
@@ -85,60 +84,6 @@
         </div>
     </section>
     <!-- 베스트셀러 슬라이더 엔드 -->
-
-<!--#########################################################################################  -->
-    <!-- 베스트셀러 슬라이더 -->
-    
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-   <section class="categories">
-
-=======
- <jsp:include page="header.jsp"></jsp:include>
-<!--#########################################################################################  -->
-
- 
-    <!-- Categories Section Begin -->
-    <section class="categories">
->>>>>>> Stashed changes:SoriBook/src/main/webapp/MainPage.jsp
-        <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="resources/Main/img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h2> <신간 도서> </h2>
-        </div>
-    </section>
-    <!-- 베스트셀러 슬라이더 엔드 -->
-
-    
 
     <!-- Latest Product Section Begin -->
     <section class="latest-product spad">
@@ -406,11 +351,11 @@
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
-<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/MainPage.jsp
-  <%@ include file="footer.jsp" %>
-=======
+
+  
+
  <jsp:include page="footer.jsp"></jsp:include>
->>>>>>> Stashed changes:SoriBook/src/main/webapp/MainPage.jsp
+
     <!-- Footer Section End -->
 
 

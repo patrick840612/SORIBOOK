@@ -8,4 +8,6 @@ public interface UserInfoService {
 
 	
 	List<UserInfoVO> selectUserInfo();
+	
+	void updateUserInfo(UserInfoVO vo);
 }

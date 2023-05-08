@@ -20,5 +20,10 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 		return mybatis.selectList("UserInfoMapper.selectUserInfo");
 		
 	}
+	
+	public void updateUserInfo(UserInfoVO vo) {
+		System.out.println("===> Mybatis updateUserInfo() 호출");
+		mybatis.update("UserInfoDAO.updateUserInfo", vo);
+	}
 
 }

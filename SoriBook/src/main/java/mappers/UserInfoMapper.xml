@@ -14,10 +14,10 @@
 
 UPDATE userinfo
 SET 
-userid,
-userpass,
-useremail
-WHERE usertel
+userid=#{userid},
+userpass=#{userpass},
+useremail=#{useremail}
+WHERE usertel=#{usertel}
 
 </update>
 	

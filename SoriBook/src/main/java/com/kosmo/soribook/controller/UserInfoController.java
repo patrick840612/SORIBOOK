@@ -24,5 +24,11 @@ public class UserInfoController {
 		
 	}
 	
+	@RequestMapping("userInfo.do")
+	public String updateBoard(UserInfoVO vo) {
+		userInfoService.updateUserInfo(vo);
+		return "redirect:/userInfo.do";
+	}
+	
 	
 }

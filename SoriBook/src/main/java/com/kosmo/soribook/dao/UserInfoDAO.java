@@ -8,4 +8,5 @@ public interface UserInfoDAO {
 
 	
 	public List<UserInfoVO> selectUserInfo();
+	public void updateUserInfo(UserInfoVO vo);
 }

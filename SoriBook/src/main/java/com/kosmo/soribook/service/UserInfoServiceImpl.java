@@ -19,5 +19,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 		System.out.println("===> UserInfoDAOImpl selectUserInfo() 호출");
 		return UserInfoDAO.selectUserInfo();
 	}
+	
+	public void updateUserInfo(UserInfoVO vo) {
+		UserInfoDAO.updateUserInfo(vo);
+	}
 
 }

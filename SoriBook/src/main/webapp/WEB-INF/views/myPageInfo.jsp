@@ -131,7 +131,7 @@
 
 						<hr />
 						<table>
-						 <form action="myPageInfo.do" method="post">
+						 <form action="userInfo.do" method="post">
 						 <c:forEach items="${userInfoList}" var="userInfo">
 							<tr>
 
@@ -145,7 +145,7 @@
 							</tr>
 							<tr>
 								<td>새 비밀번호</td>
-								<td><input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"></td>
+								<td><input type="password" id="password" name="password" required></td>
 							</tr>
 							<tr>
 								<td>새 비밀번호 확인</td>
@@ -170,7 +170,7 @@
 						<br/>
 						<div style="text-align: center;">
 						<tr>
-						<td><input type="submit" class="madman-btn" value="수정"></td>
+						<td><input type="submit" class="madman-btn" value="수정"><a href="userInfo.do"></a></td>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<td><input type="button" class="madman-btn" value="취소"></td>
 						</tr>
