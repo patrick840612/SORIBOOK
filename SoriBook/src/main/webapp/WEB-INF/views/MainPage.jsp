@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
 <!DOCTYPE html>
 <html lang="zxx">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
@@ -44,6 +43,7 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/MainPage.jsp
 
 
 <jsp:include page="header.jsp"></jsp:include>
@@ -95,6 +95,14 @@
                             <br/>
    <section class="categories">
 
+=======
+ <jsp:include page="header.jsp"></jsp:include>
+<!--#########################################################################################  -->
+
+ 
+    <!-- Categories Section Begin -->
+    <section class="categories">
+>>>>>>> Stashed changes:SoriBook/src/main/webapp/MainPage.jsp
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
@@ -398,7 +406,11 @@
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
+<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/MainPage.jsp
   <%@ include file="footer.jsp" %>
+=======
+ <jsp:include page="footer.jsp"></jsp:include>
+>>>>>>> Stashed changes:SoriBook/src/main/webapp/MainPage.jsp
     <!-- Footer Section End -->
 
 

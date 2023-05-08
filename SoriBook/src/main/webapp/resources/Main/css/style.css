@@ -676,7 +676,7 @@ ol {
 	color: #ffffff;
 }
 
-.hero__categories ul {
+.hero__categories ul{
 	border: 1px solid #ebebeb;
 	padding-top: 30px;
 	padding-bottom: 12px;
@@ -689,8 +689,13 @@ ol {
 	 width: 100%; 
 }
 
-.hero__categories ul li {
-	list-style: none;
+.hero__categories li {
+  list-style-type: none; /* 리스트 마커 없애기 */
+  margin-bottom: 10px;
+}
+
+.hero__categories ul li:hover {
+	 background-color: #5fc859;
 }
 
 .hero__categories ul li:hover {
