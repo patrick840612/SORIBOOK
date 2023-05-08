@@ -16,7 +16,7 @@ public class BookServiceImpl implements BookService {
 	
 	@Override
 	public List<BookVO> selectBook() {
-		System.out.println("===> CategoryDAOImpl selectCategory() 호출");
+		System.out.println("===> BookDAOImpl selectBook() 호출");
 		return bookDAO.selectBook();
 	}
 

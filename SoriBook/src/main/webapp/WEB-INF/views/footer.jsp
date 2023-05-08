@@ -101,7 +101,7 @@
 								<script>document.write(new Date().getFullYear());</script>
 								Copyright © SoriBook Corp. All Rights Reserved <i
 									class="fa fa-heart" aria-hidden="true"></i> <a
-									href="/soribook/MainPage.jsp" target="_blank">SoriBook</a>
+									href="/soribook/MainPage.do" target="_blank">SoriBook</a>
 							</p>
 						</div>
 						<div class="footer__copyright__payment">

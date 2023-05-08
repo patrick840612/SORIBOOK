@@ -16,13 +16,13 @@ public class BookController {
 	@Autowired
 	BookServiceImpl bookService;
 	
-	@RequestMapping("book.do")
-	public String selectBook(Model m) {
+	@RequestMapping("myPage.do")
+	public void selectBook(Model m) {
 		System.out.println("===> Contoller 호출");
 		List<BookVO> list = bookService.selectBook();
-		m.addAttribute("BookList",list);
+		m.addAttribute("bookList",list);
 		System.out.println(list);
-		return "myPageBook";
+		
 	}
 	
 	

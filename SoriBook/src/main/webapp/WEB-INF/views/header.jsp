@@ -6,20 +6,7 @@
 
 <!DOCTYPE html>
 <html lang="zxx">
-<script>
-  window.onload = function() {
-    const category = document.getElementById("category");
-    const ul = category.querySelector("ul");
 
-    category.addEventListener("click", function() {
-      if (ul.style.display === "none") {
-        ul.style.display = "block";
-      } else {
-        ul.style.display = "none";
-      }
-    });
-  }
-</script>
 
 <head>
 <meta charset="UTF-8">
