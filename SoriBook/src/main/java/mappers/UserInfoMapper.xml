@@ -7,20 +7,28 @@
 
 	SELECT *
 	FROM userinfo
-
+    WHERE usertel='010-1111-1111' 
 </select>
 
 <update id="updateUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 
 UPDATE userinfo
 SET 
-userid=#{userid},
 userpass=#{userpass},
 useremail=#{useremail}
 WHERE usertel=#{usertel}
 
 </update>
-	
-	
 
+<!-- <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+INSERT INTO userinfo(
+usertf,tfstart,tfend
+)
+  VALUES (
+    #{usertf},
+    sysdate,
+    sysdate
+  )
+	
+</insert> -->
 </mapper>

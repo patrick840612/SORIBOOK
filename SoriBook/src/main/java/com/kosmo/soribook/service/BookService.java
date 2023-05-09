@@ -10,4 +10,6 @@ public interface BookService {
 	public List<BookVO> getBookDetail(String bookNo);
 	public BookVO getBookDetail2(String bookNo);
 	public List<BookVO> getbookCnt(String bookNo);
+	
+	
 }

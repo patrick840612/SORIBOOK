@@ -112,13 +112,12 @@
 						
 
 						<hr />
+						 <form action="updateuserInfo.do" method="post">
 						<table>
-						 <form action="userInfo.do" method="post">
-						 <c:forEach items="${userInfoList}" var="userInfo">
-							<tr>
+						 <tr>
 
 								<td>아이디</td>
-								<td><input type="text" id="readonly" value="${userInfo.userid}" readonly></td>
+								<td><input type="text" id="readonly" name="userid" value="${userInfoList.userid}" readonly></td>
 									 
 							</tr>
 							<tr> 
@@ -127,37 +126,36 @@
 							</tr>
 							<tr>
 								<td>새 비밀번호</td>
-								<td><input type="password" id="password" name="password" required></td>
+								<td><input type="password" id="userpass" name="userpass" required></td>
 							</tr>
 							<tr>
 								<td>새 비밀번호 확인</td>
-								<td><input type="password" id="confirm-password" name="confirm-password" required></td>
+								<td><input type="password" id="userpass" name="confirm_password" required></td>
 							</tr>
 							<tr>
 								<td>이름</td>
-								<td><input type="text" id="readonly" value="${userInfo.username}" readonly></td>
+								<td><input type="text" id="readonly" name="username" value="${userInfoList.username}" readonly></td>
 							</tr>
 							<tr>
 								<td>이메일</td>
-								<td><input type="text" value="${userInfo.useremail}"></td>
+								<td><input type="text" name="useremail" value="${userInfoList.useremail}"></td>
 							</tr>
 							<tr>
 								<td>휴대전화</td>
-								<td><input type="text" id="readonly" value="${userInfo.usertel}" readonly></td>
-							</tr>
-							 
-							</c:forEach>
-						</table>
+								<td><input type="text" id="readonly" name="usertel" value="${userInfoList.usertel}" readonly></td>
+							</tr> 
 						<br />
 						<br/>
 						<div style="text-align: center;">
 						<tr>
-						<td><input type="submit" class="madman-btn" value="수정"><a href="userInfo.do"></a></td>
+						<td><input type="submit" class="madman-btn" value="수정"></td>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<td><input type="button" class="madman-btn" value="취소"></td>
-						</tr>
-						</form>
+						<td><input type="button" class="madman-btn" value="취소" onclick="location.href='myPage.do'"></td>
+						</tr>					
 						</div>
+						</table>
+						 </form>				
+							
 					</div>
 
 

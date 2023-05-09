@@ -25,7 +25,7 @@
                 <td><h4>『${book.bookTitle}』</h4><br/>―${book.writerName}</td>
                   
                 <td>${book.paymentDate}</td>
-                <td><button><a href="book.do">보기</a></button></td>          
+                <td><button onclick="location.href='textViewer.do'">보기</button></td>          
 
 
         </c:forEach>
