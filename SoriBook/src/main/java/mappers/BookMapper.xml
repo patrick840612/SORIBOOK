@@ -28,5 +28,8 @@
 		INNER JOIN WRITER w ON b.WRITERNO=w.WRITERNO
 	WHERE b.bookno=#{bookNo}
 	</select>
+	
+
+	
 
 </mapper>

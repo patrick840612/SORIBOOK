@@ -36,41 +36,7 @@
     <script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
     <script src="/soribook/resources/Main/js/main.js"></script>
 
-<!-- jQuery 라이브러리를 불러옵니다. -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- jQuery UI 라이브러리를 불러옵니다. -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-
-<!-- jQuery UI 라이브러리의 datepicker() 메서드를 사용하여 달력을 생성합니다. -->
-<script>
-$(document).ready(function() {
-	  var date = new Date();
-	  date.setMonth(date.getMonth() + 1); // 한 달 전 날짜로 설정
-	  $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
-	  $("#datepicker").datepicker("setDate", date);
-	});
-	
-$(document).ready(function() {
-	  var date = new Date();
-	  date.setMonth(date.getMonth() - 3); // 한 달 전 날짜로 설정
-	  $("#datepicker1").datepicker({dateFormat: 'yy-mm-dd'});
-	  $("#datepicker1").datepicker("setDate", date);
-	});
-	
-$(document).ready(function() {
-	  var date = new Date();
-	  date.setMonth(date.getMonth() +3); // 한 달 전 날짜로 설정
-	  $("#datepicker2").datepicker({dateFormat: 'yy-mm-dd'});
-	  $("#datepicker2").datepicker("setDate", date);
-	});
-</script>
-
-
-    
+ 
 </head>
 
 <body>
@@ -89,14 +55,16 @@ $(document).ready(function() {
                     <div class="sidebar">
                         <div class="sidebar__item">
                             <h4>나의 계정</h4>
+                            <form action="insertUserInfo.do" method="post">
                             <ul>
                                 <li><a href="myPage.do">나의 소리북</a></li>
                                 <li><a href="myPageInfo.do">회원정보관리</a></li>
-                                <li>구독신청<input type=button value="구독하기"></li>
-                                <li>구독만료일<input type="text" id="datepicker">
-                                </li>
-  
+                                                           
+                                <li>구독신청<input type="submit" value="구독하기" name="usertf"></li>                            
+                                <li>구독만료일:${userInfoList2.tfend}</li>
+                             
                             </ul>
+                            </form>
                         </div>
                       </div>
                       </div>

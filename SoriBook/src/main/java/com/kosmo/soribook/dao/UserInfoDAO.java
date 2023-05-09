@@ -7,6 +7,7 @@ import com.kosmo.soribook.domain.UserInfoVO;
 public interface UserInfoDAO {
 
 	
-	public List<UserInfoVO> selectUserInfo();
+	public UserInfoVO selectUserInfo();
 	public void updateUserInfo(UserInfoVO vo);
+	public void insertUserInfo(UserInfoVO vo);
 }

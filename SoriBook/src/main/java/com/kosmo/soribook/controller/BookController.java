@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kosmo.soribook.domain.BookVO;
 import com.kosmo.soribook.domain.CategoryVO;
+import com.kosmo.soribook.domain.UserInfoVO;
 import com.kosmo.soribook.service.BookServiceImpl;
 import com.kosmo.soribook.service.CategoryServiceImpl;
+import com.kosmo.soribook.service.UserInfoServiceImpl;
 
 @Controller
 public class BookController {
@@ -22,6 +24,9 @@ public class BookController {
 	@Autowired
 	CategoryServiceImpl categoryService;
 	
+	@Autowired
+	UserInfoServiceImpl userInfoService;
+	
 
 	@RequestMapping("myPage.do")
 	public void selectBook(Model m) {
@@ -29,6 +34,11 @@ public class BookController {
 		List<BookVO> list = bookService.selectBook();
 		m.addAttribute("bookList",list);
 		
+		UserInfoVO vo= userInfoService.selectUserInfo();
+		System.out.println(vo.toString());
+		m.addAttribute("userInfoList2",vo);
+		
+	
 		
 
 		//헤더카테고리 목록출력
@@ -36,6 +46,8 @@ public class BookController {
 		m.addAttribute("category",header);
 		
 	}
+	
+	
 	
 
 	

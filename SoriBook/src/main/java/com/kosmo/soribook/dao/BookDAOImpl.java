@@ -28,4 +28,6 @@ public class BookDAOImpl implements BookDAO {
 		return mybatis.selectOne("BookMapper.getBookDetail2", bookNo);
 	}
 	
+	
+	
 }

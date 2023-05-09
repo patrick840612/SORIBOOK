@@ -24,9 +24,9 @@ public class CategoryController {
 	
 	@Autowired
 	CategoryServiceImpl categoryService;
-	
 	@Autowired
 	BookServiceImpl bookService;
+	
 	
 	@RequestMapping("/{step}.do")
 	public String viewPage(@PathVariable String step, Model m) {
@@ -94,7 +94,7 @@ public class CategoryController {
 
 	}
 
-	
+	 
 	
 	
 

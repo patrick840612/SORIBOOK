@@ -11,9 +11,10 @@ public class UserInfoVO {
 	private String userid; 		//아이디
 	private String userpass; 	//비밀번호
 	private String useremail;	//이메일
-	private String userTF; 		//구독여부
-	private String tFstart; 	//구독종료일
-	private String tFend; 		//구독종료일
-
+	
+	  private String usertf; 
+	  private String tfstart; //구독여부
+	  private String tfend; //구독종료일
+	 
 
 }

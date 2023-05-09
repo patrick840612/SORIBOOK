@@ -1,7 +1,5 @@
 package com.kosmo.soribook.dao;
 
-import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,15 +13,22 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<UserInfoVO> selectUserInfo() {
+	public UserInfoVO selectUserInfo() {
 		System.out.println("===> Mybatis selectUserInfo() 호출");
-		return mybatis.selectList("UserInfoMapper.selectUserInfo");
+		return mybatis.selectOne("UserInfoMapper.selectUserInfo");
 		
 	}
 	
 	public void updateUserInfo(UserInfoVO vo) {
 		System.out.println("===> Mybatis updateUserInfo() 호출");
-		mybatis.update("UserInfoDAO.updateUserInfo", vo);
+		System.out.println(vo.toString());
+		mybatis.update("UserInfoMapper.updateUserInfo", vo);
+	}
+	
+	public void insertUserInfo(UserInfoVO vo) {
+		System.out.println("===> Mybatis insertUserInfo() 호출");
+		System.out.println(vo.toString());
+		mybatis.insert("UserInfoMapper.insertUserInfo", vo);
 	}
 
 }
