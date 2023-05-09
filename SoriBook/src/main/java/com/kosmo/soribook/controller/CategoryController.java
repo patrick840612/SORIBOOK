@@ -70,6 +70,12 @@ public class CategoryController {
 		int listSize = list.size();
 		m.addAttribute("listSize",listSize);
 		
+		/*
+		 * List<BookVO> bookCnt = bookService.getbookCnt();
+		 * m.addAttribute("bookCnt",bookCnt);
+		 */
+		
+		
 	}
 	
 	
@@ -90,7 +96,11 @@ public class CategoryController {
 		
 		BookVO vo = bookService.getBookDetail2(bookNo);
 		m.addAttribute("bookDetail",vo);
-		System.out.println(vo);
+
+		// 상품디테일 페이지 조회수 가져오기
+		List<BookVO> bookCnt = bookService.getbookCnt(bookNo);
+		m.addAttribute("bookCnt",bookCnt);
+
 
 	}
 

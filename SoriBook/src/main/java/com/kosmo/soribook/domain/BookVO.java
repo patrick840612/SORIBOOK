@@ -25,6 +25,8 @@ public class BookVO {//상품 테이블
 	private String companyName; 
 	
 	private String paymentDate;
+	
+	private String bookCnt;	// 책 판매 수
  
 
 	

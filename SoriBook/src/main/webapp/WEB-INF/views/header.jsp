@@ -13,14 +13,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>소리북</title>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <!-- Google Font -->
-<link
+<!-- <link
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
-	rel="stylesheet">
+	rel="stylesheet"> -->
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="/soribook/resources/Main/css/bootstrap.min.css"
+<!-- <link rel="stylesheet" href="/soribook/resources/Main/css/bootstrap.min.css"
 	type="text/css">
 <link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css"
 	type="text/css">
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="/soribook/resources/Main/css/slicknav.min.css"
 	type="text/css">
 <link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
-	type="text/css">
+	type="text/css"> -->
 	
 
 </head>
@@ -46,9 +46,9 @@
 
 	<!-- 카테고리 섹션 시작 -->
 
-	<div class="container">
-	<div class="row"><br/><br/></div>
-		<div class="row">
+	<div class="container ">
+	<div class="row "><br/><br/></div>
+		<div class="row shadow-none p-3 mb-5 bg-light rounded">
 			<div class="col-lg-2">		
 			<!-- <div class="hero__categories">
 						<div class="hero__categories__all">
@@ -95,7 +95,7 @@
 						</ul>
 						</li>
 						<!-- 카테고리 dropdown 끝  -->
-						<li class="active"><a href="MainPage.do">Home</a></li>
+						<li class="active"><a href="MainPage.do"><i class="bi bi-house-door-fill"></i>Home</a></li>
 						<li><a href=" ">구독상품</a></li>
 						<li><a href=" ">TOP100</a></li>
 						<li><a href=" ">이벤트</a></li>
@@ -111,10 +111,15 @@
 			<div class="col-lg-2">
 				<div class="header__cart">
 					<ul>
-						<li><a href="#"><i class="fa fa-heart"></i></a></li>
-						<!-- 회원가입 -->
-						<li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-						<!--장바구니 -->
+						<!-- 관리자페이지 버튼 -->
+						<li><a href="#"><i class="bi bi-clipboard-data-fill"></i></a></li>
+						<!-- 회원가입 버튼  -->
+						<li><a href="#"><i class="bi bi-person-fill-add"></i></a></li>
+						<!-- 마이페이지 버튼 -->
+						<li><a href="#"><i class="bi bi-person-circle"></i></a></li>
+						<!--장바구니  버튼-->
+						<li><a href="#"><i class="bi bi-cart-check-fill"></i></i></a></li>
+					
 					</ul>
 				</div>
 			</div>
@@ -129,9 +134,9 @@
 	<!--#########################################################################################  -->
 	<!-- 검색창섹션 -->
 	<section class="hero">
-	<div class="row"><br/><br/></div>
+	<div class="row "><br/><br/></div>
 		<div class="container">	    
-			<div class="row">
+			<div class="row ">
 			<div class="col-sm-3">
             <div class="header__logo">
 			<a href="MainPage.do"><img src="/soribook/resources/Main/img/SORIBOOK.png" alt=""><br/></a>
@@ -161,14 +166,14 @@
 
 
 	<!-- Js Plugins -->
-	<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<!-- 	<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
 	<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
 	<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
 	<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
 	<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
 	<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
 	<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-	<script src="/soribook/resources/Main/js/main.js"></script>
+	<script src="/soribook/resources/Main/js/main.js"></script> -->
 
 </body>
 

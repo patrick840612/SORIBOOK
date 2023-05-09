@@ -4,9 +4,9 @@
 <mapper namespace="CategoryMapper">
 
 	<select id="selectCategory"  resultType="com.kosmo.soribook.domain.CategoryVO">
-		SELECT *
-		FROM category
-		ORDER BY categoryno asc
+		SELECT c.*,NVL(b.CATECNT,0) AS CATECNT
+		FROM category c LEFT OUTER JOIN (SELECT categoryno, COUNT(CATEGORYNO) CATECNT FROM BOOK GROUP BY CATEGORYNO) b ON C.CATEGORYNO = b.CATEGORYNO
+		ORDER BY c.categoryno ASC
 	</select>
 	
 	<select id="selectCategoryList" parameterType="String" resultType="com.kosmo.soribook.domain.BookVO">

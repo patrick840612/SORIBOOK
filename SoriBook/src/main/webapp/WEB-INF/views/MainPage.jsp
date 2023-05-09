@@ -25,18 +25,7 @@
     <link rel="stylesheet" href="resources/Main/css/style.css" type="text/css">
     <link rel="stylesheet" href="/path/to/jquery.bxslider.css">
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/path/to/jquery.bxslider.min.js"></script>
-    
-        <!-- Js Plugins -->
-    <script src="resources/Main/js/jquery-3.3.1.min.js"></script>
-    <script src="resources/Main/js/bootstrap.min.js"></script>
-    <script src="resources/Main/js/jquery.nice-select.min.js"></script>
-    <script src="resources/Main/js/jquery-ui.min.js"></script>
-    <script src="resources/Main/js/jquery.slicknav.js"></script>
-    <script src="resources/Main/js/mixitup.min.js"></script>
-    <script src="resources/Main/js/owl.carousel.min.js"></script>
-    <script src="resources/Main/js/main.js"></script>
+
 
  
     
@@ -357,6 +346,18 @@
  <jsp:include page="footer.jsp"></jsp:include>
 
     <!-- Footer Section End -->
+        <!-- Js Plugins -->
+    <script src="resources/Main/js/jquery-3.3.1.min.js"></script>
+    <script src="resources/Main/js/bootstrap.min.js"></script>
+    <script src="resources/Main/js/jquery.nice-select.min.js"></script>
+    <script src="resources/Main/js/jquery-ui.min.js"></script>
+    <script src="resources/Main/js/jquery.slicknav.js"></script>
+    <script src="resources/Main/js/mixitup.min.js"></script>
+    <script src="resources/Main/js/owl.carousel.min.js"></script>
+    <script src="resources/Main/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/path/to/jquery.bxslider.min.js"></script>
+    
 
 
 

@@ -39,15 +39,7 @@
 
 
 
-<!-- Js Plugins -->
-<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
-<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
-<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
-<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-<script src="/soribook/resources/Main/js/main.js"></script>
+
 
 <% 
 
@@ -57,45 +49,6 @@ String bookUrl;
 bookUrl = "BookList.jsp";
 
 %>
-
-
-<%-- <script type="text/javascript">
-
-//이전 버튼 이벤트
-
-
-function fn_prev(page, range, rangeSize) {
-		var page = ((range - 2) * rangeSize) + 1;
-		var range = range - 1;
-		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
-		url = url + "&page=" + page;
-		url = url + "&range=" + range;
-		location.href = url;
-
-	}
-
-//페이지 번호 클릭
-	function fn_pagination(page, range, rangeSize, searchType, keyword) {
-		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
-		url = url + "&page=" + page;
-		url = url + "&range=" + range;
-		location.href = url;	
-	}
-	//다음 버튼 이벤트
-	function fn_next(page, range, rangeSize) {
-		var page = parseInt((range * rangeSize)) + 1;
-		var range = parseInt(range) + 1;
-		var url = "CategoryPage.do?categoryno=<%= categoryno%>&categoryname=<%= categoryname%>";
-		url = url + "&page=" + page;
-		url = url + "&range=" + range;
-
-		location.href = url;
-
-	}
-
-</script> --%>
-
-
 
 
 </head>
@@ -110,22 +63,27 @@ function fn_prev(page, range, rangeSize) {
 	<!-- Product Section Begin -->
 	<section class="product spad">
 		<div class="container">
-			<div class="row">
+			<div class="row shadow-none p-3 mb-5 bg-light rounded">
 				<div class="col-lg-3 col-md-3">
 					<div class="sidebar">
 					<!-- 카테고리 목록 sidebar 시작 -->
-						<div class="sidebar__item">
+						<div class="sidebar__item shadow p-3 mb-5 bg-body rounded">
+						<ul>
+								<li><h4>구독 전용상품</h4></li>
+								<li><h4>TOP 100</h4></li>
+							</ul>
+							<hr/>
 							<ul>
 								<li><h4>국내도서</h4></li>
 	 								<c:forEach items="${category }" var="category">
 										<c:if test="${category.majorCategoryNo == '1'}"> 
-											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}  (${category.cateCnt })</a></li>
 										</c:if>
 									</c:forEach>
 								<li><h4>외국도서</h4></li>
 	 								<c:forEach items="${category }" var="category">
 		 								<c:if test="${category.majorCategoryNo == '2' }"> 
-											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}</a></li>
+											<li><a href="CategoryPage.do?categoryno=${category.categoryNo}&categoryname=${category.categoryName}">${category.categoryName}  (${category.cateCnt })</a></li>
 										</c:if>
 									</c:forEach>
 							</ul>
@@ -275,97 +233,7 @@ function fn_prev(page, range, rangeSize) {
 				</div>
 				<!-- ProductList 페이지 삽입-->
 				<div class="col-lg-9 col-md-9">
-					<%-- <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="product__discount">
-                        <div class="section-title product__discount__title">
-                            <h2>${param.categoryname}</h2>
-                        </div>
-                    <div class="filter__item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-5">
-                                <div class="filter__sort">
-                                    <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="filter__found">
-                                    <h6><span>${listSize }</span> Books found</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3">
-                                <div class="filter__option">
-                                    <span class="icon_grid-2x2"></span>
-                                    <span class="icon_ul"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                    
-                    
-                     <!-- 상품--> 
-                     <c:forEach items="${bookListCnt}" var="bookList">
-                     <div class="col-lg-4 col-md-6 col-sm-6"> 
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="${bookList.bookImg}">
-                                    <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">${bookList.bookTitle}</a></h6>
-                                    <h5>${bookList.bookPrice} 원 </h5>
-                                </div>
-                            </div>
-                        </div>
-						</c:forEach>
-						<!-- 상품 끝 -->
-						
-						
-	
-                    
-                    </div>
-<!--                     <div class="product__pagination">
-                       
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div> -->
-                    
-                    <div id="paginationBox">
 
-		<ul class="pagination">
-			<c:if test="${pagination.prev}">
-				<li class="page-item">
-				<a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
-			</c:if>
-
-			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-				<li class="page-item" value="${pagination.page == idx ? 'active' : ''}">
-				<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
-			</c:forEach>
-			<c:if test="${pagination.next}">
-				<li class="page-item">
-				<a class="page-link" href="#" onClick="fn_next('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
-			</c:if>
-
-		</ul>
-
-	</div>
-
-	<!-- pagination{e} -->
-	
-                </div>
-            </div>
-        </div>
-    </section> --%>
     <div id=include>
 <jsp:include page="<%=bookUrl %>"></jsp:include>
     </div>
@@ -413,5 +281,23 @@ $("#include-btn").click(function(){
 
 </body>
 
+ <!-- Js Plugins -->
+ <script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
+<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
+<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
+<script src="/soribook/resources/Main/js/main.js"></script>
+<script type="text/javascript">
 
+$("#sortId").change(function(){
+	var i = $(".selected").data("value");
+	funtion(i)
+		
+	}
+
+})
+</script>
 </html>

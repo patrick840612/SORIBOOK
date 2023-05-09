@@ -28,5 +28,16 @@
 		INNER JOIN WRITER w ON b.WRITERNO=w.WRITERNO
 	WHERE b.bookno=#{bookNo}
 	</select>
+	
+	<select id="getbookCnt" resultType="com.kosmo.soribook.domain.BookVO">
+	SELECT b.*, NVL(c.bookcnt,0) AS bookcnt
+	FROM book b
+		LEFT OUTER JOIN (SELECT bookno,COUNT(bookno) bookcnt from bookpayment GROUP BY bookno) c ON b.BOOKNO =c.bookno
+	<if test='"bookNo" != null'>
+	where b.bookno=#{bookNo}
+	 </if>
+	ORDER BY bookcnt DESC NULLS LAST
+
+	</select>
 
 </mapper>

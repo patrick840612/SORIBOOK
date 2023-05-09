@@ -10,6 +10,8 @@ public class CategoryVO {
 	private String categoryName;
 	private String majorCategoryNo;
 	
+	private String cateCnt;
+	
 
 
 }

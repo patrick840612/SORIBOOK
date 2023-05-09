@@ -30,4 +30,10 @@ public class BookServiceImpl implements BookService {
 		return bookDAO.getBookDetail2(bookNo);
 	}
 
+	@Override
+	public List<BookVO> getbookCnt(String bookNo) {
+
+		return bookDAO.getbookCnt(bookNo);
+	}
+
 }

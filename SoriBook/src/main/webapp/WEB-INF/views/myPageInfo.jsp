@@ -39,24 +39,6 @@
 
 
 
-<!-- Js Plugins -->
-<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
-<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
-<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
-<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-<script src="/soribook/resources/Main/js/main.js"></script>
-
-<!-- jQuery 라이브러리를 불러옵니다. -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- jQuery UI 라이브러리를 불러옵니다. -->
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
@@ -186,6 +168,24 @@
 	<!-- Product Section End -->
 	<jsp:include page="footer.jsp"></jsp:include>
 
+<!-- Js Plugins -->
+<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
+<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
+<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
+<script src="/soribook/resources/Main/js/main.js"></script>
+
+<!-- jQuery 라이브러리를 불러옵니다. -->
+<!-- <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<!-- jQuery UI 라이브러리를 불러옵니다. -->
+<!-- <link rel="stylesheet"
+	href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 
 
 </body>

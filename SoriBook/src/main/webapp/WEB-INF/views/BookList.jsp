@@ -13,11 +13,11 @@
     <title>ProductList</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<!--     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet"> -->
 
     <!-- Css Styles -->
     <!-- Css Styles -->
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="/soribook/resources/Main/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet"
 	href="/soribook/resources/Main/css/font-awesome.min.css"
@@ -34,19 +34,19 @@
 <link rel="stylesheet"
 	href="/soribook/resources/Main/css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
-	type="text/css">
+	type="text/css"> -->
 
 
 
 <!-- Js Plugins -->
-<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<!-- <script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
 <script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
 <script src="/soribook/resources/Main/js/mixitup.min.js"></script>
 <script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-<script src="/soribook/resources/Main/js/main.js"></script>
+<script src="/soribook/resources/Main/js/main.js"></script> -->
     
 <% 
 
@@ -109,13 +109,14 @@ function fn_prev(page, range, rangeSize) {
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
-                                <div class="filter__sort">
-                                    <span>Sort By</span>
-                                    <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
+                                
+                                    <select class="form-select" id="sortId">
+                                    	<option value="">-선택-</option>
+                                        <option value="1">가나다순</option>
+                                        <option value="2">판매순</option>
+                                        <option value="3">최신순</option>
                                     </select>
-                                </div>
+                                
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
@@ -134,6 +135,7 @@ function fn_prev(page, range, rangeSize) {
                     
                     
                      <!-- 상품--> 
+                     
                      <c:forEach items="${bookListCnt}" var="bookList">
                      <div class="col-lg-4 col-md-6 col-sm-6"> 
                             <div class="product__item">
@@ -153,6 +155,7 @@ function fn_prev(page, range, rangeSize) {
                             </div>
                         </div>
 						</c:forEach>
+						
 						<!-- 상품 끝 -->
 						
 						
@@ -198,4 +201,6 @@ function fn_prev(page, range, rangeSize) {
      <!-- Js Plugins -->
 
 </body>
+
+
 </html>

@@ -27,5 +27,9 @@ public class BookDAOImpl implements BookDAO {
 	public BookVO getBookDetail2(String bookNo) {
 		return mybatis.selectOne("BookMapper.getBookDetail2", bookNo);
 	}
+	@Override
+	public List<BookVO> getbookCnt(String bookNo) {
+		return mybatis.selectList("BookMapper.getbookCnt",bookNo);
+	}
 	
 }
