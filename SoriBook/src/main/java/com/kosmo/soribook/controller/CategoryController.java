@@ -4,6 +4,8 @@ package com.kosmo.soribook.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kosmo.soribook.Pagination;
+import com.kosmo.soribook.domain.BookVO;
 import com.kosmo.soribook.domain.CategoryVO;
+import com.kosmo.soribook.service.BookServiceImpl;
 import com.kosmo.soribook.service.CategoryServiceImpl;
 
 @Controller
@@ -20,6 +24,9 @@ public class CategoryController {
 	
 	@Autowired
 	CategoryServiceImpl categoryService;
+	
+	@Autowired
+	BookServiceImpl bookService;
 	
 	@RequestMapping("/{step}.do")
 	public String viewPage(@PathVariable String step, Model m) {
