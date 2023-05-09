@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +9,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-<link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/ui.css">
-<link rel="stylesheet" type="text/css" href="/soribook/resources/mabagerPage/css/leekoon.css">
+<link rel="stylesheet" type="text/css" href="/soribook/resources/managerPage/css/ui.css">
+<link rel="stylesheet" type="text/css" href="/soribook/resources/managerPage/css/leekoon.css">
 <link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css" type="text/css">
+<script type="text/javascript" src="/soribook/resources/managerPage/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/soribook/resources/managerPage/js/ui.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+		
+});
+</script>
 </head>
 <body>
-
-	
-	
 	<section id="wrap">
 		<h1>소리북 관리자</h1>
 		<div id="divheader">
@@ -52,47 +59,35 @@
 		<div id="divcontainer">
 		<section id="container">
 		  	<section id="menu1" class="content">
-		  	 	<h2>회사소개</h2>
+		  	 	<h2>카테고리 관리</h2>
 		  	 	<div class="conbox">
 		  	 		<section class="content_wrap">
-		  	 			<h3 class="pargrph_tit">이지스퍼블리싱</h3>
-		  	 			<div class="pargrph">
-			                <div class="text_box">
-			                  <h4>"사람을 구체적으로 도와주는 책"</h4>
-			                  <p>
-			                  이지스퍼블리싱(주)의 책에는 '사람들에게 구체적으로 도움이 되는 책'을 만든다는 출판 가치가 담겨 있습니다. 2010년 5월 출범한 이지스퍼블리싱(주)는 크게 두 영역의 책을 출간합니다. IT 실용 도서와 학습 분야 도서입니다. IT 교재와 사진 책 등 실용서는 이지스퍼블리싱 브랜드로, 학습과 자녀교육 도서는 이지스에듀 브랜드로 출간하고 있습니다. 
-			                  </p>
-			                </div>
-			                <div class="text_box">
-			                  <h4>이지스퍼블리싱의 미션</h4>
-			                  <p>
-			                  사람에게 구체적으로 도움을 주는 책, 우리는 열심히 사는 사람들에게 도움이 되고 싶습니다. 우리는 책을 출간하기 전에 질문할 것입니다. "이 책이 사람들에게 도움이 됩니까?" 정보의 지름길을 만들어 빠르게 원하는 곳으로 가도록 도와주는 책. 손에 잡히는 이익을 얻을 수 있도록 도움이 되는 책을 만들고 싶습니다.
-			                  </p>
-			                </div>
-			                <div class="text_box">
-			                  <h4>조직관 </h4>
-			                  <p>
-			                  이지스퍼블리싱(주)에 참여하는 모든 사람에게 도움을 주고 싶습니다. 함께 참여해서 만드는 기쁨, 세상에 도움을 주는 뿌듯함을 느끼며 책을 만들고, 우리의 미래를 원하는 대로 스스로 만드는 터전. 기여한 바, 공정한 분배가 이루어지고 영광을 함께 나누는 곳. 그곳이 바로 이지스퍼블리싱(주)입니다.
-			                  </p>
-			                </div>
-			                <div class="text_box">
-			                  <h4>대표 시리즈 </h4>
-			                  <p>
-			                  이지스퍼블리싱의 대표적인 시리즈는 &#60;Do it! 시리즈&#62;입니다. 특히 2012~2015년까지 ‘Do it! 안드로이드 앱 프로그래밍’은 IT 분야 1~2위에 오르며 많은 독자의 사랑을 받고 있습니다. 또한 2014년, 국립중앙도서관의 컴퓨터 IT 분야 대출 1위 도서는 바로 ‘Do it! html5+css3 웹 표준의 정석’이었습니다.
-			                  </p>
-			                </div>
-			                <div class="text_box">
-			                  <h4>Do it! 시리즈 소개</h4>
-			                    <p>
-			                    세상의 속도를 따라잡고 싶다면 Do it! 변화의 속도를 즐기게 될 것입니다. 두잇 시리즈를 보는 독자들은 빨리 변하는 세상 속에서 뒤따라가는 것이 아니라 세상의 속도를 따라잡고 그 안에서 미래를 주도할 수 있는 리더가 될 수 있습니다. 두잇 시리즈는 대학교재로 인기가 높습니다.
-			                    </p>
-			                </div>
-			              </div>
+		  	 			<div class="pagecontent">
+		  	 			<form action="" name="CatecoryFrm" method="post" id='CatecoryFrm'> <!-- insertCategory.do getCategoryList.do updateCategory.do-->
+						<input type='radio' name='majorCategoryNo'  value='1' checked="checked">국내도서 
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type='radio' name='majorCategoryNo'  value='2'>외국도서		
+						<br/><br/><hr/><br/>
+						<input type="button" id='up'	value="▲"/>
+						<br/>
+						<input type="button" id='down'	value="▼"/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select name="categoryNo" size="7" id="selectCategory"></select> 
+						<br/><br/>
+						카테고리 명
+						<input type="text" name="categoryName" id="categoryName"/>
+						<br/><br/><hr/><br/>
+						<input type="button" value="카테고리 추가" class="categorybutton" id='categoryInsert'/>
+						<input type="button" value="카테고리 수정" class="categorybutton" id='categoryUpdate'/>
+						<input type="button" value="카테고리 삭제" class="categorybutton" id='categoryDelete'/>
+						</form>
+						</div>
+			
 		  	 		</section>
 		  	 	</div>
 		  	</section>
 		  	<section id="menu2" class="content">
-		  	 	<h2>도서소개</h2>
+		  	 	<h2>상품관리</h2>
 		  	 	<div class="conbox">
 		  	 		<section class="content_wrap">
 		  	 			<h3>도서상세내용</h3>
@@ -101,7 +96,7 @@
 		  	 				<article class="notebook">
 		  	 					<div class="detail_content">
 		  	 						<div class="img_book">
-		  	 							<img src="/soribook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
+		  	 							<img src="/soribook/resources/managerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" />
 		  	 						</div>
 		  	 						<section class="book_description">
 		  	 							<h4>Do it! HTML5+CSS3 웹 표준의 정석 &#60; 개정판 &#62;</h4>
@@ -128,14 +123,14 @@
 							<button class="roll_right"></button>
 							<div class="book_roll">
 								<ul>
-			                        <li data-url="files/book1.html"><img src="/soribook/resources/mabagerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
-			                        <li data-url="files/book2.html"><img src="/soribook/resources/mabagerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
-			                        <li data-url="files/book3.html"><img src="/soribook/resources/mabagerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
-			                        <li data-url="files/book4.html"><img src="/soribook/resources/mabagerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
-			                        <li data-url="files/book5.html"><img src="/soribook/resources/mabagerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
-			                        <li data-url="files/book6.html"><img src="/soribook/resources/mabagerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
-			                        <li data-url="files/book7.html"><img src="/soribook/resources/mabagerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
-			                        <li data-url="files/book8.html"><img src="/soribook/resources/mabagerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
+			                        <li data-url="files/book1.html"><img src="/soribook/resources/managerPage/images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
+			                        <li data-url="files/book2.html"><img src="/soribook/resources/managerPage/images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
+			                        <li data-url="files/book3.html"><img src="/soribook/resources/managerPage/images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
+			                        <li data-url="files/book4.html"><img src="/soribook/resources/managerPage/images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
+			                        <li data-url="files/book5.html"><img src="/soribook/resources/managerPage/images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
+			                        <li data-url="files/book6.html"><img src="/soribook/resources/managerPage/images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
+			                        <li data-url="files/book7.html"><img src="/soribook/resources/managerPage/images/book7.png" alt="Do it! Vue.js 입문" /></li>
+			                        <li data-url="files/book8.html"><img src="/soribook/resources/managerPage/images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
 			                      </ul>
 							</div>
 						</div>
@@ -168,16 +163,8 @@
 		  	</section>
 		</section>
 		</div>
-		    
-
 	</section>
 	
-
-	
-
-	
-	<script type="text/javascript" src="/soribook/resources/mabagerPage/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/soribook/resources/mabagerPage/js/ui.js"></script>
 </body>
 </html>
 
