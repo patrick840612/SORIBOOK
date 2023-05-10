@@ -18,6 +18,10 @@ $(document).ready(function(){
 		//클릭한 메뉴와 매칭 되는 id의 뒤에 오는 <section> 태그는 .next 클래스를 지정한다     
 	}); // 사이드바 클릭시 각 메뉴의 관리 페이지 이동 끝
 	
+	
+// 카테고리 관리 화면 입장(사이드바)		
+$('#side1').click(function(){	
+	
 	// 업버튼(▲) 클릭시 카테고리 정렬 변경
 	$('#up').click(function(){
 		var idx = $('#selectCategory')[0].selectedIndex;
@@ -60,14 +64,12 @@ $(document).ready(function(){
 	
 	//********************************************************
 	//ajax 사용하기
-	var param = { majorCategoryNo : $('input[type="radio"][name="majorCategoryNo"]').val() };
+	var param = { majorCategoryNo : $('#menu1 input[type="radio"][name="majorCategoryNo"]').val() };
 	// 카테고리 목록 출력
 	categoryList(param);
 	
 	// 카테고리 목록 호출
 	function categoryList(param){
-		
-		 /* #majorCategoryNo */
 		
 		$.ajax({
 			type : 'get',
@@ -95,8 +97,8 @@ $(document).ready(function(){
 	} // 목록 화면 출력 함수 makeList() end
 	
 	//라디오버튼을 눌렀을 떄
-	$('input[type="radio"][name="majorCategoryNo"]').change(function(){
-		var param = { majorCategoryNo : $('input[type="radio"][name="majorCategoryNo"]:checked').val()};
+	$('#menu1 input[type="radio"][name="majorCategoryNo"]').change(function(){
+		var param = { majorCategoryNo : $('#menu1 input[type="radio"][name="majorCategoryNo"]:checked').val()};
 		categoryList(param);
 	});
 	
@@ -109,7 +111,7 @@ $(document).ready(function(){
 			url : 'insertCategory.do',
 			success : function(){
 				$('#categoryName').val('');
-				var param = { majorCategoryNo : $('input[type="radio"][name="majorCategoryNo"]:checked').val()};
+				var param = { majorCategoryNo : $('#menu1 input[type="radio"][name="majorCategoryNo"]:checked').val()};
 				categoryList(param);	
 			},
 			error : function(err){
@@ -128,7 +130,7 @@ $(document).ready(function(){
 			url : 'deleteCategory.do',
 			data : param,
 			success : function(){
-				var param = { majorCategoryNo : $('input[type="radio"][name="majorCategoryNo"]:checked').val()};
+				var param = { majorCategoryNo : $('#menu1 input[type="radio"][name="majorCategoryNo"]:checked').val()};
 				categoryList(param);
 			},
 			error : function(err){
@@ -147,7 +149,7 @@ $(document).ready(function(){
 			data : param,
 			success : function(){
 				$('#categoryName').val('');
-				var param = { majorCategoryNo : $('input[type="radio"][name="majorCategoryNo"]:checked').val()};
+				var param = { majorCategoryNo : $('#menu1 input[type="radio"][name="majorCategoryNo"]:checked').val()};
 				categoryList(param);
 			},
 			error : function(err){
@@ -157,7 +159,7 @@ $(document).ready(function(){
 		});
 	}); // 카테고리 수정 완료
 
-	
+}); // 사이드바 카테고리 관리 기능구현
 	
 	
 });

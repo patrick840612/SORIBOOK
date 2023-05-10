@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookMGMapper">
+
+<select id="getWriterList" resultType="com.kosmo.soribook.domain.WriterVO">
+		select * from Writer
+</select>
+
+<select id="getCompanyList" resultType="com.kosmo.soribook.domain.CompanyVO">
+		select * from company
+</select>
+
+<select id="getSelectedWriter" parameterType="com.kosmo.soribook.domain.WriterVO" resultType="com.kosmo.soribook.domain.WriterVO">
+		select * from Writer where writerNo = #{writerNo}
+</select>
+
+<select id="getSelectedCompany" parameterType="com.kosmo.soribook.domain.CompanyVO" resultType="com.kosmo.soribook.domain.CompanyVO">
+		select * from Company where companyNo = #{companyNo}
+</select>
+
+<select id="getSelectedCategoryBookList" parameterType="com.kosmo.soribook.domain.BookVO" resultType="com.kosmo.soribook.domain.BookVO">
+		select b.booktitle booktitle, c.companyname companyname, b.bookprice bookprice, b.bookNo bookNo
+		from book b, company c, category ca
+		where b.categoryNo = ca.categoryNo and b.companyNo = c.companyNo and ca.majorcategoryNo = #{majorCategoryNo} and b.categoryNo = #{categoryNo}
+		order by b.booktitle
+</select>
+
+<insert id="writerInsert">
+		insert into writer values (seq_writer_writerNo.nextval,#{writerName},#{writerDetail})
+</insert>
+
+<insert id="companyInsert">
+		insert into company values (seq_company_companyNo.nextval,#{companyName})
+</insert>
+
+<insert id="insertBook" parameterType="com.kosmo.soribook.domain.BookVO">
+	INSERT INTO book 
+	(
+		bookNo
+		,bookPrice
+		,bookTitle
+		,bookPdate
+		,bookSyno
+		,bookImg
+		<if test="bookContent != null">
+		,bookContent
+		,bookContentSize
+		</if>
+		<if test="bookAudio != null">
+		,bookAudio
+		</if>
+		,bookSub
+		,categoryNo
+		,writerNo
+		,companyNo
+	) VALUES (
+		seq_book_bookno.nextval
+		,#{bookPrice}
+		,#{bookTitle}
+		,#{bookPdate}
+		,#{bookSyno}
+		,#{bookImg}
+		<if test="bookContent != null">
+		,#{bookContent}
+		,#{bookContentSize}
+		</if>
+		<if test="bookAudio != null">
+		,#{bookAudio}
+		</if>
+		,#{bookSub}
+		,#{categoryNo}
+		,#{writerNo}
+		,#{companyNo}
+	)
+
+</insert>
+
+</mapper>

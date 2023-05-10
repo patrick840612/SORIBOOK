@@ -1,5 +1,39 @@
 @charset "UTF-8";
 
+#leftBookManager{
+	display: inline-block;
+	position : absolute;
+	zoom : 200%;
+}
+
+#centerBookManager{
+	display: inline-block;
+	position : absolute;
+	zoom : 200%;
+	left: 500px;
+	
+}
+
+#rightBookManager{
+	display: inline-block;
+	position : absolute;
+	left: 1600px;
+ 	overflow-y:auto;
+ 	height : 750px;
+	
+}
+
+#tripleBookManager{
+	height: 800px;
+}
+
+.pagecontentmenu2{
+	margin-left: 200px;
+	margin-top: 50px;
+}
+
+
+
 body > #wrap > #divheader{
 	
 
@@ -22,6 +56,7 @@ body > #wrap > #divcontainer{
 	bottom : 200px;
 }
 
+
 #foot{
 	position: absolute;
 	bottom: 100px;
@@ -34,20 +69,55 @@ body > #wrap > #divcontainer{
 
 #selectCategory{
 	width: 200px;
+	font-size: 40%;
+	font-family: ‘Nanum Gothic’, sans-serif;
+	margin-left: 40px; 
 }
 
-.pagecontent{
-	zoom: 2;
-	margin-left: 100px;
+.pagecontentmenu1{
+	zoom: 2.2;
+	margin-left: 300px;
 	margin-top: 50px;
+	
 }
 #up, #down{
 	position: absolute;
 	margin-top: 25px;
+	margin-left: 30px; 
 }
 
-.categorybutton{
+#categoryName{
+	margin-left: 15px; 
+}
+
+.button{
 	background-color: #008080;
 	color: white;
+}
+
+input[type="button"]{cursor:pointer}
+
+#bookButton{
+	zoom: 2.2;	
+	margin-left: 170px;
+}
+
+#bookButton input{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.upload{
+	margin-left: 15px;
+}
+
+td,th{
+	width: 200px;
+	border: 2px solid #7fad39;
+	text-align: center;
+}
+
+.bookinput{
+	margin-left: 33px;
 }
 
