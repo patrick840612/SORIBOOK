@@ -46,7 +46,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 	public void usertf(UserInfoVO vo) {
 		System.out.println("===>updateUserInfo 호출");
 		System.out.println(vo.toString());
-		UserInfoDAO.usertf(vo);
+		userInfoDAO.usertf(vo);
 	}
 	
 
