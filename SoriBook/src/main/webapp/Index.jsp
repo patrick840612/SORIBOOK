@@ -15,3 +15,5 @@
 <a href="BookDetail.do" target="_blank">BookDetail.do</a><hr/>
 <a href="UserJoinForm.do" target="_blank">UserJoinForm.do</a><hr/>
 <a href="UserLoginForm.do" target="_blank">UserLoginForm.do</a><hr/>
+<a href="bookimg.do" target="_blank">bookimg.do</a><hr/>
+<a href="BookList.do" target="_blank">bookList.do</a><hr/>

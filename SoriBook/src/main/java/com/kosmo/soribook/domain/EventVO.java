@@ -9,5 +9,6 @@ public class EventVO {
 	private String eventName;	 //이벤트이름
 	private int eventDCP;		 //할인가격(퍼센트)
 	private int eventDCW;		 //할인가격(원)
-
+    private String eventImg;     //이벤트이미지
+	
 }

@@ -14,4 +14,5 @@ public interface UserInfoService {
 	public void insertUserInfo(UserInfoVO vo);
 	
 	public UserInfoVO loginService(UserInfoVO vo);
+	public void usertf(UserInfoVO vo);
 }

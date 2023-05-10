@@ -10,7 +10,7 @@
 <meta name="keywords" content="Ogani, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Ogani | Template</title>
+<title>소리북</title>
 
 <!-- Google Font -->
 <link
@@ -69,7 +69,7 @@ bookUrl = "BookList.jsp";
 					<!-- 카테고리 목록 sidebar 시작 -->
 						<div class="sidebar__item shadow p-3 mb-5 bg-body rounded">
 						<ul>
-								<li><h4>구독 전용상품</h4></li>
+								<li><h4><a href="subBookList.do">구독 전용상품</a></h4></li>
 								<li><h4>TOP 100</h4></li>
 							</ul>
 							<hr/>

@@ -46,7 +46,12 @@ public class UserInfoController {
 	  public void insertUserInfo(UserInfoVO vo) {
 	  userInfoService.insertUserInfo(vo); }
 	 
-	
+	  @RequestMapping("usertf.do")
+	public String usertf(UserInfoVO vo) {
+		userInfoService.usertf(vo);
+		
+		return "redirect:/myPage.do";
+	}
 	
 	
 	

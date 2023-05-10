@@ -171,6 +171,14 @@ ol {
 	position: relative;
 }
 
+.section-title h7 {
+	color: #1c1c1c;
+	font-weight: 700;
+	position: relative;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
 .section-title h2:after {
 	position: absolute;
 	left: 0;
@@ -769,11 +777,14 @@ ol {
 	height: 48px;
 	font-size: 16px;
 	color: #b2b2b2;
-	padding-left: 20px;
+
+
 }
 
 .hero__search__form form input::placeholder {
 	color: #b2b2b2;
+	position: relative;
+
 }
 
 .hero__search__form form button {
@@ -782,6 +793,8 @@ ol {
 	top: -1px;
 	height: 50px;
 }
+
+
 
 .hero__search__phone {
 	float: right;

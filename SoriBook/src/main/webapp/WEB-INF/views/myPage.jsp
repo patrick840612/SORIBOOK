@@ -55,14 +55,12 @@
                     <div class="sidebar">
                         <div class="sidebar__item">
                             <h4>나의 계정</h4>
-                            <form action="insertUserInfo.do" method="post">
+                            <form action="usertf.do" method="post">
                             <ul>
                                 <li><a href="myPage.do">나의 소리북</a></li>
-                                <li><a href="myPageInfo.do">회원정보관리</a></li>
-                                                           
+                                <li><a href="myPageInfo.do">회원정보관리</a></li>                            
                                 <li>구독신청<input type="submit" value="구독하기" name="usertf"></li>                            
-                                <li>구독만료일:${userInfoList2.tfend}</li>
-                             
+                                <li>구독만료일:${userInfoList2.tfend}</li>      
                             </ul>
                             </form>
                         </div>
