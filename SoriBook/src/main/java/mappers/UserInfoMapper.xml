@@ -5,7 +5,7 @@
 
 <select id="selectUserInfo" resultType="com.kosmo.soribook.domain.UserInfoVO">
 
-	SELECT *
+	SELECT userid,username,useremail,userpass,usertel,TO_CHAR(tfend, 'YYYY-MM-DD') AS tfend
 	FROM userinfo
     WHERE usertel='010-1111-1111' 
 </select>
@@ -20,7 +20,19 @@ WHERE usertel=#{usertel}
 
 </update>
 
-<!-- <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+<update id="usertf" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+
+UPDATE userinfo
+SET usertf = 1,
+    tfstart = sysdate,
+    tfend = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate, 12), 'YYYY-MM-DD'), 'YYYY-MM-DD')
+
+</update>
+
+
+
+
+ <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 INSERT INTO userinfo(
 usertf,tfstart,tfend
 )
@@ -30,5 +42,5 @@ usertf,tfstart,tfend
     sysdate
   )
 	
-</insert> -->
+</insert> 
 </mapper>

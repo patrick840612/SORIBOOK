@@ -12,4 +12,6 @@ public interface UserInfoService {
 	void updateUserInfo(UserInfoVO vo);
 	
 	public void insertUserInfo(UserInfoVO vo);
+	
+	public void usertf(UserInfoVO vo);
 }

@@ -28,7 +28,14 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 	public void insertUserInfo(UserInfoVO vo) {
 		System.out.println("===> Mybatis insertUserInfo() 호출");
 		System.out.println(vo.toString());
-		mybatis.insert("UserInfoMapper.insertUserInfo", vo);
+		mybatis.insert("UserInfoMapper.insertUserInfo", vo);		
 	}
+	
+	public void usertf(UserInfoVO vo) {
+		System.out.println("===> Mybatis usertf() 호출");
+		System.out.println(vo.toString());
+		mybatis.update("UserInfoMapper.usertf", vo);
+	}
+	
 
 }

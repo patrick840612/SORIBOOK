@@ -37,5 +37,16 @@ public class BookServiceImpl implements BookService {
 
 		return bookDAO.getbookCnt(bookNo);
 	}
+	
+	public List<BookVO> getbookCnt2() {
+
+		return bookDAO.getbookCnt2();
+	}
+
+	@Override
+	public List<BookVO> selectSub() {
+		System.out.println("===> BookDAOImpl selectSub() 호출");
+		return bookDAO.selectSub();
+	}
 
 }

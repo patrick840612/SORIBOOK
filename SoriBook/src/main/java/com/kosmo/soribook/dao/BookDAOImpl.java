@@ -32,6 +32,13 @@ public class BookDAOImpl implements BookDAO {
 		return mybatis.selectList("BookMapper.getbookCnt",bookNo);
 	}
 	
+	public List<BookVO> getbookCnt2() {
+		return mybatis.selectList("BookMapper.getbookCnt2");
+	}
 	
 	
+	public List<BookVO> selectSub() {
+		System.out.println("===> Mybatis selectSub() 호출");
+		return mybatis.selectList("BookMapper.selectSub");
+	}
 }

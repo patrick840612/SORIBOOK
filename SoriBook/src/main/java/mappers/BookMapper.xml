@@ -39,7 +39,20 @@
 	ORDER BY bookcnt DESC NULLS LAST
 
 	</select>
+	
+	<select id="getbookCnt2" resultType="com.kosmo.soribook.domain.BookVO">
+	SELECT b.*, NVL(c.bookcnt,0) AS bookcnt
+	FROM book b
+		LEFT OUTER JOIN (SELECT bookno,COUNT(bookno) bookcnt from bookpayment GROUP BY bookno) c ON b.BOOKNO =c.bookno
+	
 
+	</select>
+
+<select id="selectSub" resultType="com.kosmo.soribook.domain.BookVO">
+SELECT *
+FROM book
+WHERE booksub=1
+</select>
 	
 
 </mapper>

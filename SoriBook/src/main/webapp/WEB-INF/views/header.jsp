@@ -54,11 +54,11 @@
 						<div class="hero__categories__all">
 							<i class="fa fa-bars"></i> <span>카테고리</span>
 						</div>
-<<<<<<< Updated upstream:SoriBook/src/main/webapp/WEB-INF/views/header.jsp
+
 						<ul style="display: none;">
-=======
+
 						<ul>
->>>>>>> Stashed changes:SoriBook/src/main/webapp/header.jsp
+
 							<li><a href="#">건강 - 취미</a></li>
 							<li><a href="#">경영 - 경제</a></li>
 							<li><a href="#">공무원수험서</a></li>
@@ -96,9 +96,9 @@
 						</li>
 						<!-- 카테고리 dropdown 끝  -->
 						<li class="active"><a href="MainPage.do"><i class="bi bi-house-door-fill"></i>Home</a></li>
-						<li><a href=" ">구독상품</a></li>
-						<li><a href=" ">TOP100</a></li>
-						<li><a href=" ">이벤트</a></li>
+						<li><a href="subBookList.do">구독상품</a></li>
+						<li><a href="top100.do">TOP100</a></li>
+						<li><a href="event.do">이벤트</a></li>
 						<li><a href=" ">고객센터</a>
 							<ul class="header__menu__dropdown">
 								<li><a href=" ">공지사항</a></li>
@@ -112,11 +112,11 @@
 				<div class="header__cart">
 					<ul>
 						<!-- 관리자페이지 버튼 -->
-						<li><a href="#"><i class="bi bi-clipboard-data-fill"></i></a></li>
+						<li><a href="managePage.do"><i class="bi bi-clipboard-data-fill"></i></a></li>
 						<!-- 회원가입 버튼  -->
 						<li><a href="#"><i class="bi bi-person-fill-add"></i></a></li>
 						<!-- 마이페이지 버튼 -->
-						<li><a href="#"><i class="bi bi-person-circle"></i></a></li>
+						<li><a href="myPage.do"><i class="bi bi-person-circle"></i></a></li>
 						<!--장바구니  버튼-->
 						<li><a href="#"><i class="bi bi-cart-check-fill"></i></i></a></li>
 					
@@ -145,14 +145,12 @@
 				<div class="col-lg-9">			
 					<div class="hero__search">
 						<div class="hero__search__form">
-							<form action="#">
-								<div class="hero__search__categories">
+							<form action="#" method="post">
 								
-									All Categories <span class="arrow_carrot-down"></span>
-								</div>
+																							
 								<input type="text" placeholder="검색어를 입력하세요">
-								<button type="submit" class="site-btn">SEARCH</button>
-							</form>
+								<button type="submit" class="site-btn">SEARCH</button>						
+							</form>	
 						</div>
 					</div>
 
