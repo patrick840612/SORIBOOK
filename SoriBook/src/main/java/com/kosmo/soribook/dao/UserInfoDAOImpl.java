@@ -11,24 +11,39 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 
 	@Autowired
 	private SqlSessionTemplate mybatis;
-	
+
 	@Override
 	public UserInfoVO selectUserInfo() {
 		System.out.println("===> Mybatis selectUserInfo() 호출");
 		return mybatis.selectOne("UserInfoMapper.selectUserInfo");
-		
+
 	}
-	
+
 	public void updateUserInfo(UserInfoVO vo) {
 		System.out.println("===> Mybatis updateUserInfo() 호출");
-		System.out.println(vo.toString());
+		//		System.out.println(vo.toString());
 		mybatis.update("UserInfoMapper.updateUserInfo", vo);
 	}
-	
+
 	public void insertUserInfo(UserInfoVO vo) {
 		System.out.println("===> Mybatis insertUserInfo() 호출");
-		System.out.println(vo.toString());
+		//		System.out.println(vo.toString());
 		mybatis.insert("UserInfoMapper.insertUserInfo", vo);
+	}
+
+	@Override
+	public UserInfoVO loginService(UserInfoVO vo) {
+		UserInfoVO result = new UserInfoVO();
+		result = mybatis.selectOne("UserInfoMapper.loginService", vo);
+
+		if(result.getUserPass() != null) {
+			if(result.getUserPass()==vo.getUserPass()) return result;
+		}else {
+			result = new UserInfoVO();
+
+		}
+		return result;
+
 	}
 
 }

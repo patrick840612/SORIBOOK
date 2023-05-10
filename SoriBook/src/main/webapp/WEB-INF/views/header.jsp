@@ -114,7 +114,7 @@
 						<!-- 관리자페이지 버튼 -->
 						<li><a href="#"><i class="bi bi-clipboard-data-fill"></i></a></li>
 						<!-- 회원가입 버튼  -->
-						<li><a href="#"><i class="bi bi-person-fill-add"></i></a></li>
+						<li><a href="UserLoginForm.do"><i class="bi bi-person-fill-add"></i></a></li>
 						<!-- 마이페이지 버튼 -->
 						<li><a href="#"><i class="bi bi-person-circle"></i></a></li>
 						<!--장바구니  버튼-->
@@ -139,7 +139,7 @@
 			<div class="row ">
 			<div class="col-sm-3">
             <div class="header__logo">
-			<a href="MainPage.do"><img src="/soribook/resources/Main/img/SORIBOOK.png" alt=""><br/></a>
+			<a href="MainPage.do"><img src="/soribook/resources/Main/img/soribookLogoAll.png" alt=""><br/></a>
 				</div>	
 			</div>		
 				<div class="col-lg-9">			

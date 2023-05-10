@@ -11,24 +11,36 @@ import com.kosmo.soribook.domain.UserInfoVO;
 public class UserInfoServiceImpl implements UserInfoService {
 
 	@Autowired
-	private UserInfoDAOImpl UserInfoDAO;
+	private UserInfoDAOImpl userInfoDAO;
 	
 	@Override
 	public UserInfoVO selectUserInfo() {
 		System.out.println("===> UserInfoDAOImpl selectUserInfo() 호출");
-		return UserInfoDAO.selectUserInfo();
+		return userInfoDAO.selectUserInfo();
 	}
 	
 	public void updateUserInfo(UserInfoVO vo) {
 		System.out.println("===>updateUserInfo 호출");
-		System.out.println(vo.toString());
-		UserInfoDAO.updateUserInfo(vo);
+		userInfoDAO.updateUserInfo(vo);
 	}
 	
 	public void insertUserInfo(UserInfoVO vo) {
 		System.out.println("===>serviceUserInfo 호출");
-		System.out.println(vo.toString());
-		UserInfoDAO.insertUserInfo(vo);
+		userInfoDAO.insertUserInfo(vo);
+	}
+
+	@Override
+	public UserInfoVO loginService(UserInfoVO vo) {
+		UserInfoVO result = new UserInfoVO();
+				result = userInfoDAO.loginService(vo);
+		
+		if(result.getUserPass() != null) {
+			if(result.getUserPass()==vo.getUserPass()) return result;
+		}else {
+			result = new UserInfoVO();
+		
+		}
+		return result;
 	}
 	
 

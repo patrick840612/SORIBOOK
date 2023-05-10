@@ -31,4 +31,16 @@ usertf,tfstart,tfend
   )
 	
 </insert> -->
+
+<insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+INSERT INTO userinfo (usertel, userid, userpass, useremail, username)
+values(#{userTel},#{userId},#{userPass},#{userEmail},#{userName})
+</insert>
+
+<select id="loginService" resultType="com.kosmo.soribook.domain.UserInfoVO" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+SELECT *
+FROM userinfo
+WHERE userid = #{userId}
+</select>
+
 </mapper>

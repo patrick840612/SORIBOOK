@@ -282,7 +282,7 @@ $("#include-btn").click(function(){
 </body>
 
  <!-- Js Plugins -->
- <script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
+<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
 <script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
 <script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
