@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserInfoMapper">
 
-<select id="selectUserInfo" resultType="com.kosmo.soribook.domain.UserInfoVO">
+<!-- <select id="selectUserInfo" resultType="com.kosmo.soribook.domain.UserInfoVO">
 
 	SELECT userid,username,useremail,userpass,usertel,TO_CHAR(tfend, 'YYYY-MM-DD') AS tfend
 	FROM userinfo
