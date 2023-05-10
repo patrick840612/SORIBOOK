@@ -31,6 +31,15 @@
 			book
 	</select>
 	
+		<select id="getBookListForSub"  resultType="com.kosmo.soribook.domain.BookVO">
+	SELECT
+		*
+	FROM 
+		(SELECT ROW_NUMBER() OVER (ORDER BY booktitle) num, b.* FROM book b  ORDER BY booktitle)
+	WHERE
+		num BETWEEN #{startList}+1 AND #{startList}+9
+	</select>
+	
 
 	
 

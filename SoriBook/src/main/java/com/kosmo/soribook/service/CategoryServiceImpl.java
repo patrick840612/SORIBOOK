@@ -38,6 +38,12 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoryDAO.getBookList(pagination);
 	}
 
+	@Override
+	public List<BookVO> getBookListForSub(Pagination pagination) {
+		return categoryDAO.getBookListForSub(pagination);
+		
+	}
+
 
 
 }

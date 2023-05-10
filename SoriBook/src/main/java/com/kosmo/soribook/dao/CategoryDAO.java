@@ -12,5 +12,6 @@ public interface CategoryDAO {
 	public List<CategoryVO> selectCategoryList(String categoryno);
 	public int getBookListCnt();
 	public List<BookVO> getBookList(Pagination pagination);
+	public List<BookVO> getBookListForSub(Pagination pagination);
 	
 }

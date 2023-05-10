@@ -1,6 +1,6 @@
 package com.kosmo.soribook.service;
 
-import java.util.List;
+import java.lang.reflect.Member;
 
 import com.kosmo.soribook.domain.UserInfoVO;
 
@@ -15,4 +15,5 @@ public interface UserInfoService {
 	
 	public UserInfoVO loginService(UserInfoVO vo);
 	public void usertf(UserInfoVO vo);
+	public Member getLoginMember(String id, String pass);
 }

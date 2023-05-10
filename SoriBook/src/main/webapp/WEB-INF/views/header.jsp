@@ -1,3 +1,4 @@
+<%@page import="jdk.internal.misc.FileSystemOption"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -111,15 +112,34 @@
 			<div class="col-lg-2">
 				<div class="header__cart">
 					<ul>
-						<!-- 관리자페이지 버튼 -->
-						<li><a href="managePage.do"><i class="bi bi-clipboard-data-fill"></i></a></li>
+						
+						
+						<c:if test="${sessionScope.id == null}">
 						<!-- 회원가입 버튼  -->
-						<li><a href="UserLoginForm.do"><i class="bi bi-person-fill-add"></i></a></li>
+						<li><a href="UserLoginForm.do" >로그인/회원가입<i class="bi bi-person-fill-add"></i></a></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.id != null && sessionScope.id.userId != 'admin'}">
 						<!-- 마이페이지 버튼 -->
+						
 						<li><a href="myPage.do"><i class="bi bi-person-circle"></i></a></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.id != null && sessionScope.id.userId != 'admin'}">
 						<!--장바구니  버튼-->
 						<li><a href="#"><i class="bi bi-cart-check-fill"></i></i></a></li>
-					
+						</c:if>
+						
+						<c:if test="${sessionScope.id.userId == 'admin'}">
+						<!-- 관리자페이지 버튼 -->
+						<li><a href="managePage.do"><i class="bi bi-clipboard-data-fill"></i></a></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.id != null}">
+						<!-- 로그아웃 버튼  -->
+						<li><a href="user/logout.do"><i class="bi bi-box-arrow-left"></i></a></li>
+						</c:if>
+						
 					</ul>
 				</div>
 			</div>

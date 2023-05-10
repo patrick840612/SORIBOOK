@@ -1,6 +1,8 @@
 package com.kosmo.soribook.service;
 
 
+import java.lang.reflect.Member;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,23 +32,21 @@ public class UserInfoServiceImpl implements UserInfoService {
 	}
 
 	@Override
-	public UserInfoVO loginService(UserInfoVO vo) {
-		UserInfoVO result = new UserInfoVO();
-				result = userInfoDAO.loginService(vo);
+	public UserInfoVO loginService(UserInfoVO vo) {	
+		return userInfoDAO.loginService(vo);
 		
-		if(result.getUserPass() != null) {
-			if(result.getUserPass()==vo.getUserPass()) return result;
-		}else {
-			result = new UserInfoVO();
-		
-		}
-		return result;
 	}
 	
 	public void usertf(UserInfoVO vo) {
 		System.out.println("===>updateUserInfo 호출");
 		System.out.println(vo.toString());
 		userInfoDAO.usertf(vo);
+	}
+
+	@Override
+	public Member getLoginMember(String id, String pass) {
+		
+		return null;
 	}
 	
 

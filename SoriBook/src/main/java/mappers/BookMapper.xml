@@ -45,7 +45,6 @@
 	FROM book b
 		LEFT OUTER JOIN (SELECT bookno,COUNT(bookno) bookcnt from bookpayment GROUP BY bookno) c ON b.BOOKNO =c.bookno
 	
-
 	</select>
 
 <select id="selectSub" resultType="com.kosmo.soribook.domain.BookVO">
@@ -53,6 +52,7 @@ SELECT *
 FROM book
 WHERE booksub=1
 </select>
-	
+
+
 
 </mapper>

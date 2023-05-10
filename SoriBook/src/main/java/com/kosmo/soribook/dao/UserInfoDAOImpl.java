@@ -40,17 +40,10 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 
 	@Override
 	public UserInfoVO loginService(UserInfoVO vo) {
-		UserInfoVO result = new UserInfoVO();
-		result = mybatis.selectOne("UserInfoMapper.loginService", vo);
-
-		if(result.getUserPass() != null) {
-			if(result.getUserPass()==vo.getUserPass()) return result;
-		}else {
-			result = new UserInfoVO();
-
-		}
-		return result;
+		return mybatis.selectOne("UserInfoMapper.loginService", vo);
 
 	}
+	
+	
 
 }

@@ -32,7 +32,7 @@ SET usertf = 1,
 
 
 
- <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+<!--  <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 INSERT INTO userinfo(
 usertf,tfstart,tfend
 )
@@ -42,7 +42,7 @@ usertf,tfstart,tfend
     sysdate
   )
 	
-</insert> 
+</insert>  -->
 
 <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 INSERT INTO userinfo (usertel, userid, userpass, useremail, username)
@@ -52,7 +52,7 @@ values(#{userTel},#{userId},#{userPass},#{userEmail},#{userName})
 <select id="loginService" resultType="com.kosmo.soribook.domain.UserInfoVO" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 SELECT *
 FROM userinfo
-WHERE userid = #{userId}
+WHERE userid = #{userId} and userpass = #{userPass}
 </select>
 
 </mapper>

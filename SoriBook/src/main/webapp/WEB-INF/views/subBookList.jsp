@@ -52,7 +52,7 @@ function fn_prev(page, range, rangeSize) {
 		var page = ((range - 2) * rangeSize) + 1;
 		var range = range - 1;
 		var url = "subBookList.do";
-		url = url + "&page=" + page;
+		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		location.href = url;
 
@@ -61,7 +61,7 @@ function fn_prev(page, range, rangeSize) {
 //페이지 번호 클릭
 	function fn_pagination(page, range, rangeSize, searchType, keyword) {
 		var url = "subBookList.do";
-		url = url + "&page=" + page;
+		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		location.href = url;	
 	}
@@ -70,7 +70,7 @@ function fn_prev(page, range, rangeSize) {
 		var page = parseInt((range * rangeSize)) + 1;
 		var range = parseInt(range) + 1;
 		var url = "subBookList.do";
-		url = url + "&page=" + page;
+		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 
 		location.href = url;
@@ -159,7 +159,7 @@ function fn_prev(page, range, rangeSize) {
                     <!-- 상품--> 
                       
                     <div class="row">  
-                    <c:forEach items="${selectSub}" var="subBook">                    
+                    <c:forEach items="${bookListCnt}" var="subBook">                    
                      <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">              
                           <a id="bookClick" href="BookDetail.do?bookno=${subBook.bookNo}">

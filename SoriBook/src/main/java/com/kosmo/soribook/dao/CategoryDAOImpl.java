@@ -39,6 +39,14 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return mybatis.selectList("CategoryMapper.getBookList", pagination);
 	}
 
+	@Override
+	public List<BookVO> getBookListForSub(Pagination pagination) {
+		return mybatis.selectList("CategoryMapper.getBookListForSub", pagination);
+		
+	}
+	
+	
+
 
 
 
