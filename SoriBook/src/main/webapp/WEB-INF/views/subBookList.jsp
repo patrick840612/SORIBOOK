@@ -98,6 +98,7 @@ function fn_prev(page, range, rangeSize) {
 						<div class="sidebar__item shadow p-3 mb-5 bg-body rounded">
 						<ul>
 								<li><h4><a href="subBookList.do">구독 전용상품</a></h4></li>
+								<li><h4><a href="top100.do">탑 100</a></h4></li>
 							</ul>
 							<hr/>
 							<ul>

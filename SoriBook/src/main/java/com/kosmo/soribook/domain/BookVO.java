@@ -24,6 +24,7 @@ public class BookVO {//상품 테이블
 	private String categoryNo;	// 카테고리번호
 	private String categoryName;
 	private String majorCategoryNo;
+	private String bookCnt;
 	
 	private String writerNo;
 	private String writerName;

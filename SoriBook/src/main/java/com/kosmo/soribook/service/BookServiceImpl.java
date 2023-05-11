@@ -49,4 +49,10 @@ public class BookServiceImpl implements BookService {
 		return bookDAO.selectSub();
 	}
 
+	@Override
+	public List<BookVO> selectTop100() {
+		System.out.println("===> BookDAOImpl selectTop100() 호출");
+		return bookDAO.selectTop100();
+	}
+
 }
