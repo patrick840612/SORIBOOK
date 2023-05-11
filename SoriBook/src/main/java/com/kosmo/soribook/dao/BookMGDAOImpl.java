@@ -19,7 +19,6 @@ public class BookMGDAOImpl implements BookMGDAO {
 	
 	public List<WriterVO> getWriterList(WriterVO vo){
 		List<WriterVO> list = mybatis.selectList("BookMGMapper.getWriterList");
-		System.out.println(list.toString());
 		return list;
 	}
 	
@@ -43,8 +42,8 @@ public class BookMGDAOImpl implements BookMGDAO {
 	}
 	
 	public List<BookVO> getSelectedCategoryBookList(BookVO vo){
-
-		return mybatis.selectList("BookMGMapper.getSelectedCategoryBookList", vo);
+		List<BookVO> list = mybatis.selectList("BookMGMapper.getSelectedCategoryBookList", vo);
+		return list;
 	}
 	
 	public void writerInsert(WriterVO vo) {
@@ -52,9 +51,21 @@ public class BookMGDAOImpl implements BookMGDAO {
 	} 
 	
 	public void companyInsert(CompanyVO vo) {
-		System.out.println("==============================");
-		System.out.println("==============================");
+
 		mybatis.insert("BookMGMapper.companyInsert", vo);
+	}
+	
+	public BookVO getBook(BookVO vo) {
+		return mybatis.selectOne("BookMGMapper.getBook", vo);
+	}
+	
+	public void deleteBook(BookVO vo) {
+		mybatis.delete("BookMGMapper.deleteBook", vo);
+	}
+	
+	public void updateBook(BookVO vo) {
+
+		mybatis.update("BookMGMapper.updateBook", vo);
 	}
 
 	

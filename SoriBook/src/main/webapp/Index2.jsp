@@ -11,7 +11,7 @@
 <a href="myPage.do" target="_blank">myPage.do</a><hr/>
 <a href="header.do" target="_blank">header.do</a><hr/>
 <a href="footer.do" target="_blank">footer.do</a><hr/>
-<a href="managePage.do" target="_blank">managePage.do</a><hr/>
+<a href="manager.do" target="_blank">managePage.do</a><hr/>
 <a href="BookDetail.do" target="_blank">BookDetail.do</a><hr/>
 <a href="UserJoinForm.do" target="_blank">UserJoinForm.do</a><hr/>
 <a href="UserLoginForm.do" target="_blank">UserLoginForm.do</a><hr/>

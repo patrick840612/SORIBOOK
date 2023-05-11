@@ -14,278 +14,21 @@
 <link rel="stylesheet" href="/soribook/resources/Main/css/font-awesome.min.css" type="text/css">
 <script type="text/javascript" src="/soribook/resources/managerPage/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/soribook/resources/managerPage/js/ui.js"></script>
+<script type="text/javascript" src="/soribook/resources/managerPage/js/ui2.js"></script>
 <script type="text/javascript">
 $(function(){
-	
-// 상품관리 화면 입장
-$('#side2').click(function(){
-	// 작가 목록 호출
-	writerList();
-	// 출판사 목록 호출
-	companyList();
-	// 카테고리 목록 호출
-	categoryList();
-	
-	
-	// 출판사 등록
-	$('#companyAdd').click(function(){
-		var param = $('#bookFrm').serialize();
-		
-		$.ajax({
-			type : 'post',
-			url : 'companyInsert.do',
-			data : param,
-			success : function(){
-				companyList();
-				$('#companyName').val('');
-			},
-			error : function(err){
-				console.log(err);
-			}
-		});
-		
-	}); // 작가 등록 완료
-	
-	// 작가 등록
-	$('#writerAdd').click(function(){
-		var param = $('#bookFrm').serialize();
-		
-		$.ajax({
-			type : 'post',
-			url : 'writerInsert.do',
-			data : param,
-			success : function(){
-				writerList();
-				$('#writerName').val('');
-				$('#writerDetail').val('');
-			},
-			error : function(err){
-				console.log(err);
-			}
-		});
-		
-	}); // 작가 등록 완료
-	
-	// 카테고리 옵션 변경시 상품목록 테이블 출력
-	$('#BookCategoryNo').change(bookSimpleList); 
-	
-	// 카테고리 옵션 변경시 상품목록 테이블 출력 함수
-	function bookSimpleList(){
 
-		if($('#BookCategoryNo option:selected').val() != '선택'){
-			var param = { categoryNo : $('#BookCategoryNo option:selected').val() , majorCategoryNo : $('#menu2 input[type="radio"][name="majorCategoryNo"]:checked').val() }
-			
-			$.ajax({
-				type : 'post',
-				url : 'getSelectedCategoryBookList.do',
-				data : param,
-				dataType : 'json',
-				success : function(result){
-					var bookTable = $('#BookSimpleList');
-					bookTable.empty();
-					bookTable.append($('<tr><th>책제목</th><th>출판사</th><th>가격</th></tr>'));
-					
-					for(row of result){
-						var tr = $('<tr/>');
-						var bookTitle = $('<td/>').text(row.bookTitle);
-						var companyName = $('<td/>').text(row.companyName);
-						var bookPrice = $('<td/>').text(row.bookPrice);
-						var hidden = $('<input type="hidden" value="'+row.bookNo+'">');
-						tr.append(bookTitle);
-						tr.append(companyName);
-						tr.append(bookPrice);
-						tr.append(hidden);
-						bookTable.append(tr);
-					}
-				},
-				error : function(err){
-					console.log(err);
-				}
-			});
-			
-		}
-	} // 카테고리 옵션 변경시 상품목록 테이블 출력 함수 끝
-	
-	// 출판사선택 변경시 데이터 출력
-	$('#companyNo').change(function(){
-		
-		var param = { companyNo : $('#companyNo option:selected').val() }
-		
-		if($('#companyNo option:selected').val() == '신규'){
-			$('#companyName').val('');
-		}
-		
-		$.ajax({
-			type : 'post',
-			url : 'getSelectedCompany.do',
-			data : param,
-			dataType : 'json',
-			success : function(result){
-				console.log(result);
-			 	$('#companyName').val(result.companyName);				
-			},
-			error : function(err){
-				console.log(err);
-			}
-		});
-	}); // 출판사선택 변경시 데이터 출력 끝
 
-	
-	// 작가선택 변경시 데이터 출력
-	$('#writerNo').change(function(){
-		
-		var param = { writerNo : $('#writerNo option:selected').val() }
-		
-		if($('#writerNo option:selected').val() == '신규'){
-			$('#writerName').val('');
-			$('#writerDetail').val('');
-		}
-		
-		$.ajax({
-			type : 'post',
-			url : 'getSelectedWriter.do',
-			data : param,
-			dataType : 'json',
-			success : function(result){
-			 	$('#writerName').val(result.writerName);
-				$('#writerDetail').val(result['writerDetail']);
-			},
-			error : function(err){
-				console.log(err);
-			}
-		});
-	}); // 작가선택 변경시 데이터 출력 끝
-	
-	// 상품등록  
-	$('#bookInsert').click(function(){
-		
-		if($('#BookCategoryNo option:selected').val() == '선택'){
-			alert('카테고리를 선택해 주세요');
-		}else if($('#writerNo option:selected').val() == '신규'){
-			alert('작가를 선택해 주세요');
-		}else if($('#companyNo option:selected').val() == '신규'){
-			alert('출판사를 선택해 주세요');
-		}else {	
-			var form = $('#bookFrm')[0];   
-			var formData = new FormData(form);
-			
-			$.ajax({
-				type : 'post',
-				url : 'insertBook.do',
-				data : formData,
-				contentType: false,
-				processData: false,
-				cache : false,
-				enctype : 'multipart/form-data',
-	    	    success: function() {
-	    	    	console.log("success : ");
-	    	    	$('#bookNo').val('');
-	    	    	$('#bookPrice').val('');
-	    	    	$('#bookTitle').val('');
-	    	    	$('#bookSyno').val('');
-	    	    	$('#categoryName').val('');
-	    	    	$('#writerName').val('');
-	    	    	$('#writerDetail').val('');
-	    	    	$('#companyName').val('');
-	    	    	$('#fileImg').val('');
-	    	    	$('#fileText').val('');
-	    	    	$('#fileAudio').val('');
-	    	    	$('#bookPdate').val('');
-	    	    	bookSimpleList();
-		        },
-		        error:function(e){
-		            console.log("error : ", e);
-		        }
-			});
-		}
-		
-
-	}); // 상품등록 끝
-	
-	
-	// 카테고리 목록 호출 함수
-	function categoryList(){
-		
-		var param = { majorCategoryNo : $('#menu2 input[type="radio"][name="majorCategoryNo"]:checked').val() };
-		
-		$.ajax({
-			type : 'post',
-			url : 'getCategoryList.do',
-			data : param,
-			dataType : 'json',
-			success : function(result){
-				var categoryList = $('#BookCategoryNo');
-				categoryList.empty();
-				categoryList.append($('<option>선택</option>'));
-				for(row of result){
-					var option = $('<option value="'+row['categoryNo']+'">'+row['categoryName']+'</option>')
-					categoryList.append(option);
-				}
-			},
-			error : function(err){
-				alert('error');
-				console.log(err);
-			}
-			
-		});
-	} // 카테고리 목록 호출 함수 끝
-	
-	// 카테고리 대분류 선택시 카테고리 옵션 변경
-	$('#menu2 input[type="radio"][name="majorCategoryNo"]').change(function(){
-		categoryList(); 
-	});
-	
-	// 출판사 목록 호출 함수
-	function companyList(){
-		
-		$.ajax({
-			type : 'post',
-			url : 'getCompanyList.do',
-			dataType : 'json',
-			success : function(result){
-				var companyList = $('#companyNo');
-				companyList.empty();
-				companyList.append($('<option>신규</option>'));
-				for(row of result){
-					var option = $('<option value="'+row['companyNo']+'">'+row['companyNo']+' '+row['companyName']+'</option>')
-					companyList.append(option);
-				}
-			},
-			error : function(err){
-				alert('error');
-				console.log(err);
-			}
-			
-		});
-	} // 출판사 목록 호출 함수 끝
-	
-	// 작가 목록 호출 함수
-	function writerList(){
-		
-		$.ajax({
-			type : 'post',
-			url : 'getWriterList.do',
-			dataType : 'json',
-			success : function(result){
-				var writerList = $('#writerNo');
-				writerList.empty();
-				writerList.append($('<option>신규</option>'));
-				for(row of result){
-					var option = $('<option value="'+row['writerNo']+'">'+row['writerNo']+' '+row['writerName']+'</option>')
-					writerList.append(option);
-				}
-			},
-			error : function(err){
-				alert('error');
-				console.log(err);
-			}
-			
-		});
-	} // 작가 목록 호출 함수 끝
-	
 
 		
-}); // 사이드바(상품관리) 끝
+
+		
+
+	
+// 이벤트관리 화면 입장
+$('#side5').click(function(){
+	
+}); //사이드바(이벤트관리) 끝
 		
 });
 </script>
@@ -309,7 +52,7 @@ $('#side2').click(function(){
 					<li data-rol="menu2"><a id="side2" href="#">상품관리</a></li>        
 					<li data-rol="menu3"><a href="#">공지사항 관리</a></li>        
 					<li data-rol="menu4"><a href="#">문의 관리</a></li>
-					<li data-rol="menu5"><a href="#">이벤트 관리</a></li>
+					<li data-rol="menu5"><a id="side5" href="#">이벤트 관리</a></li>
 					<li data-rol="menu6"><a href="#">매출 통계</a></li>    
 				</ul> 
 			</nav>
@@ -361,22 +104,22 @@ $('#side2').click(function(){
 		  	 		<section class="content_wrap" id="content_wrap2">
 		  	 			<div class="pagecontentmenu2">
 			  	 			<form name="bookFrm" method="post" id='bookFrm'> 
-			  	 			<div id="tripleBookManager">
-								<div id="leftBookManager">
+			  	 			<div class="tripleBookManager">
+								<div class="leftBookManager">
 									상품번호 <input type="text"  name="bookNo" id="bookNo" disabled="disabled"><br/>
 									상품가격 <input type="text"  name="bookPrice" id="bookPrice"><br/>
 									제목<input type="text"  name="bookTitle" id="bookTitle" class="bookinput"><br/>
 									내용<br/>
 									<textarea name="bookSyno" id="bookSyno" rows="18" cols="45"></textarea>
 								</div>
-								<div id="centerBookManager">
+								<div class="centerBookManager">
 									<input type='radio' name='majorCategoryNo'  value='1' checked="checked">국내도서
 									<input type='radio' name='majorCategoryNo'  value='2'>외국도서	<br/>	
 									 카테고리 <select name="categoryNo" id="BookCategoryNo"></select><br/>
-									 작가선택 <select name="writerNo" id="writerNo"></select><br/>
+									 작가선택 <select name="writerNo" id="writerNo" class="selWC"></select><br/>
 									 작가이름 <input type="text"  name="writerName" id="writerName"><br/>
 									 작가설명 <input type="text"  name="writerDetail" id="writerDetail"><br/>
-									 출판사선택 <select name="companyNo" id="companyNo"></select><br/>
+									 출판사선택 <select name="companyNo" id="companyNo" class="selWC"></select><br/>
 									 출판사명 <input type="text"  name="companyName" id="companyName"><br/>
 									 출판일자 <input type="date"  name="bookPdate" id="bookPdate"><br/><br/>
 									 구독용상품여부 :  
@@ -386,13 +129,15 @@ $('#side2').click(function(){
 									 텍스트 파일 <input type="file"  name='fileText' id='fileText' class="upload" accept=".pdf"><br/><br/>
 									 오디오 파일 <input type="file" name='fileAudio' id='fileAudio' class="upload" accept=".mp3"><br/>
 								</div>
-								<div id="rightBookManager">
+								<div class="rightBookManager">
+									<input type="text" name="searchBookKeyword" id="searchBookKeyword" placeholder="책제목을 입력하세요" class="searchBookInput">
+									<input type="button" name="searchBookBTN" id="searchBookBTN" value="검색" class="searchBookInput"><br/><br/>
 									<table id="BookSimpleList" >
 									<tr><th>책제목</th><th>출판사</th><th>가격</th></tr>
 									</table>
 								</div>
 							</div>
-							<div id="bookButton">
+							<div class="bookButton">
 							<br/>
 							<input type="button" value="상품 등록" class="button" id='bookInsert'/>
 							<input type="button" value="상품 수정" class="button" id='bookUpdate'/>
@@ -420,7 +165,47 @@ $('#side2').click(function(){
 		  	<section id="menu5" class="content">
 		  	 	<h2>이벤트 관리</h2>
 		  	 	<div class="conbox">
-		  	 		<section class="content_wrap"></section>
+		  	 		<section class="content_wrap">
+		  	 			<div class="pagecontentmenu5">
+			  	 			<form name="eventFrm" method="post" id='eventFrm'> 
+			  	 				<div class="tripleBookManager">
+								<div class="leftBookManager5">
+									이벤트번호 <input type="text"  name="eventNo" id="eventNo" disabled="disabled"><br/><br/>
+									이벤트명 <input type="text"  name="eventName" id="eventName"><br/><br/>
+									할인 <input type="text"  name="eventDiscount" id="eventDiscount">
+									<select name="eventOption" id="eventOption">
+										<option value="eventDCP">%</option>
+										<option value="eventDCW">원</option>
+									</select><br/><br/>
+									이벤트 설명<br/>
+									<textarea name="eventDetail" id="eventDetail" rows="18" cols="45"></textarea>
+								</div>
+								<div class="centerBookManager5">
+									 이벤트 이미지 <input type="file" name='fileEventImg' id='fileEventImg' accept=".jpg, .jpeg, .png"><br/><br/>
+									 <input type='radio' name='eventSelectSort'  value='category' checked="checked">카테고리
+									 <select name="categoryNo" id="categoryNo5"></select>&nbsp;&nbsp;
+									 <input type='radio' name='eventSelectSort'  value='book'>상품
+									 <select name="bookNo" id="bookNo5"></select>
+        							 
+									 <br/><br/>
+									 선택사항 추가 <br/>
+									 <div id="addEventOption" ><!-- <input type="button" value="버튼"> --></div><br/>
+								</div>
+								<div class="rightBookManager5">
+									<table id="eventList" >
+									<tr><th>No</th><th>이벤트명</th><th>할인</th><th>활성화</th></tr>
+									</table>
+								</div>
+							</div>
+							<div class="eventButton">
+							<br/>
+							<input type="button" value="이벤트 등록" class="button" id='eventInsert'/>
+							<input type="button" value="이벤트 수정" class="button" id='eventUpdate'/>
+							<input type="button" value="이벤트 삭제" class="button" id='eventDelete'/>
+							</div>
+			  	 			</form>
+			  	 		</div>	
+		  	 		</section>
 		  	 	</div>
 		  	</section>
 		  	<section id="menu6" class="content">

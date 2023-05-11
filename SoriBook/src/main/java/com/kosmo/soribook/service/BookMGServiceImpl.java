@@ -47,8 +47,19 @@ public class BookMGServiceImpl implements BookMGService {
 	}
 	
 	public void companyInsert(CompanyVO vo) {
-		System.out.println("===> BookMGDAOImpl companyInsert() 호출");
 		bookMGDAO.companyInsert(vo);
+	}
+	
+	public BookVO getBook(BookVO vo) {
+		return bookMGDAO.getBook(vo);
+	}
+	
+	public void deleteBook(BookVO vo) {
+		bookMGDAO.deleteBook(vo);
+	}
+	
+	public void updateBook(BookVO vo) {
+		bookMGDAO.updateBook(vo);
 	}
 
 }

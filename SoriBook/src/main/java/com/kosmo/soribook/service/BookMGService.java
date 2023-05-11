@@ -16,6 +16,9 @@ public interface BookMGService {
 	public List<BookVO> getSelectedCategoryBookList(BookVO vo);
 	public void writerInsert(WriterVO vo);
 	public void companyInsert(CompanyVO vo);
+	public BookVO getBook(BookVO vo);
+	public void deleteBook(BookVO vo);
+	public void updateBook(BookVO vo);
 
 
 }

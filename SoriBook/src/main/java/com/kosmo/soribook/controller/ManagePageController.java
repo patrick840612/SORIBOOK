@@ -25,9 +25,14 @@ public class ManagePageController {
 	@Autowired
 	private BookMGService bookMGService;
 
-	@RequestMapping("/managePage.do")
+	@RequestMapping("/manager.do")
 	public String firstPage() {
-		return "manager/managePage";
+		return "redirect:managePage.do";
+	}
+	
+	@RequestMapping("/managePage.do")
+	public String managePage() {
+		return "/manager/managePage";
 	}
 	
 	@ResponseBody
@@ -35,8 +40,6 @@ public class ManagePageController {
 	public List<CategoryVO> getCategoryList(CategoryVO vo, Model model) {
 		List<CategoryVO> list = categoryMGService.getCategoryList(vo);
 		model.addAttribute("categoryList", list);
-		System.out.println(list.toString());
-		
 		return list;
 	}
 	
@@ -73,16 +76,15 @@ public class ManagePageController {
 	@RequestMapping("/getCompanyList.do")
 	public List<CompanyVO> getCompanyList(CompanyVO vo, Model model){
 		List<CompanyVO> list = bookMGService.getCompanyList(vo);
-		System.out.println("==============================");
-		System.out.println(list.toString());
-		System.out.println("==============================");
-		
 		return list;
 	}
 	
 	@ResponseBody
 	@RequestMapping("/insertBook.do") 
 	public void insertBook(BookVO vo) throws IOException { 
+		System.out.println("==============================");
+		System.out.println(vo.toString());
+		System.out.println("==============================");
 		bookMGService.insertBook(vo); 
 	}
 	
@@ -102,6 +104,7 @@ public class ManagePageController {
 	@RequestMapping("/getSelectedCategoryBookList.do")
 	public List<BookVO> getSelectedCategoryBookList(BookVO vo) {
 		List<BookVO> list = bookMGService.getSelectedCategoryBookList(vo);
+
 		return list;
 	}
 	
@@ -116,6 +119,25 @@ public class ManagePageController {
 	public void companyInsert(CompanyVO vo) {
 		bookMGService.companyInsert(vo);
 	}
+	
+	@ResponseBody
+	@RequestMapping("/getBook.do")
+	public BookVO getBook(BookVO vo) {
+		return bookMGService.getBook(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/deleteBook.do")
+	public void deleteBook(BookVO vo) {
+		bookMGService.deleteBook(vo);
+	}
 
-	 
+	@ResponseBody
+	@RequestMapping("/updateBook.do")
+	public void updateBook(BookVO vo) throws IOException {
+		System.out.println("==============================");
+		System.out.println(vo.toString());
+		System.out.println("==============================");
+		bookMGService.updateBook(vo);
+	}
 }

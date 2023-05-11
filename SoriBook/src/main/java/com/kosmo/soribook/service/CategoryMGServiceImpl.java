@@ -16,22 +16,18 @@ public class CategoryMGServiceImpl implements CategoryMGService {
 	
 	@Override
 	public List<CategoryVO> getCategoryList(CategoryVO vo) {
-		System.out.println("===> CategoryMGDAOImpl getCategoryList() 호출");
 		return categoryMGDAO.getCategoryList(vo);
 	}
 	
 	public void insertCategory(CategoryVO vo) {
-		System.out.println("===> CategoryMGDAOImpl insertCategory() 호출");
 		categoryMGDAO.insertCategory(vo);
 	}
 	
 	public void deleteCategory(CategoryVO vo) {
-		System.out.println("===> CategoryMGDAOImpl deleteCategory() 호출");
 		categoryMGDAO.deleteCategory(vo);
 	}
 	
 	public void updateCategory(CategoryVO vo) {
-		System.out.println("===> CategoryMGDAOImpl updateCategory() 호출");
 		categoryMGDAO.updateCategory(vo);
 	}
 

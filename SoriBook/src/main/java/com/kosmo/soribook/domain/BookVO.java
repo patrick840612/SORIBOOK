@@ -18,7 +18,7 @@ public class BookVO {//상품 테이블
 	private String bookSyno;  	// 시놉시스
 	private String bookImg;	  	// 섬네일이미지
 	private String bookContent;	//텍스트파일
-	private long bookContentSize;
+	private long bookContentSize; // 텍스트파일 용량
 	private String bookAudio;   // 오디오파일
 	private String bookSub;  	// 구독용 여부
 	private String categoryNo;	// 카테고리번호
@@ -34,6 +34,8 @@ public class BookVO {//상품 테이블
 	private String companyName; 
 	
 	private String paymentDate;
+	
+	String searchBookKeyword;// 관리자페이지 상품검색 키워드
 	
 	//****************************************** 파일업로드용
 	MultipartFile fileImg; // 상품 썸네일 이미지용

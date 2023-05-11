@@ -1,20 +1,21 @@
 @charset "UTF-8";
 
-#leftBookManager{
+.leftBookManager{
 	display: inline-block;
 	position : absolute;
 	zoom : 200%;
+	margin-left: -60px;;
 }
 
-#centerBookManager{
+.centerBookManager{
 	display: inline-block;
 	position : absolute;
 	zoom : 200%;
-	left: 500px;
+	left: 470px;
 	
 }
 
-#rightBookManager{
+.rightBookManager{
 	display: inline-block;
 	position : absolute;
 	left: 1600px;
@@ -23,16 +24,51 @@
 	
 }
 
-#tripleBookManager{
+.tripleBookManager{
 	height: 800px;
+}
+
+.pagecontentmenu1{
+	zoom: 1.7;
+	margin-left: 300px;
+	margin-top: 50px;
+	
 }
 
 .pagecontentmenu2{
 	margin-left: 200px;
 	margin-top: 50px;
+	zoom : 0.7;
 }
 
+.pagecontentmenu5{
+	zoom : 0.6;
+}
 
+.leftBookManager5{
+	display: inline-block;
+	position : absolute;
+	zoom : 200%;
+	left: 80px;
+}
+
+.centerBookManager5{
+	display: inline-block;
+	position : absolute;
+	zoom : 200%;
+	left: 480px;
+	
+}
+
+.rightBookManager5{
+	display: inline-block;
+	position : absolute;
+	left: 1450px;
+ 	overflow-y:auto;
+ 	height : 750px;
+ 	zoom : 1.2;
+	
+}
 
 body > #wrap > #divheader{
 	
@@ -74,12 +110,6 @@ body > #wrap > #divcontainer{
 	margin-left: 40px; 
 }
 
-.pagecontentmenu1{
-	zoom: 2.2;
-	margin-left: 300px;
-	margin-top: 50px;
-	
-}
 #up, #down{
 	position: absolute;
 	margin-top: 25px;
@@ -97,14 +127,15 @@ body > #wrap > #divcontainer{
 
 input[type="button"]{cursor:pointer}
 
-#bookButton{
+.bookButton{
 	zoom: 2.2;	
-	margin-left: 170px;
+	margin-left: 200px;
 }
 
-#bookButton input{
-	margin-left: 5px;
-	margin-right: 5px;
+.eventButton{
+	margin-left: 300px;
+	margin-top: 50px;
+	zoom: 2.8;
 }
 
 .upload{
@@ -120,4 +151,35 @@ td,th{
 .bookinput{
 	margin-left: 33px;
 }
+
+.bookListTr:hover{
+	background-color: #7fad39;
+	cursor: pointer;
+}
+
+.searchBookInput{
+	zoom : 1.8;
+}
+
+#searchBookKeyword{
+	width : 200px;
+	height : 20px;
+	margin-right: 10px;
+}
+
+#addEventOption{
+	border: 1px solid black;
+	height: 325px;
+}
+
+#eventName{
+	margin-left: 15px;
+}
+
+#eventDiscount{
+	margin-left: 44px;
+}
+
+.selWC{width: 170px;}
+
 
