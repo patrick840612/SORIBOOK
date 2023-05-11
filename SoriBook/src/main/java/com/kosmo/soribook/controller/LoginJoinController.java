@@ -85,6 +85,7 @@ public class LoginJoinController {
 		if(result != null) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("id", result);
+			
 
 			response.sendRedirect("/soribook/Index.jsp");
 		}else {

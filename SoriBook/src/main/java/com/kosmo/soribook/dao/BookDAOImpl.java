@@ -41,4 +41,8 @@ public class BookDAOImpl implements BookDAO {
 		System.out.println("===> Mybatis selectSub() 호출");
 		return mybatis.selectList("BookMapper.selectSub");
 	}
+	@Override
+	public List<BookVO> selectTop100() {
+		return mybatis.selectList("BookMapper.selectTop100");
+	}
 }

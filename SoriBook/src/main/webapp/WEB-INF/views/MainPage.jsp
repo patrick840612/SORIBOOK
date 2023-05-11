@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="resources/Main/css/bootstrap.min.css" type="text/css">
+    
     <link rel="stylesheet" href="resources/Main/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="resources/Main/css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="resources/Main/css/nice-select.css" type="text/css">
@@ -27,8 +27,10 @@
     <link rel="stylesheet" href="/path/to/jquery.bxslider.css">
     
 
-
- 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
     
 </head>
 
@@ -41,7 +43,7 @@
 
     <!-- 베스트셀러 슬라이더 -->
     <section class="categories">
-
+    
         <div class="container">
             <div class="row">
             
@@ -162,8 +164,7 @@
 
     <!-- Footer Section End -->
         <!-- Js Plugins -->
-    <script src="resources/Main/js/jquery-3.3.1.min.js"></script>
-    <script src="resources/Main/js/bootstrap.min.js"></script>
+
     <script src="resources/Main/js/jquery.nice-select.min.js"></script>
     <script src="resources/Main/js/jquery-ui.min.js"></script>
     <script src="resources/Main/js/jquery.slicknav.js"></script>

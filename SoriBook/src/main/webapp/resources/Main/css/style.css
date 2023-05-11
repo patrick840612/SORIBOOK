@@ -31,6 +31,7 @@
 /*----------------------------------------*/
 /* css 추가 시작*/
 
+/*  */
 .copyright{
 	color: #909090;
 }
@@ -154,6 +155,27 @@ ol {
 
 #readonly{
 	background:gray;
+}
+
+.notice_search {	
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qna.notice_search {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice_search input{
+width: 200px;
+}
+
+.notice_search button{
+	text-align: center;
+	
 }
 
 /*---------------------

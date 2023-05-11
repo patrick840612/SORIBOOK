@@ -13,4 +13,5 @@ public interface BookDAO {
 	public List<BookVO> getbookCnt(String bookNo);
 	public List<BookVO> getbookCnt2();
 	public List<BookVO> selectSub();
+	public List<BookVO> selectTop100();
 }

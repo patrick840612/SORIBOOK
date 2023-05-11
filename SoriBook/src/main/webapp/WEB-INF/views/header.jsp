@@ -100,10 +100,10 @@
 						<li><a href="subBookList.do">구독상품</a></li>
 						<li><a href="top100.do">TOP100</a></li>
 						<li><a href="event.do">이벤트</a></li>
-						<li><a href=" ">고객센터</a>
+						<li><a href="serviceCenter.do">고객센터</a>
 							<ul class="header__menu__dropdown">
-								<li><a href=" ">공지사항</a></li>
-								<li><a href=" ">1:1문의</a></li>
+								<li><a href="serviceCenter.do">공지사항</a></li>
+								<li><a href="qna.do">1:1문의</a></li>
 							</ul></li>
 					</ul>
 

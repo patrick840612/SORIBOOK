@@ -86,6 +86,31 @@ public class BookController {
 				m.addAttribute("category",header);
 	}
 	
+	@RequestMapping("top100.do")
+	public void selectTop100(Model m
+			, @RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range) {
+		System.out.println("===> Contoller 호출");
+		List<BookVO> listsub = bookService.selectTop100();
+		m.addAttribute("selectTop100",listsub);
+		
+		//전체 게시글 개수
+		int listCnt = listsub.size();
+		
+		//pagination
+		Pagination pagination = new Pagination();
+		pagination.pageInfo2(page, range, listCnt);
+		m.addAttribute("pagination",pagination);
+		m.addAttribute("bookListCnt",categoryService.getBookListForSub(pagination));
+		
+		
+       //헤더카테고리 목록출력
+		List<CategoryVO> header = categoryService.selectCategory();
+		m.addAttribute("category",header);
+		
+		
+	}
+	
 	
 
 	

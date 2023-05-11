@@ -117,7 +117,7 @@
 						 <tr>
 
 								<td>아이디</td>
-								<td><input type="text" id="readonly" name="userid" value="${userInfoList.userid}" readonly></td>
+								<td><input type="text" id="readonly" name="userid" value="${sessionScope.id.userId}" readonly></td>
 									 
 							</tr>
 							<tr> 
@@ -134,15 +134,15 @@
 							</tr>
 							<tr>
 								<td>이름</td>
-								<td><input type="text" id="readonly" name="username" value="${userInfoList.username}" readonly></td>
+								<td><input type="text" id="readonly" name="username" value="${sessionScope.id.userName}" readonly></td>
 							</tr>
 							<tr>
 								<td>이메일</td>
-								<td><input type="text" name="useremail" value="${userInfoList.useremail}"></td>
+								<td><input type="text" name="useremail" value="${sessionScope.id.userEmail}"></td>
 							</tr>
 							<tr>
 								<td>휴대전화</td>
-								<td><input type="text" id="readonly" name="usertel" value="${userInfoList.usertel}" readonly></td>
+								<td><input type="text" id="readonly" name="usertel" value="${sessionScope.id.userTel}" readonly></td>
 							</tr> 
 						<br />
 						<br/>

@@ -53,6 +53,24 @@ FROM book
 WHERE booksub=1
 </select>
 
+<select id="selectTop100" resultType="com.kosmo.soribook.domain.BookVO">
+<![CDATA[  
+SELECT *
+FROM (
+    SELECT b.*, NVL(c.bookcnt, 0) AS bookcnt,
+        ROW_NUMBER() OVER (ORDER BY NVL(c.bookcnt, 0) DESC) AS rnk
+    FROM book b
+    LEFT OUTER JOIN (
+        SELECT bookno, COUNT(bookno) AS bookcnt
+        FROM bookpayment
+        GROUP BY bookno
+    ) c ON b.BOOKNO = c.bookno
+) 
+WHERE rnk <= 100
+]]> 
+</select>
+
+
 
 
 </mapper>
