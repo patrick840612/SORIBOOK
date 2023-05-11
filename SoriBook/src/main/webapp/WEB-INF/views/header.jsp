@@ -50,7 +50,7 @@
 	<div class="container ">
 	<div class="row "><br/><br/></div>
 		<div class="row shadow-none p-3 mb-5 bg-light rounded">
-			<div class="col-lg-2">		
+			<div class="col-lg-1">		
 			<!-- <div class="hero__categories">
 						<div class="hero__categories__all">
 							<i class="fa fa-bars"></i> <span>카테고리</span>
@@ -109,7 +109,7 @@
 
 				</nav>
 			</div>
-			<div class="col-lg-2">
+			<div class="col-lg-3">
 				<div class="header__cart">
 					<ul>
 						
@@ -121,13 +121,13 @@
 						
 						<c:if test="${sessionScope.id != null && sessionScope.id.userId != 'admin'}">
 						<!-- 마이페이지 버튼 -->
-						
-						<li><a href="myPage.do"><i class="bi bi-person-circle"></i></a></li>
+		
+						<li>${sessionScope.id.userId },님  <a href="myPage.do"><i class="bi bi-person-circle"></i></a></li>
 						</c:if>
 						
 						<c:if test="${sessionScope.id != null && sessionScope.id.userId != 'admin'}">
 						<!--장바구니  버튼-->
-						<li><a href="#"><i class="bi bi-cart-check-fill"></i></i></a></li>
+						<li><a href="Cart.do"><i class="bi bi-cart-check-fill"></i></i></a></li>
 						</c:if>
 						
 						<c:if test="${sessionScope.id.userId == 'admin'}">

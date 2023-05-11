@@ -52,7 +52,20 @@ values(#{userTel},#{userId},#{userPass},#{userEmail},#{userName})
 <select id="loginService" resultType="com.kosmo.soribook.domain.UserInfoVO" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 SELECT *
 FROM userinfo
+<if test='userId != null'>
 WHERE userid = #{userId} and userpass = #{userPass}
+</if>
 </select>
 
+<select id="idCheck"  resultType="com.kosmo.soribook.domain.UserInfoVO" parameterType="com.kosmo.soribook.domain.UserInfoVO">
+SELECT *
+FROM userinfo
+where userid = #{userId}
+</select>
+
+<select id="telCheck" resultType="com.kosmo.soribook.domain.UserInfoVO"  parameterType="com.kosmo.soribook.domain.UserInfoVO">
+SELECT *
+FROM userinfo
+where usertel = #{userTel}
+</select>
 </mapper>

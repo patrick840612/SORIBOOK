@@ -1,5 +1,7 @@
 package com.kosmo.soribook.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,7 +30,10 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 	public void insertUserInfo(UserInfoVO vo) {
 		System.out.println("===> Mybatis insertUserInfo() 호출");
 		//		System.out.println(vo.toString());
-		mybatis.insert("UserInfoMapper.insertUserInfo", vo);
+		int result;
+		result = mybatis.insert("UserInfoMapper.insertUserInfo", vo);
+		System.out.println("*************" + result);
+		
 	}
 	
 	public void usertf(UserInfoVO vo) {
@@ -42,6 +47,31 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 	public UserInfoVO loginService(UserInfoVO vo) {
 		return mybatis.selectOne("UserInfoMapper.loginService", vo);
 
+	}
+
+	@Override
+	public List<UserInfoVO> userList() {
+		return mybatis.selectList("UserInfoMapper.loginService");
+	}
+
+	@Override
+	public boolean idCheck(UserInfoVO vo) {
+		boolean result = false;
+		UserInfoVO select = mybatis.selectOne("UserInfoMapper.idCheck",vo);
+		if (select != null) {
+			result = true;
+		}
+		return result;
+	}
+
+	@Override
+	public boolean telCheck(UserInfoVO vo) {
+		boolean result = false;
+		UserInfoVO select = mybatis.selectOne("UserInfoMapper.telCheck",vo);
+		if (select != null) {
+			result = true;
+		}
+		return result;
 	}
 	
 	
