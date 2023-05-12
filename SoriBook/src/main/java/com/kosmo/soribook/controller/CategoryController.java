@@ -1,5 +1,7 @@
 package com.kosmo.soribook.controller;
 
+import java.awt.print.Book;
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,12 +28,13 @@ public class CategoryController {
 	BookServiceImpl bookService;
 
 	 
-	  @RequestMapping("/{step}.do") public String viewPage(@PathVariable String
-	  step, Model m) {
+	  @RequestMapping("/{step}.do") public String viewPage(@PathVariable String step, Model m) {
 	  System.out.println("===> CategoryController.selectCategoryHeader 호출");
-	  System.out.println("#######****+++++++++++++++++++++++++"); List<CategoryVO>
-	  list = categoryService.selectCategory(); m.addAttribute("category",list);
-	  return step; }
+	  System.out.println("#######****+++++++++++++++++++++++++");
+	  List<CategoryVO> list = categoryService.selectCategory();
+	  m.addAttribute("category",list);
+	  return step; 
+	  }
 	 
 
 	@RequestMapping("header.do")
@@ -52,7 +55,18 @@ public class CategoryController {
 		Pagination pagination = new Pagination();
 		pagination.pageInfo(page, range, listCnt, categoryno);
 		m.addAttribute("pagination", pagination);
-		m.addAttribute("bookListCnt", categoryService.getBookList(pagination));
+		
+		
+		List<BookVO> bkcntList = categoryService.getBookList(pagination);
+		// bookPrice 넘버포맷 변경 9999->9,999
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(true);
+		for (BookVO vo : bkcntList) {
+			int price = vo.getBookPrice();
+		    String priceWithCommas = nf.format(price);
+		    vo.setBookPriceString(priceWithCommas);
+		}
+		m.addAttribute("bookListCnt", bkcntList);
 
 		List<CategoryVO> list = categoryService.selectCategoryList(categoryno);
 		m.addAttribute("bookList", list);
@@ -63,10 +77,7 @@ public class CategoryController {
 		int listSize = list.size();
 		m.addAttribute("listSize", listSize);
 
-		/*
-		 * List<BookVO> bookCnt = bookService.getbookCnt();
-		 * m.addAttribute("bookCnt",bookCnt);
-		 */
+
 
 	}
 
@@ -82,6 +93,13 @@ public class CategoryController {
 		m.addAttribute("bookList", list);
 
 		BookVO vo = bookService.getBookDetail2(bookNo);
+		// bookPrice 넘버포맷 변경 9999->9,999
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(true);
+		int price = vo.getBookPrice();
+		String priceWithCommas = nf.format(price);
+		vo.setBookPriceString(priceWithCommas);
+		System.out.println(vo);
 		m.addAttribute("bookDetail", vo);
 
 		// 상품디테일 페이지 조회수 가져오기

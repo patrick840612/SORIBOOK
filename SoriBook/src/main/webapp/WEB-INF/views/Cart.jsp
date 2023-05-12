@@ -59,31 +59,14 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody id="cartListTable">
                             <input type="hidden" name="userTel" id="userTel" value="${sessionScope.id.userTel}">
-                           
-                            <!-- 장바구니 상품 시작 -->
-                  		   <%-- <c:forEach items="${cartList}" var="cartList">
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                    <input type="hidden" name="cartBookNo" id="cartBookNo" value="${cartList.cartBookNo}">
-                                    <input type="hidden" name="bookNo" id="bookNo" value="${cartList.bookNo}">
-                                    
-                                        <img src="${cartList.bookImg }" width="100" height="150" alt="">
-                                        <h5>${cartList.bookTitle }</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        ${cartList.bookPrice } 원
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close" id="cartListDelete"></span>
-                                    </td>
-                                </tr>
-                           </c:forEach> --%>   
-                                <!-- 장바구니 상품 끝 -->
-                                
-                               
+                                 <!-- 장바구니 상품 시작 -->
+                            <tbody id="cartListTable">
+
+                             <!-- 장바구니 상품 위치 -->
+
                             </tbody>
+                             <!-- 장바구니 상품 끝 -->
                         </table>
                     </div>
                 </div>
@@ -107,10 +90,10 @@
                     <div class="shoping__checkout">
                         <h5>장바구니 종합</h5>
                         <ul>
-                            <li>상품 개수 <span>$454.98</span></li>
-                            <li>총 가격 <span>$454.98</span></li>
+                            <li>상품 개수 <span> </span></li>
+                            <li>총 가격 <span> </span></li>
                         </ul>
-                        <a href="#" class="primary-btn">결제하기</a>
+                        <a href="#" class="primary-btn" id="pay">결제하기</a>
                     </div>
                 </div>
             </div>
@@ -135,18 +118,43 @@
 
 var params = {"userTel" : $("#userTel").val() };
 
+//장바구니 전체 가격 구하는 함수
+function updateTotalPrice() {
+    var total = 0;
+    $('.shoping__cart__price').each(function() {
+        var price = Number($(this).text().replace('원', '')); 
+        total += price;
+    });
+    $('.shoping__checkout ul li:nth-child(2) span').text(total.toLocaleString() + '원');
+}
+
+//장바구니 전체 상품 개수 구하는 함수
+function updateTotalAmount() {
+    var total = 0;
+    $('.shoping__cart__price').each(function() {
+        var price = Number($(this).text().replace('원', '')); 
+        total += price;
+    });
+    $('.shoping__checkout ul li:nth-child(1) span').text(total + '개');
+}
+
 function cartListAll(){
 	$.ajax({
 		url : "cartListAll.do"
 		,type     : "POST"
 		,data     : params
 		,dataType : 'JSON'
-		,success  : function(data) {console.log(data)
+		,success  : function(data) {
+			$("#cartListTable").empty();
+			let count = $(".cartBookNo").length;
+			console.log(count)
+			
 			$.each(data.data,function(index, element){
+				
 				var str = "";
 				str = str
 				+'<tr><td class="shoping__cart__item">'
-				+'<input type="hidden" name="cartBookNo" id="cartBookNo" value="'
+				+'<input type="hidden" name="cartBookNo" class="cartBookNo" id="cartBookNo" value="'
 				+element.cartBookNo
 				+'">'
 				+'<input type="hidden" name="bookNo" id="bookNo" value="'
@@ -160,14 +168,18 @@ function cartListAll(){
 				+'</h5>'
 				+'</td>'
 				+'<td class="shoping__cart__price">'
-				+element.bookPrice
+				+parseInt(element.bookPrice, 10).toLocaleString()
 				+'원'
 				+'</td>'
 				+'<td class="shoping__cart__item__close">'
-				+'<span class="icon_close" id="cartListDelete"></span>'
+				+'<span class="icon_close" id="cartListDelete'
+				+element.cartBookNo
+				+'" ></span>'
 				+'</td>'
 				+'</tr>';
 				$('#cartListTable').append(str);
+				updateTotalPrice();
+				
 			});
 		}
 		,error: function(){
@@ -182,12 +194,12 @@ $(function(){
  	window.onload = cartListAll();
 
 	//cartListDelete 삭제 ajax
-	$('#cartListDelete').on("click",(function(e){
+	$(document).on("click",'[id^="cartListDelete"]',(function(e){
 		e.preventDefault()
 			var params = {
-			"bookNo" : $("#bookNo").val(),
+			"bookNo" :  $(this).closest('tr').find('#bookNo').val(),
 			"userTel" : $("#userTel").val(),
-			"cartBookNo" : $("#cartBookNo").val()
+			"cartBookNo" : $(this).closest('tr').find('#cartBookNo').val()
 		};
 		console.log(params)
 		 $.ajax({
@@ -195,7 +207,6 @@ $(function(){
 			,type    : "POST"
 			,data 	 :	params
 			,success : function(){
-				alert("성공")
 				cartListAll();
 				}
 			,error   : function(){

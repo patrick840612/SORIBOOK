@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosmo.soribook.Pagination;
 import com.kosmo.soribook.domain.BookVO;
 
 @Repository("bookDAO")
@@ -42,7 +43,13 @@ public class BookDAOImpl implements BookDAO {
 		return mybatis.selectList("BookMapper.selectSub");
 	}
 	@Override
-	public List<BookVO> selectTop100() {
+	public List<BookVO> selectTop100(Pagination pagination) {
 		return mybatis.selectList("BookMapper.selectTop100");
 	}
+	@Override
+	public List<BookVO> selectNewestBook() {
+		return mybatis.selectList("BookMapper.selectNewestBook");
+	}
+	
+	
 }

@@ -24,13 +24,8 @@
     <link rel="stylesheet" href="resources/Main/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="resources/Main/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="resources/Main/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/path/to/jquery.bxslider.css">
-    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- jQuery and Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
     
 </head>
 
@@ -45,6 +40,33 @@
     <section class="categories">
     
         <div class="container">
+        
+        <div class="row">
+        <div class="col-lg-12" >
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner ">
+    <div class="carousel-item active">
+      <img src="/soribook/resources/Main/img/배너1.png" class="d-block w-100" alt="..." >
+    </div>
+    <div class="carousel-item">
+      <img src="/soribook/resources/Main/img/배너2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/soribook/resources/Main/img/배너3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        </div>
+        </div>
+        
             <div class="row">
             <div class="section-title"  style="text-align : center;">
                 <h7>베스트셀러</h7>
@@ -60,7 +82,7 @@
                     </div>                    
                     </c:forEach>
                 </div>
-                <div class="section-title"  style="text-align : center;">
+                <%-- <div class="section-title"  style="text-align : center;">
                 <h7>행사상품리스트</h7>
                 </div>
                 <div class="categories__slider owl-carousel">
@@ -73,14 +95,13 @@
                         </div>
                     </div>                    
                     </c:forEach>
-                </div>
+                </div> --%>
                 <div class="section-title">
                 <h7>신간리스트</h7>
                 </div>
-                
                 <div class="categories__slider owl-carousel">
-                <c:forEach var='bookvo' items='${bookimg}' begin="0" end="9" >
-                    <div class="col-lg-3">
+                <c:forEach var='bookvo' items='${newestList}' begin="0" end="9" >
+                    <div class="col-lg-12">
 
                         <div class="categories__item set-bg">
                        		<img src='${ bookvo.bookImg }'/>
@@ -164,7 +185,7 @@
 
     <!-- Footer Section End -->
         <!-- Js Plugins -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="resources/Main/js/jquery.nice-select.min.js"></script>
     <script src="resources/Main/js/jquery-ui.min.js"></script>
     <script src="resources/Main/js/jquery.slicknav.js"></script>
@@ -172,7 +193,7 @@
     <script src="resources/Main/js/owl.carousel.min.js"></script>
     <script src="resources/Main/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/path/to/jquery.bxslider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
 
 

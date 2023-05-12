@@ -174,7 +174,7 @@ function fn_prev(page, range, rangeSize) {
                                  </div>  
                                 <div class="product__item__text">
                                     <h6><a id="bookClick" href="BookDetail.do?bookno=${subBook.bookNo}">${subBook.bookTitle}</a></h6>
-                                    <h5>${subBook.bookPrice} 원 </h5>  
+                                    <h5>${subBook.bookPriceString} 원 </h5>  
                                 </div>   
                             </div>
                         </div>

@@ -12,41 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ProductList</title>
 
-    <!-- Google Font -->
-<!--     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet"> -->
-
-    <!-- Css Styles -->
-    <!-- Css Styles -->
-<!-- <link rel="stylesheet"
-	href="/soribook/resources/Main/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/font-awesome.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/elegant-icons.css" type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/nice-select.css" type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/jquery-ui.min.css" type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/owl.carousel.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="/soribook/resources/Main/css/slicknav.min.css" type="text/css">
-<link rel="stylesheet" href="/soribook/resources/Main/css/style.css"
-	type="text/css"> -->
-
-
-
-<!-- Js Plugins -->
-<!-- <script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
-<script src="/soribook/resources/Main/js/bootstrap.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.nice-select.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery-ui.min.js"></script>
-<script src="/soribook/resources/Main/js/jquery.slicknav.js"></script>
-<script src="/soribook/resources/Main/js/mixitup.min.js"></script>
-<script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
-<script src="/soribook/resources/Main/js/main.js"></script> -->
     
 <% 
 
@@ -150,7 +115,7 @@ function fn_prev(page, range, rangeSize) {
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a id="bookClick" href="BookDetail.do?bookno=${bookList.bookNo}">${bookList.bookTitle}</a></h6>
-                                    <h5>${bookList.bookPrice} 원 </h5>
+                                    <h5>${bookList.bookPriceString} 원 </h5>
                                 </div>
                             </div>
                         </div>

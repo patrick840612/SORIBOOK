@@ -123,7 +123,7 @@
 								class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 								class="fa fa-star-half-o"></i> <span>(18 reviews)</span>
 						</div>
-						<div class="product__details__price">${bookDetail.bookPrice}
+						<div class="product__details__price">${bookDetail.bookPriceString}
 							원</div>
 						<%-- <p>${bookDetail.bookSyno }</p> --%>
 						<div class="product__details__quantity">
