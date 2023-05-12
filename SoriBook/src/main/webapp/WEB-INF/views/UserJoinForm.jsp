@@ -143,9 +143,11 @@ body {
 	</div>
 	<script src="/soribook/resources/Main/js/jquery-3.3.1.min.js"></script>
 	<script>
+	// customValidity 용 js변수 (jquery 작동안함)
 	var userIdCheck = document.getElementById("userId");
 	var userTelCheck = document.getElementById("userTel");
 	
+	//**** userId 아이디 중복체크 ajax 시작
 	$('#userId').on('keyup', function() {
 		//입력한 userId가져오기
 		let userId = $('input[name=userId]').val();
@@ -191,6 +193,9 @@ body {
 		});
 
 	});
+					//**** userId 아이디 중복체크 ajax 끝
+	
+					//*** userTel 사용자 휴대폰번호 중복체크 ajax  시작
  	$('#userTel').on('keyup', function() {
 		//입력한 userId가져오기
 		let userId = $('input[name=userId]').val();
@@ -223,10 +228,11 @@ body {
 		});
 
 	});
+					//*** userTel 사용자 휴대폰번호 중복체크 ajax  끝
 
 	
 	
-  
+  					//*** html5 유효성검사 시작
     window.addEventListener('load', () => {
       const forms = document.getElementsByClassName('validation-form');
 	
@@ -244,7 +250,9 @@ body {
         }, false);
       });
     }, false);
+  					//*** html5 유효성검사 끝
     
+  					//*** 비밀번호 customVaildity setting 시작
  $(function(){
 	 
     var password = document.getElementById("userPass")
@@ -264,9 +272,9 @@ body {
   }
   password.onchange = validatePassword;
   confirm_password.onkeyup = validatePassword;
-  
-
+ 
  })
+					//*** 비밀번호 customVaildity setting 끝
 
   </script>
 </body>

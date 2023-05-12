@@ -5,17 +5,17 @@
 
 <select id="getReplyListByBookNo" resultType="com.kosmo.soribook.domain.ReplyVO">
 
-SELECT replyno, replycontent, to_char(replydate,'yyyy-mm-dd') replydate, bookno, usertel
-FROM reply
+SELECT r.replyno, r.replycontent, to_char(r.replydate,'yyyy-mm-dd') replydate, r.bookno, u.usertel, u.userid
+FROM reply r INNER JOIN USERINFO u ON r.USERTEL = u.USERTEL 
 WHERE bookno=#{bookNo}
-ORDER BY replydate desc
+ORDER BY TO_NUMBER(replyno) desc
 
 </select>
 
-<insert id="insertReply">
+<insert id="insertReply" parameterType="com.kosmo.soribook.domain.ReplyVO">
 
 INSERT INTO REPLY 
-values(seq_reply_replyno.nextval,#{replyContent},sysdate,#{bookNo},'010-1111-1111')
+values(seq_reply_replyno.nextval,#{replyContent},sysdate,#{bookNo},#{userTel})
 
 </insert>
 
