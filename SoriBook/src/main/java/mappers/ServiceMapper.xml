@@ -16,4 +16,29 @@
 	WHERE noticeNo=#{noticeNo}
 </select>
 
+<update id="updateQnA" parameterType="com.kosmo.soribook.domain.QnAVO">
+
+UPDATE qna
+SET 
+qnaTitle=#{qnaTitle},
+qnaContent=#{qnaContent},
+qnaImg1=#{qnaImg1},
+qnaImg2=#{qnaImg2},
+qnaImg3=#{qnaImg3},
+userPass=#{userPass}
+WHERE qnaNo=#{qnaNo}
+
+</update>
+
+<insert id="insertQnA" parameterType="com.kosmo.soribook.domain.QnAVO">
+INSERT INTO qna (qnaNo,qnaTitle, qnaContent,userTel,qnaImg1,qnaImg2,qnaImg3,qnaDate)
+values(seq_qna_qnaNo.nextval,#{qnaTitle},#{qnaContent},#{userTel},#{qnaImg1},#{qnaImg2},#{qnaImg3},sysdate)
+</insert>
+
+<select id="selectQnA" resultType="com.kosmo.soribook.domain.QnAVO">
+SELECT *
+FROM qna
+WHERE qnaAnswer is not null
+</select>
+
 </mapper>

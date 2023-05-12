@@ -5,14 +5,15 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kosmo.soribook.domain.CategoryVO;
 import com.kosmo.soribook.domain.NoticeVO;
-
+import com.kosmo.soribook.domain.QnAVO;
 import com.kosmo.soribook.service.CategoryServiceImpl;
 import com.kosmo.soribook.service.ServiceServiceImpl;
 
@@ -28,13 +29,12 @@ public class ServiceController {
 	
 	@RequestMapping("serviceCenter.do")
 	public void selectNotice(Model m) {
-		System.out.println("===========================");
-		System.out.println("===========================");
+		
 		List<NoticeVO> list= ServiceService.selectNotice();
 		m.addAttribute("noticeList",list);
-		System.out.println("===========================");
+	
 		System.out.println(list);
-		System.out.println("===========================");
+		
 		//헤더카테고리 목록출력
 		List<CategoryVO> header = categoryService.selectCategory();
 		m.addAttribute("category",header);
@@ -54,6 +54,29 @@ public class ServiceController {
 		List<CategoryVO> header = categoryService.selectCategory();
 		m.addAttribute("category",header);
 		
+	}
+	
+	@RequestMapping("qnadummypage.do")
+	  public String insertQnA(QnAVO vo) {
+
+		System.out.println(vo);
+		ServiceService.insertQnA(vo);
+		return "redirect:/serviceCenter.do";
+		}
+	
+	@RequestMapping("qna.do")
+	public void selectQnA(Model m) {
+		System.out.println("===========================selectQnA호출");
+		List<QnAVO> list= ServiceService.selectQnA();
+		System.out.println(list);
+		m.addAttribute("qnaList",list);
+		System.out.println(m);
+		
+		//헤더카테고리 목록출력
+				List<CategoryVO> header = categoryService.selectCategory();
+				m.addAttribute("category",header);
+	    
+
 	}
 	
 	
