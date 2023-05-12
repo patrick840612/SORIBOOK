@@ -46,7 +46,9 @@
     
         <div class="container">
             <div class="row">
-            
+            <div class="section-title"  style="text-align : center;">
+                <h7>베스트셀러</h7>
+                </div>
                 <div class="categories__slider owl-carousel">
                 <c:forEach var='bookvo' items='${bookimg}' begin="0" end="9">
                     <div class="col-lg-12">
@@ -58,8 +60,8 @@
                     </div>                    
                     </c:forEach>
                 </div>
-                <div class="section-title">
-                <h7><베스트셀러></h7>
+                <div class="section-title"  style="text-align : center;">
+                <h7>행사상품리스트</h7>
                 </div>
                 <div class="categories__slider owl-carousel">
                 <c:forEach var='bookvo' items='${bookimg}' begin="0" end="9" >
@@ -73,7 +75,7 @@
                     </c:forEach>
                 </div>
                 <div class="section-title">
-                <h7><행사상품리스트></h7>
+                <h7>신간리스트</h7>
                 </div>
                 
                 <div class="categories__slider owl-carousel">
@@ -87,9 +89,7 @@
                     </div>                    
                     </c:forEach>
                 </div>
-                <div class="section-title">
-                <h7><신간리스트></h7>
-                </div>
+                
             </div>
         </div>
     </section>

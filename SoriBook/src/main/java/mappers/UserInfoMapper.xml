@@ -14,9 +14,9 @@
 
 UPDATE userinfo
 SET 
-userpass=#{userpass},
-useremail=#{useremail}
-WHERE usertel=#{usertel}
+userpass=#{userPass},
+useremail=#{userEmail}
+WHERE usertel=#{userTel}
 
 </update>
 
@@ -30,19 +30,6 @@ SET usertf = 1,
 </update>
 
 
-
-
-<!--  <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
-INSERT INTO userinfo(
-usertf,tfstart,tfend
-)
-  VALUES (
-    #{usertf},
-    sysdate,
-    sysdate
-  )
-	
-</insert>  -->
 
 <insert id="insertUserInfo" parameterType="com.kosmo.soribook.domain.UserInfoVO">
 INSERT INTO userinfo (usertel, userid, userpass, useremail, username)

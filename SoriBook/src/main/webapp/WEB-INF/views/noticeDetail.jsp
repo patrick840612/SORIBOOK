@@ -71,8 +71,7 @@
                       
                       <div class="col-lg-9 col-md-5">
                       <div class="notice">
-                      
-                      
+                                           
                       
                       <h7>${noticeDetail.noticeTitle}</h7>
                       <h6>${noticeDetail.noticeDate}</h6>

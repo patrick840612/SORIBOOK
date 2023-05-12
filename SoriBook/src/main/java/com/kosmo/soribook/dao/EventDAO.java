@@ -10,6 +10,6 @@ import com.kosmo.soribook.domain.EventVO;
 public interface EventDAO {
 
 	public List<EventVO> selectEvent() ;
-
+	public EventVO selectEventDetail(String eventno);
 	
 }

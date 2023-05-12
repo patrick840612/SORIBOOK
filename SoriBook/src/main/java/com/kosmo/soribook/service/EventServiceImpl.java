@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosmo.soribook.dao.EventDAOImpl;
 import com.kosmo.soribook.domain.EventVO;
+import com.kosmo.soribook.domain.NoticeVO;
 
 @Service("eventService")
 public class EventServiceImpl implements EventService {
@@ -19,6 +20,11 @@ public class EventServiceImpl implements EventService {
 	public List<EventVO> selectEvent() {
 		System.out.println("===> EventDAOImpl selectEvent() 호출");
 		return eventDAO.selectEvent();
+	}
+	
+       public EventVO selectEventDetail(String eventno) {
+		
+		return eventDAO.selectEventDetail(eventno);
 	}
 
 }

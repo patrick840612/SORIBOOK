@@ -165,7 +165,7 @@
 				<div class="col-lg-9">			
 					<div class="hero__search">
 						<div class="hero__search__form">
-							<form action="#" method="post">
+							<form action="search.do" method="post">
 								
 																							
 								<input type="text" placeholder="검색어를 입력하세요">
