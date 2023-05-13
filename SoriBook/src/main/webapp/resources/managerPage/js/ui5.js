@@ -171,7 +171,7 @@ $(document).ready(function(){
 				$('#imgPlace').empty();
 				if(result.eventImg!=null){
 					
-					$('#imgPlace').append($("<img src='./resources/eventImg/"+ result.eventImg +"' width='379' height='330'>"))	
+					$('#imgPlace').append($("<img src='./resources/Main/img/"+ result.eventImg +"' width='379' height='330'>"))	
 				}
 			},
 			error : function(err){
