@@ -33,7 +33,8 @@ public class EventVO {
 			UUID uuid = UUID.randomUUID();
 			this.eventImg = uuid.toString()+evet_img_name;
 			
-			File f = new File("D:\\Spring\\webgit\\test\\src\\main\\webapp\\resources\\eventImg\\"+eventImg);
+			File f = new File("D:\\Spring\\webgit\\test\\src\\main\\webapp\\resources\\Main\\img\\"+eventImg);
+			
 			
 			try {
 				fileEventImg.transferTo(f);

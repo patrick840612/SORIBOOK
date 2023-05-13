@@ -37,7 +37,6 @@ public class BookVO {//상품 테이블
 	private String paymentDate;
 	
 	String searchBookKeyword;// 관리자페이지 상품검색 키워드
-	 String SearchBookList;
 	
 	//****************************************** 파일업로드용
 	MultipartFile fileImg; // 상품 썸네일 이미지용
@@ -56,7 +55,7 @@ public class BookVO {//상품 테이블
 			UUID uuid = UUID.randomUUID();
 			this.bookAudio = uuid.toString()+audio_name;
 			
-			File f = new File("D:\\Spring\\webgit\\soribook\\src\\main\\webapp\\resources\\bookAudio\\"+bookAudio);
+			File f = new File("D:\\Spring\\webgit\\test\\src\\main\\webapp\\resources\\audio\\"+bookAudio);
 			
 			System.out.println(f.getAbsolutePath());
 			System.out.println(f.getName());
@@ -80,7 +79,7 @@ public class BookVO {//상품 테이블
 			UUID uuid = UUID.randomUUID();
 			this.bookImg = uuid.toString()+img_name;
 			
-			File f = new File("D:\\Spring\\webgit\\soribook\\src\\main\\webapp\\resources\\bookImg\\"+bookImg);
+			File f = new File("D:\\Spring\\webgit\\test\\src\\main\\webapp\\resources\\img\\"+bookImg);
 			
 			try {
 				fileImg.transferTo(f);
@@ -103,7 +102,7 @@ public class BookVO {//상품 테이블
 			UUID uuid = UUID.randomUUID();
 			this.bookContent = uuid.toString()+text_name;
 			
-			File f = new File("D:\\Spring\\webgit\\soribook\\src\\main\\webapp\\resources\\bookContent\\"+bookContent);
+			File f = new File("D:\\Spring\\webgit\\test\\src\\main\\webapp\\resources\\Text\\"+bookContent);
 			
 			try {
 				fileText.transferTo(f);
