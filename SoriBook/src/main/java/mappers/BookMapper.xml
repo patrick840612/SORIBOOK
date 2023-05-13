@@ -9,7 +9,7 @@
 	FROM book b 
 	INNER JOIN writer w ON b.writerno = w.writerno
 	INNER JOIN bookpayment bp ON b.bookno = bp.bookno
-	INNER JOIN payment p ON bp.paymentno = p.paymentno
+	INNER JOIN payment p ON bp.paymentno = p.paymentno	
 	ORDER BY b.bookno ASC
 
 </select>
@@ -87,6 +87,15 @@ ORDER BY bookpdate desc
 		
 
 </select>
+
+<select id="viewer" resultType="com.kosmo.soribook.domain.BookVO">
+
+	SELECT *
+	FROM book
+	WHERE bookno=#{bookNo}
+
+</select>
+
 
 
 </mapper>

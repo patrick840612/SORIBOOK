@@ -52,8 +52,7 @@
                 
                 <div class="detail"></div>
                 <tr>
-                <td><h6>이벤트 내용</h6></td><br/>
-                 
+             
                 <td> ${eventDetail.eventDetail}</td>
                 </tr>
                 </div>

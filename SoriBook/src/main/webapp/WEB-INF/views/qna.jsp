@@ -153,9 +153,9 @@
 							</tr>
 							<tr>
 								<td>사진첨부</td>								
-								<td><input type="file" id="imageUpload" name="qnaImg1" accept="image/*"></td><br/>
-								<td><input type="file" id="imageUpload" name="qnaImg2" accept="image/*"></td><br/>
-								<td><input type="file" id="imageUpload" name="qnaImg3" accept="image/*"></td>
+								<td><input type="file" id="imageUpload" name="qnaImg1" accept="resources/img/*"></td><br/>
+								<td><input type="file" id="imageUpload" name="qnaImg2" accept="resources/img/*"></td><br/>
+								<td><input type="file" id="imageUpload" name="qnaImg3" accept="resources/img/*"></td>
 							</tr>						
 							<tr>					
 								<td>휴대전화</td>
@@ -192,6 +192,7 @@
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
          ${qnaList.qnaAnswer}
+         ${qnaList.qnaImg1}
       </div>
     </div>
     </c:forEach>

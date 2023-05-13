@@ -132,31 +132,7 @@ function fn_prev(page, range, rangeSize) {
                         <div class="section-title product__discount__title">
                             <h2>TOP 100</h2>
                         </div>
-                    <div class="filter__item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-5">
-                                
-                                    <select class="form-select" id="sortId">
-                                    	<option value="">-선택-</option>
-                                        <option value="1">가나다순</option>
-                                        <option value="2">판매순</option>
-                                        <option value="3">최신순</option>
-                                    </select>
-                                
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="filter__found">
-                                    <h6><span>${listSize}</span> Books found</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-3">
-                                <div class="filter__option">
-                                    <span class="icon_grid-2x2"></span>
-                                    <span class="icon_ul"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!-- 상품--> 
                       
                     <div class="row">  

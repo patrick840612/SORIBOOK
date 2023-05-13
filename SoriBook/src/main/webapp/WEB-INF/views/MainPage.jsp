@@ -137,7 +137,7 @@
                                 <li><i class="fa fa-calendar-o"></i> 2023, 05</li>
                                 
                             </ul>
-                            <h5><a href="#">소리북 선정 월간취미책 5월호</a></h5>
+                            <h5><a href="eventDetail.do?eventno=1">소리북 선정 월간취미책 5월호</a></h5>
                             <p>당신은 사건 현장에 있습니다. 시즌2 </p>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                                 <li><i class="fa fa-calendar-o"></i> 2023, 02~</li>
                                 
                             </ul>
-                            <h5><a href="#">소리북 구독 20만 감사제</a></h5>
+                            <h5><a href="eventDetail.do?eventno=2">소리북 구독 20만 감사제</a></h5>
                             <p> 구독자 이북 구매시 1000원 추가 할인! </p>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                 <li><i class="fa fa-calendar-o"></i> 2023, 05</li>
                                 
                             </ul>
-                            <h5><a href="#">러시아 대문호와 만나다</a></h5>
+                            <h5><a href="eventDetail.do?eventno=3">러시아 대문호와 만나다</a></h5>
                             <p>19세기부터 20세기 러시아 문호들의 작품들과 만나는 시간, 지금 바로 구독상품을 확인해보세요. </p>
                         </div>
                     </div>

@@ -16,9 +16,9 @@ public class BookDAOImpl implements BookDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<BookVO> selectBook() {
+	public List<BookVO> selectBook(String bookno) {
 		System.out.println("===> Mybatis selectCategory() 호출");
-		return mybatis.selectList("BookMapper.selectBook");
+		return mybatis.selectList("BookMapper.selectBook",bookno);
 	}
 	@Override
 	public List<BookVO> getBookDetail(String bookNo) {
@@ -59,6 +59,11 @@ public class BookDAOImpl implements BookDAO {
 		return list;
 	}
 	
+	
+	public BookVO viewer(String bookno) {
+		System.out.println("===> Mybatis selectCategory() 호출");
+		return mybatis.selectOne("BookMapper.viewer",bookno);
+	}
 	
 	
 	

@@ -16,9 +16,9 @@ public class BookServiceImpl implements BookService {
 	private BookDAOImpl bookDAO;
 	
 	@Override
-	public List<BookVO> selectBook() {
+	public List<BookVO> selectBook(String bookno) {
 		System.out.println("===> BookDAOImpl selectBook() 호출");
-		return bookDAO.selectBook();
+		return bookDAO.selectBook(bookno);
 	}
 	
 	@Override
@@ -65,6 +65,11 @@ public class BookServiceImpl implements BookService {
 	public List<BookVO> SearchBookList(BookVO vo) {
 		System.out.println("===> BookDAOImpl SearchBookList() 호출");
 		return bookDAO.SearchBookList(vo);
+	}
+	
+	public BookVO viewer(String bookno) {
+		System.out.println("===> BookDAOImpl selectBook() 호출");
+		return bookDAO.viewer(bookno);
 	}
 	
 

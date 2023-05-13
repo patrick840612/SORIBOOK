@@ -3,6 +3,7 @@ package com.kosmo.soribook.controller;
 import java.text.NumberFormat;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,9 +34,13 @@ public class BookController {
 	
 
 	@RequestMapping("myPage.do")
-	public void selectBook(Model m) {
+	public void selectBook(Model m,HttpServletRequest httpServletRequest) {
 		System.out.println("===> Contoller 호출");
-		List<BookVO> list = bookService.selectBook();
+		String bookno = httpServletRequest.getParameter("bookno");
+		
+		List<BookVO> list = bookService.selectBook(bookno);
+		System.out.println("북노"+bookno);
+		System.out.println("리스트"+list);
 		m.addAttribute("bookList",list);
 		
 		UserInfoVO vo= userInfoService.selectUserInfo();
@@ -147,6 +152,18 @@ public class BookController {
 		
 	}
 	
+	@RequestMapping("textViewer.do")
+	public void textViewer(Model m,HttpServletRequest httpServletRequest) {
+		System.out.println("===> Contoller 호출");
+		String bookno = httpServletRequest.getParameter("bookNo");
+		m.addAttribute("viewer",bookService.viewer(bookno));
+		
+		
+
+	
+	
+		
+	}
 	
 	
 

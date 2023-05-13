@@ -76,7 +76,7 @@
                       <h7>${noticeDetail.noticeTitle}</h7>
                       <h6>${noticeDetail.noticeDate}</h6>
                       <hr/>
-                       <textarea id="message" name="message" rows="4" cols="50" readonly>
+                       <textarea id="message" name="message" rows="10" cols="115" readonly>
                        ${noticeDetail.noticeContent}
                        </textarea>
                       
