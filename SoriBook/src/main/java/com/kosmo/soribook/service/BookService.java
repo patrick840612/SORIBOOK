@@ -15,4 +15,5 @@ public interface BookService {
 	public List<BookVO> selectSub();
 	public List<BookVO> selectTop100(Pagination pagination);
 	public List<BookVO> selectNewestBook();
+	public List<BookVO> SearchBookList(BookVO vo); 
 }

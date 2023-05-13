@@ -37,6 +37,7 @@ public class BookVO {//상품 테이블
 	private String paymentDate;
 	
 	String searchBookKeyword;// 관리자페이지 상품검색 키워드
+	 String SearchBookList;
 	
 	//****************************************** 파일업로드용
 	MultipartFile fileImg; // 상품 썸네일 이미지용

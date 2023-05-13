@@ -131,6 +131,23 @@ public class BookController {
 		
 	}
 	
+	@RequestMapping("search.do")
+	public List<BookVO> SearchBookList(Model m, BookVO vo) { // @RequestParam String SearchBookList
+		System.out.println("===> Contoller 호출");
+		System.out.println(vo.toString());
+		List<BookVO> list = bookService.SearchBookList(vo);
+		m.addAttribute("SearchBookList",list);
+		
+
+		//헤더카테고리 목록출력
+		List<CategoryVO> header = categoryService.selectCategory();
+		m.addAttribute("category",header);
+		
+		return list;
+		
+	}
+	
+	
 	
 
 	

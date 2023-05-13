@@ -76,4 +76,17 @@ FROM book
 ORDER BY bookpdate desc
 </select>
 
+<select id="SearchBookList" parameterType="com.kosmo.soribook.domain.BookVO" resultType="com.kosmo.soribook.domain.BookVO">
+		 select *
+		from book
+		 where 		
+		<if test="SearchBookList != null">
+			booktitle LIKE '%${SearchBookList}%'
+		</if> 
+		order by booktitle 
+		
+
+</select>
+
+
 </mapper>

@@ -51,5 +51,15 @@ public class BookDAOImpl implements BookDAO {
 		return mybatis.selectList("BookMapper.selectNewestBook");
 	}
 	
+	@Override
+	public List<BookVO> SearchBookList(BookVO vo) {
+		System.out.println("===> Mybatis SearchBookList() 호출");
+		List<BookVO> list = mybatis.selectList("BookMapper.SearchBookList",vo);
+		System.out.println(list);
+		return list;
+	}
+	
+	
+	
 	
 }

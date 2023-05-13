@@ -60,5 +60,12 @@ public class BookServiceImpl implements BookService {
 	public List<BookVO> selectNewestBook() {
 		return bookDAO.selectNewestBook();
 	}
+	
+	@Override
+	public List<BookVO> SearchBookList(BookVO vo) {
+		System.out.println("===> BookDAOImpl SearchBookList() 호출");
+		return bookDAO.SearchBookList(vo);
+	}
+	
 
 }

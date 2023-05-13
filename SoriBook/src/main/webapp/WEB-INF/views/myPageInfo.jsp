@@ -40,40 +40,6 @@
 
 
 
-
-
-<!-- jQuery UI 라이브러리의 datepicker() 메서드를 사용하여 달력을 생성합니다. -->
-<script>
-	$(document).ready(function() {
-		var date = new Date();
-		date.setMonth(date.getMonth() + 1); // 한 달 전 날짜로 설정
-		$("#datepicker").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
-		$("#datepicker").datepicker("setDate", date);
-	});
-
-	$(document).ready(function() {
-		var date = new Date();
-		date.setMonth(date.getMonth() - 3); // 한 달 전 날짜로 설정
-		$("#datepicker1").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
-		$("#datepicker1").datepicker("setDate", date);
-	});
-
-	$(document).ready(function() {
-		var date = new Date();
-		date.setMonth(date.getMonth() + 3); // 한 달 전 날짜로 설정
-		$("#datepicker2").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
-		$("#datepicker2").datepicker("setDate", date);
-	});
-</script>
-
-
-
 </head>
 
 <body>

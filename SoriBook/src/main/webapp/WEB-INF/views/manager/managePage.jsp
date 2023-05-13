@@ -91,6 +91,7 @@ $(function(){
 		  	 		</section>
 		  	 	</div>
 		  	</section>
+		  	<!-- 검색기능  -->
 		  	<section id="menu2" class="content">
 		  	 	<h2>상품관리</h2>
 		  	 	<div class="conbox">
@@ -143,6 +144,7 @@ $(function(){
 		  	 		</section>
 		  	 	</div>
 		  	</section>
+		  	
 		  	<section id="menu3" class="content">
 		  	 	<h2>공지사항 관리</h2>
 		  	 	<div class="conbox">
