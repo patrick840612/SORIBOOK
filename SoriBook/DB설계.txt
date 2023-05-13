@@ -307,11 +307,12 @@ ALTER TABLE Reply
 
 /* 장바구니상품 */
 CREATE TABLE Cart (
-	CartBookNo Varchar2(100) NOT NULL, /* 장바구니상품번호 */
-	CartNo Varchar2(100), /* 장바구니번호 */
+	CartBookNo Varchar2(100) NOT NULL, /* 장바구니상품번호 */	
 	BookNo Varchar2(100), /* 상품번호 */
 	UserTel Varchar2(100) /* 전화번호 */
 );
+
+ 제거CartNo Varchar2(100), /* 장바구니번호 */
 
 COMMENT ON TABLE Cart IS '장바구니상품';
 
