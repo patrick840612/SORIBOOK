@@ -199,3 +199,7 @@ td,th{
 #cancelPreview{
 	margin-left: 243px;
 }
+
+#blinking{
+	background-color: #008080;
+}
