@@ -143,6 +143,9 @@ $(document).ready(function(){
 	$('#eventListTable').on("click","tr[class='eventListTr']",function(){
 		let param51 = { eventNo : $(this).find('td:eq(0)').text() }
 		
+		$('.eventListTr').removeAttr('id');
+		$(this).attr('id','blinking');
+		
 		$.ajax({
 			type : 'post',
 			url : 'getEventByPK.do',
@@ -220,6 +223,9 @@ $(document).ready(function(){
 			let formDataEvent2 = new FormData(formEvent2);
 			formDataEvent2.append( 'eventNo' , $('#eventNo').val() );
 			
+			var selectEventNo = $('#eventNo').val();
+			
+			
 			if($('#eventOption option:selected').val()=='eventDCP'){
 				formDataEvent2.append('eventDCP',$('#eventDiscount').val());
 				
@@ -240,7 +246,16 @@ $(document).ready(function(){
 						$('#eventDetail').val('');
 						$('#fileEventImg').val('');
 						$('#imgPlace').empty();
-						eventList();						
+						eventList();
+						
+						setTimeout(() => {
+							$('#eventListTable td').filter(function(){
+								 if($(this).text() == selectEventNo){
+								 	$(this).parent().attr('id','blinking');  
+								 }
+							});
+						}, 500);
+						blinking();
 					},
 					error : function(err){
 						console.log(err);
@@ -270,6 +285,15 @@ $(document).ready(function(){
 						$('#fileEventImg').val('');
 						$('#imgPlace').empty();
 						eventList();
+						
+						setTimeout(() => {
+							$('#eventListTable td').filter(function(){
+								 if($(this).text() == selectEventNo){
+								 	$(this).parent().attr('id','blinking');  
+								 }
+							});
+						}, 500);
+						blinking();
 					},
 					error : function(err){
 						console.log(err);
@@ -279,6 +303,16 @@ $(document).ready(function(){
 			}
 		}		
 	}); // 이벤트 수정하기 끝
+	
+	// 아이디 찾아서 깜박임 넣기
+	function blinking(){
+	    var intervalId = setInterval(function(){
+	        $('#blinking').fadeOut(500).fadeIn(500);
+	    }, 1000);
+	    setTimeout(function(){
+	        clearInterval(intervalId);
+	    }, 1000);
+	}
 	
 	
 // 이벤트관리 화면 입장
