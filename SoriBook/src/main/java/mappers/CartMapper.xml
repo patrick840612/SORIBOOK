@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CartMapper">
+
+<insert id="insertCart" parameterType="com.kosmo.soribook.domain.CartVO">
+INSERT INTO cart (cartbookno, bookno, usertel)
+values(seq_cart_cartbookno.nextval,#{bookNo},#{userTel})
+</insert>
+
+<select id="selectCart" resultType="com.kosmo.soribook.domain.CartVO">
+SELECT c.*,b.*
+FROM CART c INNER JOIN BOOK b ON c.BOOKNO = b.BOOKNO 
+WHERE usertel = #{userTel}
+</select>
+
+<delete id="cartListDelete" parameterType="com.kosmo.soribook.domain.CartVO">
+DELETE FROM CART
+WHERE usertel=#{userTel} AND CARTBOOKNO=#{cartBookNo}
+</delete>
+</mapper>

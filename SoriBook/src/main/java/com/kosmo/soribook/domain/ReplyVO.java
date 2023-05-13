@@ -11,6 +11,6 @@ public class ReplyVO { 			  //댓글 테이블
 	private String replyDate;     //댓글작성일
 	private String bookNo;		  //책번호
 	private String userTel;		  //사용자 번호
-	private String userid;		  //사용자 아이디
+	private String userId;		  //사용자 아이디
 
 }

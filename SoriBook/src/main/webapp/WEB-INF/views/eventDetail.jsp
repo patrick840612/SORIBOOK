@@ -28,7 +28,6 @@
     
 
 
- 
     
 </head>
 
@@ -38,56 +37,29 @@
 <jsp:include page="header.jsp"></jsp:include>
 <br/>
 <!--#########################################################################################  -->
- <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="resources/Main/img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>이달의 행사</h2>
-                        <div class="breadcrumb__option">                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-<!-- Blog Section Begin -->
-    <section class="blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-5">
-           
-                </div>
+    <h7>${eventDetail.eventName}</h7>
+    <hr/>
+  
+<br/>
+               <div class="eventDetail">    
+              <tr> 
+                <td><img src="${eventDetail.eventImg}"></td>
+               </tr>   
+               <hr/>
+                <br/>
+                <br/>
+                <br/>
                 
-                <div class="col-lg-10 col-md-7">
-                 <c:forEach var="event" items="${eventList}">
-                            <div class="blog__item">
-                                <div class="event">
-                                    <img src="${event.eventImg}">
-                                    
-                                </div>
-                                
-                                <div class="blog__item__text">
-                                    
-                                    <h5><a href="eventDetail.do?eventno=${event.eventNo}">${event.eventName}</a></h5>
-                                    <p>${event.eventDetail} </p>
-                                    <a href="eventDetail.do?eventno=${event.eventNo}" class="blog__btn">자세히 <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                            <hr/>
-                            </c:forEach>
-                        </div>                     
-                    </div>
+                <div class="detail"></div>
+                <tr>
+                <td><h6>이벤트 내용</h6></td><br/>
+                 
+                <td> ${eventDetail.eventDetail}</td>
+                </tr>
                 </div>
-              <div class="col-lg-2 col-md-5">
-           
-                </div> 
-        </div>
-    </section>
-    <!-- Blog Section End -->
-<!--###########################################################################################  -->
+        
+           </div>       
+
 
     
 

@@ -15,20 +15,13 @@
 <script type="text/javascript" src="/soribook/resources/managerPage/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/soribook/resources/managerPage/js/ui.js"></script>
 <script type="text/javascript" src="/soribook/resources/managerPage/js/ui2.js"></script>
+<script type="text/javascript" src="/soribook/resources/managerPage/js/ui5.js"></script>
 <script type="text/javascript">
 $(function(){
-
-
-
-		
-
-		
-
 	
-// 이벤트관리 화면 입장
-$('#side5').click(function(){
 	
-}); //사이드바(이벤트관리) 끝
+	
+
 		
 });
 </script>
@@ -177,23 +170,20 @@ $('#side5').click(function(){
 										<option value="eventDCP">%</option>
 										<option value="eventDCW">원</option>
 									</select><br/><br/>
+									시작일 <input type="date" name="eventStartDate" id="eventStartDate" class="eventDates"><br/><br/>
+									종료일 <input type="date" name="eventEndDate" id="eventEndDate" class="eventDates"><br/><br/>
 									이벤트 설명<br/>
-									<textarea name="eventDetail" id="eventDetail" rows="18" cols="45"></textarea>
+									<textarea name="eventDetail" id="eventDetail" rows="12" cols="42"></textarea><br/>
 								</div>
-								<div class="centerBookManager5">
-									 이벤트 이미지 <input type="file" name='fileEventImg' id='fileEventImg' accept=".jpg, .jpeg, .png"><br/><br/>
-									 <input type='radio' name='eventSelectSort'  value='category' checked="checked">카테고리
-									 <select name="categoryNo" id="categoryNo5"></select>&nbsp;&nbsp;
-									 <input type='radio' name='eventSelectSort'  value='book'>상품
-									 <select name="bookNo" id="bookNo5"></select>
-        							 
-									 <br/><br/>
-									 선택사항 추가 <br/>
-									 <div id="addEventOption" ><!-- <input type="button" value="버튼"> --></div><br/>
+								<div class="centerBookManager5"><br/><br/>
+									 이벤트 이미지 추가 <input type="file" name='fileEventImg' id='fileEventImg' accept=".jpg, .jpeg, .png"><br/><br/>
+									 이벤트 이미지 <input type="button" id="cancelPreview" value="취소"><br/>
+									 <div id="imgPlace" ></div><br/>
 								</div>
 								<div class="rightBookManager5">
-									<table id="eventList" >
-									<tr><th>No</th><th>이벤트명</th><th>할인</th><th>활성화</th></tr>
+									<table id="eventListTable" >
+									
+									
 									</table>
 								</div>
 							</div>

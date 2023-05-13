@@ -9,7 +9,12 @@
 	FROM event
 </select>
 
+<select id="selectEventDetail" resultType="com.kosmo.soribook.domain.EventVO">
 
+	SELECT *
+	FROM event
+	WHERE eventNo=#{eventNo}
+</select>
 	
 
 </mapper>

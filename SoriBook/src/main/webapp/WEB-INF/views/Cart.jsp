@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -51,33 +52,21 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">상품 목록</th>
+                                    <th class="shoping__product"></th>
                                     <th>가격</th>
                                     
                                     <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            
-                            <!-- 장바구니 상품 시작 -->
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="http://dummyimage.com/250x300.png/ff4444/ffffff" width="150" height="200" alt="">
-                                        
-                                        <h5>Vegetable’s Package</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $55.00
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <!-- 장바구니 상품 끝 -->
-                                
-                               
+                            <input type="hidden" name="userTel" id="userTel" value="${sessionScope.id.userTel}">
+                                 <!-- 장바구니 상품 시작 -->
+                            <tbody id="cartListTable">
+
+                             <!-- 장바구니 상품 위치 -->
+
                             </tbody>
+                             <!-- 장바구니 상품 끝 -->
                         </table>
                     </div>
                 </div>
@@ -85,8 +74,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">쇼핑 계속하기</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                    			<!-- 쇼핑 계속하기는 뒤로가기로 구현 -->
+                        <a class="primary-btn cart-btn"  onclick="history.back()">쇼핑 계속하기</a>
+                      			  <!-- 장바구니 새로고침은 새로고침 구현 -->
+                        <a class="primary-btn cart-btn cart-btn-right"  onclick="location.reload()"><span class="icon_loading"></span>
                             장바구니 새로고침</a>
                     </div>
                 </div>
@@ -99,10 +90,10 @@
                     <div class="shoping__checkout">
                         <h5>장바구니 종합</h5>
                         <ul>
-                            <li>상품 개수 <span>$454.98</span></li>
-                            <li>총 가격 <span>$454.98</span></li>
+                            <li>상품 개수 <span> </span></li>
+                            <li>총 가격 <span> </span></li>
                         </ul>
-                        <a href="#" class="primary-btn">결제하기</a>
+                        <a href="#" class="primary-btn" id="pay">결제하기</a>
                     </div>
                 </div>
             </div>
@@ -123,6 +114,110 @@
 <script src="/soribook/resources/Main/js/mixitup.min.js"></script>
 <script src="/soribook/resources/Main/js/owl.carousel.min.js"></script>
 <script src="/soribook/resources/Main/js/main.js"></script>
+<script type="text/javascript">
+
+var params = {"userTel" : $("#userTel").val() };
+
+//장바구니 전체 가격 구하는 함수
+function updateTotalPrice() {
+    var total = 0;
+    $('.shoping__cart__price').each(function() {
+        var price = Number($(this).text().replace('원', '')); 
+        total += price;
+    });
+    $('.shoping__checkout ul li:nth-child(2) span').text(total.toLocaleString() + '원');
+}
+
+//장바구니 전체 상품 개수 구하는 함수
+function updateTotalAmount() {
+    var total = 0;
+    $('.shoping__cart__price').each(function() {
+        var price = Number($(this).text().replace('원', '')); 
+        total += price;
+    });
+    $('.shoping__checkout ul li:nth-child(1) span').text(total + '개');
+}
+
+function cartListAll(){
+	$.ajax({
+		url : "cartListAll.do"
+		,type     : "POST"
+		,data     : params
+		,dataType : 'JSON'
+		,success  : function(data) {
+			$("#cartListTable").empty();
+			let count = $(".cartBookNo").length;
+			console.log(count)
+			
+			$.each(data.data,function(index, element){
+				
+				var str = "";
+				str = str
+				+'<tr><td class="shoping__cart__item">'
+				+'<input type="hidden" name="cartBookNo" class="cartBookNo" id="cartBookNo" value="'
+				+element.cartBookNo
+				+'">'
+				+'<input type="hidden" name="bookNo" id="bookNo" value="'
+				+element.bookNo
+				+'">'
+				+'<img src="'
+				+element.bookImg
+				+'" width="100" height="150" alt="">'
+				+'<h5>'
+				+element.bookTitle
+				+'</h5>'
+				+'</td>'
+				+'<td class="shoping__cart__price">'
+				+parseInt(element.bookPrice, 10).toLocaleString()
+				+'원'
+				+'</td>'
+				+'<td class="shoping__cart__item__close">'
+				+'<span class="icon_close" id="cartListDelete'
+				+element.cartBookNo
+				+'" ></span>'
+				+'</td>'
+				+'</tr>';
+				$('#cartListTable').append(str);
+				updateTotalPrice();
+				
+			});
+		}
+		,error: function(){
+			alert("cartListAll 실패!!")
+		}
+	})
+	
+}
+
+$(function(){
+
+ 	window.onload = cartListAll();
+
+	//cartListDelete 삭제 ajax
+	$(document).on("click",'[id^="cartListDelete"]',(function(e){
+		e.preventDefault()
+			var params = {
+			"bookNo" :  $(this).closest('tr').find('#bookNo').val(),
+			"userTel" : $("#userTel").val(),
+			"cartBookNo" : $(this).closest('tr').find('#cartBookNo').val()
+		};
+		console.log(params)
+		 $.ajax({
+			url : "cartListDelete.do"
+			,type    : "POST"
+			,data 	 :	params
+			,success : function(){
+				cartListAll();
+				}
+			,error   : function(){
+			}
+		})  // end of ajax
+	})) // end of cartListDelete function
+	
+	
+
+})
+</script>
 
 
 

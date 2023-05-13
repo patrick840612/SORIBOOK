@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EventMGMapper">
+
+	<insert id="insertEventW" parameterType="com.kosmo.soribook.domain.EventVO">
+		insert into event 
+		(eventNo,eventName,eventDCW
+		<if test="eventImg != null">
+		,eventImg
+		</if>
+		,eventDetail,eventStartDate,eventEndDate
+		) values 
+		(seq_event_eventNo.nextval,#{eventName},#{eventDCW}
+		<if test="eventImg != null">
+		,#{eventImg}
+		</if>
+		,#{eventDetail},#{eventStartDate},#{eventEndDate}
+		)
+	</insert>
+	
+	<insert id="insertEventP" parameterType="com.kosmo.soribook.domain.EventVO">
+		insert into event 
+		(eventNo,eventName,eventDCP
+		<if test="eventImg != null">
+		,eventImg
+		</if>
+		,eventDetail,eventStartDate,eventEndDate
+		) values 
+		(seq_event_eventNo.nextval,#{eventName},#{eventDCP}
+		<if test="eventImg != null">
+		,#{eventImg}
+		</if>
+		,#{eventDetail},#{eventStartDate},#{eventEndDate}
+		)
+	</insert>
+	
+	<select id="getEventList" resultType="com.kosmo.soribook.domain.EventVO">
+		select *  from event
+	</select>
+	
+	<select id="getEventByPK" parameterType="com.kosmo.soribook.domain.EventVO" resultType="com.kosmo.soribook.domain.EventVO">
+		select eventNo,eventName,eventDCP,eventDCW,eventImg,eventDetail,eventStartDate,eventEndDate from event where eventNo=#{eventNo}
+	</select>
+	
+	<delete id="deleteEvent" parameterType="com.kosmo.soribook.domain.EventVO">
+		delete from event where eventNo = #{eventNo}
+	</delete>
+	
+	<update id="updateEventW" parameterType="com.kosmo.soribook.domain.EventVO">
+		update event set 
+		eventName = #{eventName}
+		,eventDCW = #{eventDCW}
+		,eventDCP = null
+		<choose>
+			<when test="eventImg != null">
+				,eventImg = #{eventImg}
+			</when>
+			<when test="eventImg == null">
+				,eventImg = null
+			</when>
+		</choose>
+		,eventDetail = #{eventDetail}
+		,eventStartDate = #{eventStartDate}
+		,eventEndDate = #{eventEndDate}
+		where eventNo = #{eventNo}
+	</update>
+	
+	<update id="updateEventP" parameterType="com.kosmo.soribook.domain.EventVO">
+		update event set 
+		eventName = #{eventName}
+		,eventDCP = #{eventDCP}
+		,eventDCW = null
+		<choose>
+			<when test="eventImg != null">
+				,eventImg = #{eventImg}
+			</when>
+			<when test="eventImg == null">
+				,eventImg = null
+			</when>
+		</choose>
+		,eventDetail = #{eventDetail}
+		,eventStartDate = #{eventStartDate}
+		,eventEndDate = #{eventEndDate}
+		where eventNo = #{eventNo}
+	</update>
+
+</mapper>

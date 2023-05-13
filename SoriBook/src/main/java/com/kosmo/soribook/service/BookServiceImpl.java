@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosmo.soribook.Pagination;
 import com.kosmo.soribook.dao.BookDAOImpl;
 import com.kosmo.soribook.domain.BookVO;
 
@@ -50,9 +51,14 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<BookVO> selectTop100() {
+	public List<BookVO> selectTop100(Pagination pagination) {
 		System.out.println("===> BookDAOImpl selectTop100() 호출");
-		return bookDAO.selectTop100();
+		return bookDAO.selectTop100(pagination);
+	}
+
+	@Override
+	public List<BookVO> selectNewestBook() {
+		return bookDAO.selectNewestBook();
 	}
 
 }

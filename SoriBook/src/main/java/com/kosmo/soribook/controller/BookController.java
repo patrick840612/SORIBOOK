@@ -1,5 +1,6 @@
 package com.kosmo.soribook.controller;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 
@@ -54,6 +55,9 @@ public class BookController {
 		List<BookVO> list = bookService.getbookCnt2();
 		m.addAttribute("bookimg",list);
 		
+		List<BookVO> newestList = bookService.selectNewestBook();
+		m.addAttribute("newestList", newestList);
+		
 		//헤더카테고리 목록출력
 				List<CategoryVO> header = categoryService.selectCategory();
 				m.addAttribute("category",header);
@@ -69,8 +73,7 @@ public class BookController {
 		List<BookVO> listsub = bookService.selectSub();
 		m.addAttribute("selectSub",listsub);
 		
-	
-				
+
 		//전체 게시글 개수
 				int listCnt = listsub.size();
 				
@@ -78,9 +81,17 @@ public class BookController {
 				Pagination pagination = new Pagination();
 				pagination.pageInfo2(page, range, listCnt);
 				m.addAttribute("pagination",pagination);
-				m.addAttribute("bookListCnt",categoryService.getBookListForSub(pagination));
-				
-				
+				List<BookVO> bkcntList = categoryService.getBookListForSub(pagination);
+				// bookPrice 넘버포맷 변경 9999->9,999
+				NumberFormat nf = NumberFormat.getInstance();
+				nf.setGroupingUsed(true);
+				for (BookVO vo : bkcntList) {
+					int price = vo.getBookPrice();
+				    String priceWithCommas = nf.format(price);
+				    vo.setBookPriceString(priceWithCommas);
+				}
+				m.addAttribute("bookListCnt",bkcntList);
+								
 		//헤더카테고리 목록출력
 				List<CategoryVO> header = categoryService.selectCategory();
 				m.addAttribute("category",header);
@@ -91,17 +102,26 @@ public class BookController {
 			, @RequestParam(required = false, defaultValue = "1") int page
 			, @RequestParam(required = false, defaultValue = "1") int range) {
 		System.out.println("===> Contoller 호출");
-		List<BookVO> listsub = bookService.selectTop100();
-		m.addAttribute("selectTop100",listsub);
+//		List<BookVO> listsub = bookService.selectTop100(pagination);
+//		m.addAttribute("selectTop100",listsub);
 		
 		//전체 게시글 개수
-		int listCnt = listsub.size();
+		int listCnt = 100;
 		
 		//pagination
 		Pagination pagination = new Pagination();
 		pagination.pageInfo2(page, range, listCnt);
 		m.addAttribute("pagination",pagination);
-		m.addAttribute("bookListCnt",categoryService.getBookListForSub(pagination));
+		List<BookVO> bkcntList = bookService.selectTop100(pagination);
+		// bookPrice 넘버포맷 변경 9999->9,999
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(true);
+		for (BookVO vo : bkcntList) {
+			int price = vo.getBookPrice();
+		    String priceWithCommas = nf.format(price);
+		    vo.setBookPriceString(priceWithCommas);
+		}
+		m.addAttribute("selectTop100",bkcntList);
 		
 		
        //헤더카테고리 목록출력

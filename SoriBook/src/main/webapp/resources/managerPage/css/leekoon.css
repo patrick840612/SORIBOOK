@@ -49,21 +49,21 @@
 	display: inline-block;
 	position : absolute;
 	zoom : 200%;
-	left: 80px;
+	left: 40px;
 }
 
 .centerBookManager5{
 	display: inline-block;
 	position : absolute;
 	zoom : 200%;
-	left: 480px;
+	left: 400px;
 	
 }
 
 .rightBookManager5{
 	display: inline-block;
 	position : absolute;
-	left: 1450px;
+	left: 1410px;
  	overflow-y:auto;
  	height : 750px;
  	zoom : 1.2;
@@ -133,9 +133,10 @@ input[type="button"]{cursor:pointer}
 }
 
 .eventButton{
-	margin-left: 300px;
+	margin-left: 230px;
 	margin-top: 50px;
 	zoom: 2.8;
+	letter-spacing: 30px;
 }
 
 .upload{
@@ -157,6 +158,11 @@ td,th{
 	cursor: pointer;
 }
 
+.eventListTr:hover{
+	background-color: #7fad39;
+	cursor: pointer;
+}
+
 .searchBookInput{
 	zoom : 1.8;
 }
@@ -167,9 +173,9 @@ td,th{
 	margin-right: 10px;
 }
 
-#addEventOption{
+#imgPlace{
 	border: 1px solid black;
-	height: 325px;
+	height: 331px;
 }
 
 #eventName{
@@ -182,4 +188,14 @@ td,th{
 
 .selWC{width: 170px;}
 
+.eventDates{
+	margin-left: 30px;
+}
 
+#eventListTable{
+	width: 850px;
+}
+
+#cancelPreview{
+	margin-left: 243px;
+}

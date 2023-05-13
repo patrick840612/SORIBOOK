@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kosmo.soribook.domain.BookVO;
 import com.kosmo.soribook.domain.CategoryVO;
 import com.kosmo.soribook.domain.CompanyVO;
+import com.kosmo.soribook.domain.EventVO;
 import com.kosmo.soribook.domain.WriterVO;
 import com.kosmo.soribook.service.BookMGService;
 import com.kosmo.soribook.service.CategoryMGService;
+import com.kosmo.soribook.service.EventMGService;
 
 @Controller
 public class ManagePageController {
@@ -24,6 +26,9 @@ public class ManagePageController {
 	
 	@Autowired
 	private BookMGService bookMGService;
+	
+	@Autowired
+	private EventMGService eventMGService;
 
 	@RequestMapping("/manager.do")
 	public String firstPage() {
@@ -82,9 +87,7 @@ public class ManagePageController {
 	@ResponseBody
 	@RequestMapping("/insertBook.do") 
 	public void insertBook(BookVO vo) throws IOException { 
-		System.out.println("==============================");
 		System.out.println(vo.toString());
-		System.out.println("==============================");
 		bookMGService.insertBook(vo); 
 	}
 	
@@ -135,9 +138,53 @@ public class ManagePageController {
 	@ResponseBody
 	@RequestMapping("/updateBook.do")
 	public void updateBook(BookVO vo) throws IOException {
-		System.out.println("==============================");
-		System.out.println(vo.toString());
-		System.out.println("==============================");
 		bookMGService.updateBook(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/insertEventW.do")
+	public void insertEventW(EventVO vo) throws IOException {
+		eventMGService.insertEventW(vo);		
+	}
+	
+	@ResponseBody
+	@RequestMapping("/insertEventP.do")
+	public void insertEventP(EventVO vo) throws IOException {
+		eventMGService.insertEventP(vo);		
+	}
+	
+	@ResponseBody
+	@RequestMapping("/updateEventW.do")
+	public void updateEventW(EventVO vo) throws IOException {
+		System.out.println(vo.toString());
+		System.out.println("===========================");
+		eventMGService.updateEventW(vo);		
+	}
+	
+	@ResponseBody
+	@RequestMapping("/updateEventP.do")
+	public void updateEventP(EventVO vo) throws IOException {
+		eventMGService.updateEventP(vo);		
+	}
+
+	
+	
+	
+	@ResponseBody
+	@RequestMapping("/getEventList.do")
+	public List<EventVO> getEventList(){
+		return eventMGService.getEventList();
+	}
+	
+	@ResponseBody
+	@RequestMapping("getEventByPK.do")
+	public EventVO getEventByPK(EventVO vo) {
+		return eventMGService.getEventByPK(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("deleteEvent.do")
+	public void deleteEvent(EventVO vo) {
+		eventMGService.deleteEvent(vo);
 	}
 }

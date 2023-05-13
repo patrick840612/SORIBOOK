@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosmo.soribook.dao.ServiceDAOImpl;
 import com.kosmo.soribook.domain.NoticeVO;
+import com.kosmo.soribook.domain.QnAVO;
 
 @Service("serviceService")
 public class ServiceServiceImpl implements ServiceService {
@@ -16,14 +17,24 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	@Override
 	public List<NoticeVO> selectNotice() {
-		System.out.println("===> ServiceDAOImpl selectNotice() 호출");
+		
 		return serviceDAO.selectNotice();
 	}
 	
 	@Override
 	public NoticeVO selectNoticeDetail(String noticeno) {
-		System.out.println("===> ServiceDAOImpl selectNoticeDetail() 호출");
+		
 		return serviceDAO.selectNoticeDetail(noticeno);
+	}
+	
+	public void insertQnA(QnAVO vo) {
+
+		serviceDAO.insertQnA(vo);
+	}
+	
+    public List<QnAVO> selectQnA() {
+    	System.out.println("===>ServiceDAOImpl selectQnA() 호출");
+		return serviceDAO.selectQnA();
 	}
 
 }

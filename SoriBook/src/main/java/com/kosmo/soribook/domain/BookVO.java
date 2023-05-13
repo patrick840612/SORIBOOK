@@ -12,7 +12,8 @@ import lombok.Data;
 public class BookVO {//상품 테이블
 
 	private String bookNo; 		//상품번호 pk
-	private int    bookPrice; 	// 가격
+	private int bookPrice; 	// 가격
+	private String bookPriceString;
 	private String bookTitle; 	// 제목
 	private String bookPdate; 	// 출판일자	
 	private String bookSyno;  	// 시놉시스

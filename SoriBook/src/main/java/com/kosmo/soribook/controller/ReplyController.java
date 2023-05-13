@@ -30,6 +30,7 @@ public class ReplyController {
 	public Map<String,Object> replyList(ReplyVO vo){
 		List<ReplyVO> replyList=replyService.getReplyListByBookNo(vo);
 		Map<String,Object> map=new HashMap<String, Object>();
+
 		map.put("result", true);
 		map.put("data", replyList);
 		map.put("size", replyList.size());
